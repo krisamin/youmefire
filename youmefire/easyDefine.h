@@ -1,9 +1,25 @@
-#define UP 72
-#define DOWN 80
-#define LEFT 75
-#define RIGHT 77
-#define SPACE 32
+#define _CRT_SECURE_NO_WARNINGS false
+#pragma once
+#ifndef DEFINE_H
+#define DEFINE_H
 
-#define WINDOW_WIDTH 1920
-#define WINDOW_HEIGHT 1080
-#define WINDOW_SCALE 0.5
+#include "global.h"
+
+//#include "easyDisplay.h"
+#include "easyImage.h"
+#include "easyAudio.h"
+#include "easyMouse.h"
+
+#include "utils.h"
+#include "initializer.h"
+
+HANDLE CONSOLE_INPUT, CONSOLE_OUTPUT;
+HWND WINDOW_HANDLE;
+EasyImage easyImage;
+
+void InitAudio();
+void InitMouse();
+void InitImage();
+void ResetImage();
+
+#endif

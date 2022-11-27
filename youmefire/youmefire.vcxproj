@@ -127,7 +127,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Source.c" />
+    <ClCompile Include="index.c" />
+    <ClCompile Include="intro.c" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="utils.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="easyDisplay.h" />
@@ -135,6 +138,12 @@
     <ClInclude Include="easyDefine.h" />
     <ClInclude Include="easyImage.h" />
     <ClInclude Include="easyMouse.h" />
+    <ClInclude Include="global.h" />
+    <ClInclude Include="initializer.h" />
+    <ClInclude Include="utils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
