@@ -11,4 +11,5 @@ INPUT_RECORD rec;
 DWORD dwNOER;
 HANDLE CIN;
 int mouseX, mouseY, mouseC, mouseS;
+WCHAR* name;
 #endif

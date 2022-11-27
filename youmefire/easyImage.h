@@ -6,16 +6,16 @@
 #pragma comment(lib, "msimg32.lib")
 
 typedef struct {
-	char* name;
+	WCHAR* name;
 	int x, y;
 	int opacity;
 }Image;
 
 typedef struct {
-	char* name;
+	WCHAR* name;
 	int x, y;
 	int opacity;
-	char* text;
+	WCHAR* text;
 	int fontSize;
 	int fontWeight;
 	int fontAngle;
@@ -26,11 +26,11 @@ typedef struct {
 
 typedef struct {
 	bool enable;
-	char* type;
-	char* name;
+	WCHAR* type;
+	WCHAR* name;
 	int x, y;
 	int opacity;
-	char* text;
+	WCHAR* text;
 	int fontSize;
 	int fontWeight;
 	int fontAngle;
@@ -84,11 +84,8 @@ inline BLENDFUNCTION GetBlendFunction(int alpha) {
 }
 
 inline void PutBitmapToBackDC(HDC backDC, HDC consoleDC, Layer image, UINT transparentColor) {
-	wchar_t fileNameWChar[100];
-	swprintf(fileNameWChar, 100, L"%hs", image.name);
-
 	const HDC bitmapDC = CreateCompatibleDC(backDC);
-	const HBITMAP bitmap = (HBITMAP)LoadImage(NULL, fileNameWChar, IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
+	const HBITMAP bitmap = (HBITMAP)LoadImage(NULL, image.name, IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
 	SelectObject(bitmapDC, bitmap);
 
 	const int x = image.x;
@@ -112,10 +109,8 @@ inline void PutBitmapToBackDC(HDC backDC, HDC consoleDC, Layer image, UINT trans
 }
 
 inline void PutTextToBackDC(HDC backDC, HDC consoleDC, Layer text) {
-	wchar_t fontNameWChar[100];
-	swprintf(fontNameWChar, 100, L"%hs", text.name);
 
-	const HFONT font = CreateFont(text.fontSize, 0, text.fontAngle, 0, text.fontWeight, 0, 0, 0, HANGEUL_CHARSET, 0, 0, 0, VARIABLE_PITCH | FF_ROMAN, fontNameWChar);
+	const HFONT font = CreateFont(text.fontSize, 0, text.fontAngle, 0, text.fontWeight, 0, 0, 0, HANGEUL_CHARSET, 0, 0, 0, VARIABLE_PITCH | FF_ROMAN, text.name);
 	SelectObject(backDC, font);
 
 	SetBkMode(backDC, TRANSPARENT);
@@ -158,10 +153,10 @@ inline void _render(EasyImage* self) {
 	const HDC backDC = CreateNewBackDC(self->_consoleDC);
 	for (int _ = 0; _ < self->count; _++) {
 		if (self->layer[_].enable) {
-			if (self->layer[_].type == "image") {
+			if (self->layer[_].type == L"image") {
 				PutBitmapToBackDC(backDC, self->_consoleDC, self->layer[_], self->transparentColor);
 			}
-			else if (self->layer[_].type == "text") {
+			else if (self->layer[_].type == L"text") {
 				PutTextToBackDC(backDC, self->_consoleDC, self->layer[_]);
 			}
 		}

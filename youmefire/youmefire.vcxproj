@@ -130,6 +130,7 @@
     <ClCompile Include="index.c" />
     <ClCompile Include="intro.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="newgame.c" />
     <ClCompile Include="utils.c" />
   </ItemGroup>
   <ItemGroup>
@@ -144,6 +145,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="names.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

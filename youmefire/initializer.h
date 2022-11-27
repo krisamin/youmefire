@@ -4,6 +4,7 @@
 #include "utils.h"
 #include <windows.h>
 #include <stdbool.h>
+#include <locale.h>
 #pragma comment(lib, "msimg32.lib")
 
 inline void GetHandle() {
@@ -96,6 +97,7 @@ inline void initialize() {
 	HideScrollBar();
 	SetProcessDPIAware();
 	SetConsole(WINDOW_WIDTH, WINDOW_HEIGHT);
+  setlocale(LC_ALL, "KOREAN");
 
 	/*printf("Open Sounds\n");
 	OpenAudio(L"sounds/music/ost.mp3", L"ost");

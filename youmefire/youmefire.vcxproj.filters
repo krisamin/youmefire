@@ -33,6 +33,9 @@
     <ClCompile Include="intro.c">
       <Filter>Source Files\screens</Filter>
     </ClCompile>
+    <ClCompile Include="newgame.c">
+      <Filter>Source Files\screens</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="easyDisplay.h">
@@ -62,5 +65,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="names.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
