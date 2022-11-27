@@ -30,10 +30,13 @@
     <ClCompile Include="utils.c">
       <Filter>Source Files\others</Filter>
     </ClCompile>
-    <ClCompile Include="intro.c">
+    <ClCompile Include="gameintro.c">
       <Filter>Source Files\screens</Filter>
     </ClCompile>
     <ClCompile Include="newgame.c">
+      <Filter>Source Files\screens</Filter>
+    </ClCompile>
+    <ClCompile Include="viichanintro.c">
       <Filter>Source Files\screens</Filter>
     </ClCompile>
   </ItemGroup>

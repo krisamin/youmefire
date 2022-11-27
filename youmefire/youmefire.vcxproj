@@ -128,10 +128,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="index.c" />
-    <ClCompile Include="intro.c" />
+    <ClCompile Include="gameintro.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="newgame.c" />
     <ClCompile Include="utils.c" />
+    <ClCompile Include="viichanintro.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="easyDisplay.h" />

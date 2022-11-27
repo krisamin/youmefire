@@ -40,14 +40,14 @@ int NewGame() {
 	int currentMenu = 0;
 	bool nameUpdate = true;
 
-	Layer nameLayer = { true, L"text", L"Pretendard Variable", 960, 540, 100, TEXT(""), 96, 700, 0, TA_CENTER, 1, RGB(255, 255, 255)};
+	Layer nameLayer = { true, 1, L"text", L"Pretendard Variable", 960, 540, 100, TEXT(""), 96, 700, 0, TA_CENTER, 1, RGB(255, 255, 255)};
 
 	easyImage.reset(&easyImage);
 	while (true) {
 		if (IsInPixel(629, 809, 341, 91)) {
 			currentMenu = 1;
 			if (mouseC & mouseS) {
-				PlayAudio(L"button", false);
+				PlayAudio(L"effect/button", false);
 				mouseS = false;
 				name = GetRandomName();
 				nameUpdate = true;
@@ -56,8 +56,10 @@ int NewGame() {
 		else if (IsInPixel(1018, 809, 274, 91)) {
 			currentMenu = 2;
 			if (mouseC & mouseS) {
-				PlayAudio(L"button", false);
+				PlayAudio(L"effect/button", false);
 				mouseS = false;
+				StopAudio(L"music/ost");
+				Intro();
 			}
 		}
 		else {
@@ -67,7 +69,7 @@ int NewGame() {
 
 		WCHAR* imgPath = (WCHAR*)malloc(100);
 		wsprintf(imgPath, L"images/screen/newgame/%d.bmp", currentMenu);
-		Layer background = { true, L"image", imgPath, 0, 0, 100 };
+		Layer background = { true, 0, L"image", imgPath, 0, 0, 100 };
 
 		if (nameUpdate) {
 			nameUpdate = false;
@@ -77,8 +79,8 @@ int NewGame() {
 		/*easyImage.count = 5;
 		Layer layer[5];
 		easyImage.layer = layer;*/
-		easyImage.setLayer(&easyImage, 0, background);
-		easyImage.setLayer(&easyImage, 1, nameLayer);
+		easyImage.setLayer(&easyImage, background);
+		easyImage.setLayer(&easyImage, nameLayer);
 		easyImage.render(&easyImage);
 	}
 }

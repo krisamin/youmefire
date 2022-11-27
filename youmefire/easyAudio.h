@@ -33,7 +33,11 @@ inline void VolumeAudio(WCHAR* alias, int volume) {
 }
 
 inline void InitAudio() {
-	OpenAudio(L"sounds/music/ost.mp3", L"ost");
-	OpenAudio(L"sounds/music/yurusu.mp3", L"yurusu");
-	OpenAudio(L"sounds/effect/button.mp3", L"button");
+	OpenAudio(L"sounds/music/ost.mp3", L"music/ost");
+	OpenAudio(L"sounds/music/yurusu.mp3", L"music/yurusu");
+	OpenAudio(L"sounds/music/それぞれの大晦日.mp3", L"music/viichanintro");
+
+	OpenAudio(L"sounds/effect/button.mp3", L"effect/button");
+	OpenAudio(L"sounds/effect/jab.mp3", L"effect/jab");
+	OpenAudio(L"sounds/effect/calling.mp3", L"effect/calling");
 }

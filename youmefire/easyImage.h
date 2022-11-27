@@ -26,6 +26,7 @@ typedef struct {
 
 typedef struct {
 	bool enable;
+	int index;
 	WCHAR* type;
 	WCHAR* name;
 	int x, y;
@@ -48,7 +49,7 @@ typedef struct _EasyImage {
 	HWND _windowHandle;
 	HDC _consoleDC;
 
-	void (*setLayer)(struct _EasyImage*, int index, Layer layer);
+	void (*setLayer)(struct _EasyImage*, Layer layer);
 	void (*reset)(struct _EasyImage*);
 	void (*initialize)(struct _EasyImage*);
 	void (*render)(struct _EasyImage*);
@@ -130,8 +131,8 @@ inline void PutTextToBackDC(HDC backDC, HDC consoleDC, Layer text) {
 	DeleteObject(font);
 }
 
-inline void _setLayer(EasyImage* self, int index, Layer layer) {
-	self->layer[index] = layer;
+inline void _setLayer(EasyImage* self, Layer layer) {
+	self->layer[layer.index] = layer;
 }
 
 inline void _reset(EasyImage* self) {
