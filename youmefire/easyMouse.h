@@ -1,16 +1,12 @@
+#include "utils.h"
+
 #include <stdio.h>
 #include <windows.h>
 #include <windowsx.h>
 #include <process.h>
 #include <stdbool.h>
 
-INPUT_RECORD rec;
-DWORD dwNOER;
-HANDLE CIN = 0;
-
-int mouseX, mouseY, mouseC, mouseS = true;
-
-void checkMouseStateThread(void* param) {
+inline void checkMouseStateThread(void* param) {
   HWND consoleWND = GetConsoleWindow();
   POINT mousePos;
 	int oldMouseX = -1, oldMouseY = -1;
@@ -34,7 +30,7 @@ void checkMouseStateThread(void* param) {
   }
 }
 
-void StartMouseInputThread() {
+inline void InitMouse() {
   SetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), ENABLE_PROCESSED_INPUT | ENABLE_MOUSE_INPUT);
   _beginthread(checkMouseStateThread, 0, NULL);
 }

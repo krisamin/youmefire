@@ -1,16 +1,17 @@
+#include "utils.h"
+
 #include <windows.h>
 #include <stdbool.h>
+#include <stdio.h>
 #pragma comment(lib, "msimg32.lib")
 
 typedef struct {
-	bool enable;
 	char* name;
 	int x, y;
 	int opacity;
 }Image;
 
 typedef struct {
-	bool enable;
 	char* name;
 	int x, y;
 	int opacity;
@@ -47,8 +48,7 @@ typedef struct _EasyImage {
 	HWND _windowHandle;
 	HDC _consoleDC;
 
-	void (*setImage)(struct Layer*, int index, Image image);
-	void (*setText)(struct Layer*, int index, Text text);
+	void (*setLayer)(struct _EasyImage*, int index, Layer layer);
 	void (*reset)(struct _EasyImage*);
 	void (*initialize)(struct _EasyImage*);
 	void (*render)(struct _EasyImage*);
@@ -135,34 +135,26 @@ inline void PutTextToBackDC(HDC backDC, HDC consoleDC, Layer text) {
 	DeleteObject(font);
 }
 
-inline void _setImage(Layer* layer, int index, Image image) {
-	layer[index].enable = image.enable;
-	layer[index].type = "image";
-	layer[index].name = image.name;
-	layer[index].x = image.x;
-	layer[index].y = image.y;
-	layer[index].opacity = image.opacity;
+inline void _setLayer(EasyImage* self, int index, Layer layer) {
+	self->layer[index].enable = layer.enable;
+	self->layer[index].type = layer.type;
+
+	self->layer[index].name = layer.name;
+	self->layer[index].x = layer.x;
+	self->layer[index].y = layer.y;
+	self->layer[index].opacity = layer.opacity;
+	self->layer[index].text = layer.text;
+	self->layer[index].fontSize = layer.fontSize;
+	self->layer[index].fontWeight = layer.fontWeight;
+	self->layer[index].fontAngle = layer.fontAngle;
+	self->layer[index].fontAlignX = layer.fontAlignX;
+	self->layer[index].fontAlignY = layer.fontAlignY;
+	self->layer[index].fontColor = layer.fontColor;
 }
 
-inline void _setText(Layer* layer, int index, Text text) {
-	layer[index].enable = text.enable;
-	layer[index].type = "text";
-	layer[index].name = text.name;
-	layer[index].x = text.x;
-	layer[index].y = text.y;
-	layer[index].opacity = 100;
-	layer[index].text = text.text;
-	layer[index].fontSize = text.fontSize;
-	layer[index].fontWeight = text.fontWeight;
-	layer[index].fontAngle = text.fontAngle;
-	layer[index].fontAlignX = text.fontAlignX;
-	layer[index].fontAlignY = text.fontAlignY;
-	layer[index].fontColor = text.fontColor;
-}
-
-inline void _reset(EasyImage* easyImage) {
-	for (int i = 0; i < easyImage->count; i++) {
-		easyImage->layer[i].enable = false;
+inline void _reset(EasyImage* self) {
+	for (int i = 0; i < self->count; i++) {
+		self->layer[i].enable = false;
 	}
 }
 
@@ -171,22 +163,24 @@ inline void ApplyToDC(HDC dstDC, HDC srcDC) {
 }
 
 inline void _initialize(EasyImage* self) {
-	self->_windowHandle = GetConsoleWindowHandle();
+	self->_windowHandle = GetConsoleWindow();
 	self->_consoleDC = GetDC(self->_windowHandle);
 }
 
 inline void _render(EasyImage* self) {
 	const HDC backDC = CreateNewBackDC(self->_consoleDC);
 	for (int _ = 0; _ < self->count; _++) {
-		if (!self->layer[_].enable) continue;
-		if (self->layer[_].type == "image") {
-			PutBitmapToBackDC(backDC, self->_consoleDC, self->layer[_], self->transparentColor);
-		} else if (self->layer[_].type == "text") {
-			PutTextToBackDC(backDC, self->_consoleDC, self->layer[_]);
+		if (self->layer[_].enable) {
+			if (self->layer[_].type == "image") {
+				PutBitmapToBackDC(backDC, self->_consoleDC, self->layer[_], self->transparentColor);
+			}
+			else if (self->layer[_].type == "text") {
+				PutTextToBackDC(backDC, self->_consoleDC, self->layer[_]);
+			}
 		}
 	}
 	ApplyToDC(self->_consoleDC, backDC);
 	DeleteDC(backDC);
 }
 
-static const EasyImage DEFAULT_EASY_IMAGE = { NULL, NULL, 0, RGB(0,0,0), NULL, NULL, _setImage, _setText, _reset, _initialize, _render, NULL };
+static const EasyImage DEFAULT_EASY_IMAGE = { NULL, NULL, 0, RGB(0,0,0), NULL, NULL, _setLayer, _reset, _initialize, _render, NULL };

@@ -13,10 +13,25 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\others">
+      <UniqueIdentifier>{a8709aff-407a-450b-8d26-4999b8cdf4ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\screens">
+      <UniqueIdentifier>{079dd97c-1ffb-444b-8961-71d0cfc53120}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.c">
+    <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="index.c">
+      <Filter>Source Files\screens</Filter>
+    </ClCompile>
+    <ClCompile Include="utils.c">
+      <Filter>Source Files\others</Filter>
+    </ClCompile>
+    <ClCompile Include="intro.c">
+      <Filter>Source Files\screens</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -26,14 +41,23 @@
     <ClInclude Include="easyAudio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="easyDefine.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="easyMouse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="easyImage.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="initializer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="easyDefine.h">
+      <Filter>Source Files\others</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
