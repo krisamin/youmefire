@@ -3,15 +3,18 @@
 #pragma comment(lib, "msimg32.lib")
 
 typedef struct {
-	char* fileName;
+	bool enable;
+	char* name;
 	int x, y;
 	int opacity;
 }Image;
 
 typedef struct {
-	char* text;
+	bool enable;
+	char* name;
 	int x, y;
-	char* fontName;
+	int opacity;
+	char* text;
 	int fontSize;
 	int fontWeight;
 	int fontAngle;
@@ -21,6 +24,7 @@ typedef struct {
 }Text;
 
 typedef struct {
+	bool enable;
 	char* type;
 	char* name;
 	int x, y;
@@ -43,6 +47,9 @@ typedef struct _EasyImage {
 	HWND _windowHandle;
 	HDC _consoleDC;
 
+	void (*setImage)(struct Layer*, int index, Image image);
+	void (*setText)(struct Layer*, int index, Text text);
+	void (*reset)(struct _EasyImage*);
 	void (*initialize)(struct _EasyImage*);
 	void (*render)(struct _EasyImage*);
 	void (*applyToDC)(HDC);
@@ -128,6 +135,37 @@ inline void PutTextToBackDC(HDC backDC, HDC consoleDC, Layer text) {
 	DeleteObject(font);
 }
 
+inline void _setImage(Layer* layer, int index, Image image) {
+	layer[index].enable = image.enable;
+	layer[index].type = "image";
+	layer[index].name = image.name;
+	layer[index].x = image.x;
+	layer[index].y = image.y;
+	layer[index].opacity = image.opacity;
+}
+
+inline void _setText(Layer* layer, int index, Text text) {
+	layer[index].enable = text.enable;
+	layer[index].type = "text";
+	layer[index].name = text.name;
+	layer[index].x = text.x;
+	layer[index].y = text.y;
+	layer[index].opacity = 100;
+	layer[index].text = text.text;
+	layer[index].fontSize = text.fontSize;
+	layer[index].fontWeight = text.fontWeight;
+	layer[index].fontAngle = text.fontAngle;
+	layer[index].fontAlignX = text.fontAlignX;
+	layer[index].fontAlignY = text.fontAlignY;
+	layer[index].fontColor = text.fontColor;
+}
+
+inline void _reset(EasyImage* easyImage) {
+	for (int i = 0; i < easyImage->count; i++) {
+		easyImage->layer[i].enable = false;
+	}
+}
+
 inline void ApplyToDC(HDC dstDC, HDC srcDC) {
 	BitBlt(dstDC, 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, srcDC, 0, 0, SRCCOPY);
 }
@@ -140,6 +178,7 @@ inline void _initialize(EasyImage* self) {
 inline void _render(EasyImage* self) {
 	const HDC backDC = CreateNewBackDC(self->_consoleDC);
 	for (int _ = 0; _ < self->count; _++) {
+		if (!self->layer[_].enable) continue;
 		if (self->layer[_].type == "image") {
 			PutBitmapToBackDC(backDC, self->_consoleDC, self->layer[_], self->transparentColor);
 		} else if (self->layer[_].type == "text") {
@@ -150,4 +189,4 @@ inline void _render(EasyImage* self) {
 	DeleteDC(backDC);
 }
 
-static const EasyImage DEFAULT_EASY_IMAGE = { NULL, NULL, 0, RGB(0,0,0), NULL, NULL, _initialize, _render, NULL };
+static const EasyImage DEFAULT_EASY_IMAGE = { NULL, NULL, 0, RGB(0,0,0), NULL, NULL, _setImage, _setText, _reset, _initialize, _render, NULL };

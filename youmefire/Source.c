@@ -88,21 +88,14 @@ int Index(EasyImage easyImage) {
 
 		char imgPath[20];
 		sprintf(imgPath, "images/index/%d%d.bmp", currentPage, currentMenu);
+		Image background = { true, imgPath, 0, 0, 100 };
 
 		TCHAR mousePosition[100];
 		wsprintf(mousePosition, TEXT("X: %-4d, Y: %-4d, C: %-2d, S: %-2d"), mouseX, mouseY, mouseC, mouseS);
+		Text positionText = { true, "D2Coding", 0, 0, 100, mousePosition, 50, 900, 0, TA_LEFT, 0, RGB(0, 0, 0) };
 
-		easyImage.count = 2;
-		Layer layer[2] = {
-			{
-				"image",
-				imgPath, 0, 0, 100
-			}, {
-				"text",
-				"D2Coding", 0, 0, 100, mousePosition, 50, 900, 0, TA_LEFT, 0, RGB(0, 0, 0)
-			}
-		};
-		easyImage.layer = layer;
+		easyImage.setImage(easyImage.layer, 0, background);
+		easyImage.setText(easyImage.layer, 1, positionText);
 		easyImage.render(&easyImage);
 	}
 }
@@ -128,15 +121,15 @@ int main() {
 	EasyImage easyImage = DEFAULT_EASY_IMAGE;
 	easyImage.initialize(&easyImage);
 
-	easyImage.count = 1;
-	Layer background[1] = {
-		{
-			"image",
-			"images/solid/101010.bmp", 0, 0, 100
-		}
-	};
-	easyImage.layer = background;
+	easyImage.count = 50;
+	Layer layer[50] = { false, };
+	easyImage.layer = layer;
 	easyImage.render(&easyImage);
+
+	/*Image background = { true, "images/index/11.bmp", 0, 0, 100 };
+	easyImage.setImage(easyImage.layer, 0, background);
+	easyImage.render(&easyImage);
+	Sleep(10000);*/
 
 	/*PlayAudio(L"yurusu", true);
 	intro(easyImage);
@@ -154,20 +147,14 @@ int main() {
 	}
 	StopAudio(L"ost");
 
-	easyImage.count = 3;
-	Layer layer[3] = {
-		{
-			"image",
-			"images/jingburger.bmp", 0, 0, 100
-		}, {
-			"image",
-			"images/dialog/jingburger.bmp", 0, 0, 80
-		}, {
-			"text",
-			"Pretendard Variable", 110, 760, 100, TEXT("안녕하세요. 이것은 테스트를 위한 글입니다."), 40, 700, 0, TA_LEFT, 0, RGB(0, 0, 0)
-		}
-	};
-	easyImage.layer = layer;
+	Image background = { true, "images/jingburger.bmp", 0, 0, 100 };
+	Image jingburgerDialog = { true, "images/dialog/jingburger.bmp", 0, 0, 80 };
+	Text hoverText = { true, "Pretendard Variable", 110, 760, 100, TEXT("안녕하세요. 이것은 테스트를 위한 글입니다."), 40, 700, 0, TA_LEFT, 0, RGB(0, 0, 0) };
+
+	easyImage.reset(&easyImage);
+	easyImage.setImage(easyImage.layer, 0, background);
+	easyImage.setImage(easyImage.layer, 5, jingburgerDialog);
+	easyImage.setText(easyImage.layer, 10, hoverText);
 	easyImage.render(&easyImage);
 
 	PlayAudio(L"yurusu", true);
