@@ -18,12 +18,13 @@ int MainProcess() {
 int main() {
 	MainProcess();
 	//Sleep(1000);
+	ReadStory();
 
 	/*WCHAR* setName = (WCHAR*)malloc(sizeof(WCHAR) * 3);
 	setName = L"세구";
 	name = setName;
 	Intro();*/
-	GameIntro();
+	//GameIntro();
 
 
 	PlayAudio(L"bgm/ost", true);

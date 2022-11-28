@@ -32,6 +32,20 @@ inline void VolumeAudio(WCHAR* alias, int volume) {
 	mciSendString(command, NULL, 0, 0);
 }
 
+inline void FadeAudio(WCHAR* alias, int from, int to) {
+	int volume = from;
+	WCHAR command[100];
+	wsprintf(command, TEXT("setaudio %s volume to %d"), alias, from);
+	mciSendString(command, NULL, 0, 0);
+	while ((to > from && volume < to) || (to < from && volume > to)) {
+		if (to > from) volume += 10;
+		if (to < from) volume -= 10;
+		if ((to > from && volume >= to) || (to < from && volume <= to)) volume = to;
+		VolumeAudio(alias, volume);
+		Sleep(10);
+	}
+}
+
 inline void InitAudio() {
 	OpenAudio(L"sounds/bgm/ost.mp3", L"bgm/ost");
 	OpenAudio(L"sounds/bgm/yurusu.mp3", L"bgm/yurusu");

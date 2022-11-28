@@ -30,8 +30,6 @@ int ReadStory() {
 
 	WCHAR* bufferLine;
 	WCHAR* splitLine = wcstok(story, L"\n", &bufferLine);
-	int index = 0;
-	int inRand = rand() % 20;
 	while (splitLine != NULL) {
 		bool ok = true;
 		if (wcscmp(splitLine, L"#START") == 0) {
@@ -136,6 +134,11 @@ int ReadStory() {
 				if (wcscmp(type, L"SET") == 0) {
 					int volume = _wtoi(wcstok(NULL, L":", &buffer));
 					VolumeAudio(alias, volume);
+				}
+				else if (wcscmp(type, L"FADE") == 0) {
+					int from = _wtoi(wcstok(NULL, L":", &buffer));
+					int to = _wtoi(wcstok(NULL, L":", &buffer));
+					FadeAudio(alias, from, to);
 				}
 			}
 		}
