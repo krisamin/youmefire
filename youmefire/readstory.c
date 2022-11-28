@@ -110,6 +110,12 @@ int ReadStory() {
 			}
 			if (target) {
 				WCHAR* content = wcstok(NULL, L":", &buffer);
+
+				WCHAR* pwc = wcsstr(content, L"|N");
+				if (pwc) {
+					wcsncpy(pwc, name, 2);
+				}
+
 				target->enable = true;
 				StepPrint(content, *target);
 			}
@@ -128,6 +134,9 @@ int ReadStory() {
 				else if (wcscmp(type, L"EFFECT") == 0) {
 					PlayAudio(alias, false);
 				}
+			}
+			else if (wcscmp(command, L"STOP") == 0) {
+				StopAudio(alias);
 			}
 			else if (wcscmp(command, L"VOLUME") == 0) {
 				WCHAR* type = wcstok(NULL, L":", &buffer);

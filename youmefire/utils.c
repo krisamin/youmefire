@@ -1,5 +1,10 @@
 #include "easyDefine.h"
 
+#include <stdlib.h>
+#include <assert.h>
+#include <string.h>
+#include <wchar.h>
+
 void InitImage(int count) {
 	easyImage = DEFAULT_EASY_IMAGE;
 	easyImage.initialize(&easyImage);
@@ -40,7 +45,7 @@ void StepPrint(WCHAR* string, Layer* layer) {
 			easyImage.render(&easyImage);
 			break;
 		}
-		if (count >= 5) {
+		if (count >= 0) {
 			count = 0;
 			layer->text = SubStr(string, 0, index++);
 			easyImage.setLayer(&easyImage, *layer);
@@ -70,4 +75,31 @@ void FadeImage(int from, int to, Layer* layer) {
 		easyImage.setLayer(&easyImage, *layer);
 		easyImage.render(&easyImage);
 	}
+}
+
+int wcsrpl(const wchar_t* wstr, const wchar_t* wsubstr, const wchar_t* wrepl)
+{
+	register int i = 0;
+	wchar_t* chr = NULL;
+	size_t sub_len = 0;
+	size_t repl_len = 0;
+
+	assert(wstr != NULL);
+	assert(wsubstr != NULL);
+	assert(wrepl != NULL);
+
+	chr = wcsstr(wstr, wsubstr);
+	if (chr == NULL) return 0;
+
+	sub_len = wcslen(wsubstr);
+	repl_len = wcslen(wrepl);
+
+	for (i = 0; i < (int)sub_len && i < (int)repl_len; i++)
+	{
+		*chr = wrepl[i];
+		chr++;
+		if (chr == '\0') break;
+	}
+
+	return i;
 }

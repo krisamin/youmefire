@@ -18,7 +18,18 @@ int MainProcess() {
 int main() {
 	MainProcess();
 	//Sleep(1000);
-	ReadStory();
+
+	//const size = lstrlenW(content);
+	//WCHAR wcs[] = L"|N Hello.";
+	//WCHAR wcs[size];
+	//wcsncpy(wcs, content, size);
+	//wcs[lstrlenW(content)] = '\0';
+	//wprintf(L"%c\n", wcs[0]);
+
+	/*WCHAR* setName = (WCHAR*)malloc(sizeof(WCHAR) * 3);
+	setName = L"세구\0";
+	name = setName;*/
+	//ReadStory();
 
 	/*WCHAR* setName = (WCHAR*)malloc(sizeof(WCHAR) * 3);
 	setName = L"세구";

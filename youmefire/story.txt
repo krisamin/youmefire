@@ -47,10 +47,10 @@ HOVER:주인공은 어두운 회색 머리에, 검은색 머리핀을 한 여자
 #IMAGE
 HOVERTEXT:DISABLE
 
-#IMAGE
-HIDER:OPACITY:FADE:80:0
 #AUDIO
 bgm/intro:VOLUME:FADE:500:1000
+#IMAGE
+HIDER:OPACITY:FADE:80:0
 
 #IMAGE
 DIALOG:ENABLE
@@ -109,12 +109,12 @@ HIDER:OPACITY:FADE:100:80
 HOVER:초등학교 때 부터 친하게 지내던 징버거 누나의 전화가 왔다.
 #CLICK
 
+#AUDIO
+bgm/intro:VOLUME:FADE:500:1000
 #IMAGE
 HOVERTEXT:DISABLE
 #IMAGE
 HIDER:OPACITY:FADE:80:0
-#AUDIO
-bgm/intro:VOLUME:FADE:500:1000
 
 #IMAGE
 DIALOG:ENABLE
@@ -124,7 +124,7 @@ NAMETAG:ENABLE
 NAMETAG:PATH:images/dialog/jingburger.bmp
 
 #TEXT
-DIALOG:[[NAME]]아 뭐해? 할 거 없으면 상포역으로 나와
+DIALOG:|N아 뭐해? 할 거 없으면 상포역으로 나와
 #CLICK
 
 #IMAGE
@@ -145,5 +145,8 @@ effect/doing:START:EFFECT
 #TEXT
 HOVER:징버거 누나의 전화를 받고, 급하게 근처 상포역으로 갈 준비를 했다.
 #CLICK
+
+#AUDIO
+bgm/intro:STOP
 
 #END
