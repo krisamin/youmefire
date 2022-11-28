@@ -30,6 +30,11 @@ int Intro() {
 	StepPrint(L"주인공은 어두운 회색 머리에, 검은색 머리핀을 한 여자와 부딪치게 된다.", &hoverText);
 	WaitClick();
 
+	easyImage.reset(&easyImage);
+	background.name = L"images/screen/intro/sorry.bmp";
+	easyImage.setLayer(&easyImage, background);
+	FadeImage(100, 0, &black);
+
 	int volume = 500;
 	while (volume < 1000) {
 		volume += 10;
@@ -37,32 +42,50 @@ int Intro() {
 		Sleep(10);
 	}
 
-	/*Layer menuBackground = { true, 12, L"image", L"images/solid/000000.bmp", 0, 0, 80 };
-	easyImage.setLayer(&easyImage, menuBackground);*/
-
-	background.name = L"images/screen/introviichan/sorry.bmp";
-	black.opacity = 0;
-	easyImage.setLayer(&easyImage, black);
-	easyImage.setLayer(&easyImage, background);
 	easyImage.setLayer(&easyImage, dialog);
 	easyImage.setLayer(&easyImage, nameTag);
 	StepPrint(L"앗.. 죄송합니다", &dialogText);
 	WaitClick();
 
 	easyImage.reset(&easyImage);
-	black.opacity = 80;
 	easyImage.setLayer(&easyImage, background);
 	easyImage.setLayer(&easyImage, black);
+	FadeImage(0, 80, &black);
 	StepPrint(L"여자가 말했다.", &hoverText);
 	WaitClick();
 	StepPrint(L"주인공은 부딪힌 여자를 어디선가 본 것 같았지만, 그냥 무시하고 집으로 갔다.", &hoverText);
 	WaitClick();
-	background.opacity = 0;
+
+	easyImage.reset(&easyImage);
 	easyImage.setLayer(&easyImage, background);
+	FadeImage(80, 100, &black);
+
+	easyImage.reset(&easyImage);
+	easyImage.setLayer(&easyImage, black);
 	StepPrint(L"못 한 짐정리를 마저 하고, 쉬려던 찰나,", &hoverText);
 	WaitClick();
+
 	PlayAudio(L"effect/calling", false);
-	Sleep(2000);
+	Sleep(1000);
+	background.name = L"images/screen/intro/calling.bmp";
+	easyImage.setLayer(&easyImage, background);
+	FadeImage(100, 80, &black);
+
 	StepPrint(L"초등학교 때 부터 친하게 지내던 징버거 누나의 전화가 왔다.", &hoverText);
+	WaitClick();
+	FadeImage(80, 0, &black);
+
+	nameTag.name = L"images/dialog/jingburger.bmp";
+	easyImage.setLayer(&easyImage, dialog);
+	easyImage.setLayer(&easyImage, nameTag);
+	WCHAR* line = (WCHAR*)malloc(sizeof(WCHAR) * 100);
+	wsprintf(line, L"%s아 뭐해? 할 거 없으면 상포역으로 나와", name);
+	StepPrint(line, &dialogText);
+	WaitClick();
+	easyImage.reset(&easyImage);
+	easyImage.setLayer(&easyImage, background);
+	FadeImage(0, 100, &black);
+	PlayAudio(L"effect/doing", false);
+	StepPrint(L"징버거 누나의 전화를 받고, 급하게 근처 상포역으로 갈 준비를 했다.", &hoverText);
 	WaitClick();
 }

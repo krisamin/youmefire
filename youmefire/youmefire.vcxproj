@@ -129,8 +129,10 @@
   <ItemGroup>
     <ClCompile Include="index.c" />
     <ClCompile Include="gameintro.c" />
+    <ClCompile Include="jingburgerfirst.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="newgame.c" />
+    <ClCompile Include="readstory.c" />
     <ClCompile Include="utils.c" />
     <ClCompile Include="intro.c" />
   </ItemGroup>
@@ -149,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="names.txt" />
+    <Text Include="story.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

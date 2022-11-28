@@ -19,12 +19,15 @@ int main() {
 	MainProcess();
 	//Sleep(1000);
 
-	//GameIntro();
+	/*WCHAR* setName = (WCHAR*)malloc(sizeof(WCHAR) * 3);
+	setName = L"세구";
+	name = setName;
+	Intro();*/
+	GameIntro();
 
-	PlayAudio(L"music/ost", true);
+
+	PlayAudio(L"bgm/ost", true);
 	int type = Index();
 	if (!type)return 0;
-	StopAudio(L"music/ost");
-
-	//ViichanIntro();
+	StopAudio(L"bgm/ost");
 }

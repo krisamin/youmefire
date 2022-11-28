@@ -6,25 +6,25 @@ int GameIntro() {
 	easyImage.reset(&easyImage);
 	easyImage.setLayer(&easyImage, background);
 	easyImage.render(&easyImage);
-	PlayAudio(L"music/yurusu", true);
+	PlayAudio(L"bgm/yurusu", true);
 	Sleep(700);
 
-	background.name = L"images/screen/intro/1.bmp";
+	background.name = L"images/screen/gameintro/1.bmp";
 	easyImage.setLayer(&easyImage, background);
 	easyImage.render(&easyImage);
 	Sleep(900);
 
-	background.name = L"images/screen/intro/2.bmp";
+	background.name = L"images/screen/gameintro/2.bmp";
 	easyImage.setLayer(&easyImage, background);
 	easyImage.render(&easyImage);
 	Sleep(1500);
 
-	background.name = L"images/screen/intro/3.bmp";
+	background.name = L"images/screen/gameintro/3.bmp";
 	easyImage.setLayer(&easyImage, background);
 	easyImage.render(&easyImage);
 	Sleep(900);
 
-	background.name = L"images/screen/intro/4.bmp";
+	background.name = L"images/screen/gameintro/4.bmp";
 	easyImage.setLayer(&easyImage, background);
 	easyImage.render(&easyImage);
 	Sleep(1500);
@@ -34,9 +34,9 @@ int GameIntro() {
 	int volume = 1000;
 
 	while (volume) {
-		VolumeAudio(L"music/yurusu", volume);
+		VolumeAudio(L"bgm/yurusu", volume);
 		volume -= 10;
 		Sleep(10);
 	}
-	StopAudio(L"music/yurusu");
+	StopAudio(L"bgm/yurusu");
 }

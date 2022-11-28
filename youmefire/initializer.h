@@ -3,8 +3,11 @@
 
 #include "utils.h"
 #include <windows.h>
+#include <stdlib.h>
 #include <stdbool.h>
 #include <locale.h>
+#include <time.h>
+
 #pragma comment(lib, "msimg32.lib")
 
 inline void GetHandle() {
@@ -98,6 +101,7 @@ inline void initialize() {
 	SetProcessDPIAware();
 	SetConsole(WINDOW_WIDTH, WINDOW_HEIGHT);
   setlocale(LC_ALL, "KOREAN");
+  srand(time(NULL));
 
 	/*printf("Open Sounds\n");
 	OpenAudio(L"sounds/music/ost.mp3", L"ost");

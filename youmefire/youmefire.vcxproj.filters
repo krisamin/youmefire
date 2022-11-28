@@ -39,6 +39,12 @@
     <ClCompile Include="intro.c">
       <Filter>Source Files\screens</Filter>
     </ClCompile>
+    <ClCompile Include="jingburgerfirst.c">
+      <Filter>Source Files\screens</Filter>
+    </ClCompile>
+    <ClCompile Include="readstory.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="easyDisplay.h">
@@ -73,5 +79,6 @@
     <Text Include="names.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="story.txt" />
   </ItemGroup>
 </Project>

@@ -20,17 +20,17 @@ WCHAR* GetRandomName() {
 	fclose(fp);
 
 	WCHAR* buffer;
-	WCHAR* splitedName = wcstok(temp, L"\n", &buffer);
+	WCHAR* splitName = wcstok(temp, L"\n", &buffer);
 	int index = 0;
 	int inRand = rand() % 20;
-	while (splitedName != NULL) {
+	while (splitName != NULL) {
 		if (inRand == index++) {
-			WCHAR* returnName = (WCHAR*)malloc(sizeof(WCHAR) * lstrlenW(splitedName));
-			wcscpy(returnName, splitedName);
+			WCHAR* returnName = (WCHAR*)malloc(sizeof(WCHAR) * lstrlenW(splitName));
+			wcscpy(returnName, splitName);
 			free(temp);
 			return returnName;
 		}
-		splitedName = wcstok(NULL, L"\n", &buffer);
+		splitName = wcstok(NULL, L"\n", &buffer);
 	}
 }
 
@@ -58,8 +58,8 @@ int NewGame() {
 			if (mouseC & mouseS) {
 				PlayAudio(L"effect/button", false);
 				mouseS = false;
-				StopAudio(L"music/ost");
-				Intro();
+				StopAudio(L"bgm/ost");
+				ReadStory();
 			}
 		}
 		else {
@@ -67,7 +67,7 @@ int NewGame() {
 		}
 
 
-		WCHAR* imgPath = (WCHAR*)malloc(100);
+		WCHAR* imgPath = (WCHAR*)malloc(sizeof(WCHAR) * 100);
 		wsprintf(imgPath, L"images/screen/newgame/%d.bmp", currentMenu);
 		Layer background = { true, 0, L"image", imgPath, 0, 0, 100 };
 

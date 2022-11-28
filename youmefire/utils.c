@@ -12,7 +12,7 @@ void InitImage(int count) {
 	easyImage.render(&easyImage);
 }
 
-WCHAR* substr(WCHAR* src, int m, int n) {
+WCHAR* SubStr(WCHAR* src, int m, int n) {
 	// 목적지 문자열의 길이를 얻는다.
 	int len = n - m;
 
@@ -40,9 +40,9 @@ void StepPrint(WCHAR* string, Layer* layer) {
 			easyImage.render(&easyImage);
 			break;
 		}
-		if (count >= 10) {
+		if (count >= 5) {
 			count = 0;
-			layer->text = substr(string, 0, index++);
+			layer->text = SubStr(string, 0, index++);
 			easyImage.setLayer(&easyImage, *layer);
 			easyImage.render(&easyImage);
 			if (index > wcslen(string)) break;
@@ -55,4 +55,19 @@ void StepPrint(WCHAR* string, Layer* layer) {
 void WaitClick() {
 	while (!(mouseC & mouseS)) continue;
 	mouseS = false;
+}
+
+void FadeImage(int from, int to, Layer* layer) {
+	int opacity = from;
+	layer->opacity = opacity;
+	easyImage.setLayer(&easyImage, *layer);
+	easyImage.render(&easyImage);
+	while ((to > from && opacity < to) || (to < from && opacity > to)) {
+		if (to > from) opacity += 10;
+		if (to < from) opacity -= 10;
+		if ((to > from && opacity >= to) || (to < from && opacity <= to)) opacity = to;
+		layer->opacity = opacity;
+		easyImage.setLayer(&easyImage, *layer);
+		easyImage.render(&easyImage);
+	}
 }
