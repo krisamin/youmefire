@@ -79,6 +79,8 @@
     <Text Include="names.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="story.txt" />
+    <Text Include="story.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

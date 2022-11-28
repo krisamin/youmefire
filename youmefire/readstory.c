@@ -17,10 +17,13 @@ WCHAR* ReadStoryFile() {
 	return temp;
 }
 
-int ReadStory() {
+int ReadStory(int section) {
+	WCHAR sectionList[2][10] = {L"INTRO", L"PROLOGUE"};
+	wprintf(L"%s", sectionList[section]);
+
 	Layer background = { true, 0, L"image", L"images/solid/101010.bmp", 0, 0, 100 };
 	Layer hider = { true, 9, L"image", L"images/solid/101010.bmp", 0, 0, 100 };
-	Layer dialog = { true, 7, L"image", L"images/dialog/dialog.bmp", 72, 700, 60 };
+	Layer dialog = { true, 7, L"image", L"images/dialog/dialog.bmp", 72, 700, 80 };
 	Layer nameTag = { true, 8, L"image", L"images/dialog/viichan.bmp", 120, 671, 100 };
 	Layer hoverText = { true, 10, L"text", L"Pretendard Bold", 960, 540, 100, L"", 50, 400, 0, TA_CENTER, 1, RGB(255, 255, 255) };
 	Layer dialogText = { true, 10, L"text", L"Pretendard SemiBold", 110, 760, 100, L"", 50, 400, 0, TA_LEFT, 0, RGB(0, 0, 0) };
@@ -30,19 +33,31 @@ int ReadStory() {
 
 	WCHAR* bufferLine;
 	WCHAR* splitLine = wcstok(story, L"\n", &bufferLine);
+
+	bool started = false;
 	while (splitLine != NULL) {
-		bool ok = true;
-		if (wcscmp(splitLine, L"#START") == 0) {
+		splitLine = wcstok(NULL, L"\n", &bufferLine);
+
+		WCHAR* buffer;
+		WCHAR* command = wcstok(splitLine, L":", &buffer);
+
+		if (!started) {
+			if (wcscmp(command, L"#SECTION") == 0) {
+				WCHAR* sectionName = wcstok(NULL, L":", &buffer);
+				if (wcscmp(sectionName, sectionList[section]) == 0) {
+					started = true;
+				}
+			}
+			continue;
+		}
+		if (wcscmp(command, L"#START") == 0) {
 			printf("START\n");
 		}
-		else if (wcscmp(splitLine, L"#END") == 0) {
+		else if (wcscmp(command, L"#END") == 0) {
 			return 0;
 		}
-		else if (wcscmp(splitLine, L"#IMAGE") == 0) {
-			splitLine = wcstok(NULL, L"\n", &bufferLine);
-
-			WCHAR* buffer;
-			WCHAR* type = wcstok(splitLine, L":", &buffer);
+		else if (wcscmp(command, L"#IMAGE") == 0) {
+			WCHAR* type = wcstok(NULL, L":", &buffer);
 			Layer* target = NULL;
 			if (wcscmp(type, L"RENDER") == 0) {
 				easyImage.render(&easyImage);
@@ -96,16 +111,13 @@ int ReadStory() {
 				}
 			}
 		}
-		else if (wcscmp(splitLine, L"#TEXT") == 0) {
-			splitLine = wcstok(NULL, L"\n", &bufferLine);
-
-			WCHAR* buffer;
-			WCHAR* command = wcstok(splitLine, L":", &buffer);
+		else if (wcscmp(command, L"#TEXT") == 0) {
+			WCHAR* type = wcstok(NULL, L":", &buffer);
 			Layer* target = NULL;
-			if (wcscmp(command, L"HOVER") == 0) {
+			if (wcscmp(type, L"HOVER") == 0) {
 				target = &hoverText;
 			}
-			else if (wcscmp(command, L"DIALOG") == 0) {
+			else if (wcscmp(type, L"DIALOG") == 0) {
 				target = &dialogText;
 			}
 			if (target) {
@@ -120,11 +132,8 @@ int ReadStory() {
 				StepPrint(content, *target);
 			}
 		}
-		else if (wcscmp(splitLine, L"#AUDIO") == 0) {
-			splitLine = wcstok(NULL, L"\n", &bufferLine);
-
-			WCHAR* buffer;
-			WCHAR* alias = wcstok(splitLine, L":", &buffer);
+		else if (wcscmp(command, L"#AUDIO") == 0) {
+			WCHAR* alias = wcstok(NULL, L":", &buffer);
 			WCHAR* command = wcstok(NULL, L":", &buffer);
 			if (wcscmp(command, L"START") == 0) {
 				WCHAR* type = wcstok(NULL, L":", &buffer);
@@ -151,18 +160,13 @@ int ReadStory() {
 				}
 			}
 		}
-		else if (wcscmp(splitLine, L"#CLICK") == 0) {
+		else if (wcscmp(command, L"#CLICK") == 0) {
 			WaitClick();
 		}
-		else if (wcscmp(splitLine, L"#SLEEP") == 0) {
-			int sleep = _wtoi(wcstok(NULL, L"\n", &bufferLine));
+		else if (wcscmp(command, L"#SLEEP") == 0) {
+			int sleep = _wtoi(wcstok(NULL, L":", &buffer));
 			Sleep(sleep);
 		}
-		else {
-			ok = false;
-		}
-		//if (ok) Sleep(100);
-		splitLine = wcstok(NULL, L"\n", &bufferLine);
 	}
 
 	Sleep(1000000);

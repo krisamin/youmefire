@@ -26,17 +26,16 @@ int main() {
 	//wcs[lstrlenW(content)] = '\0';
 	//wprintf(L"%c\n", wcs[0]);
 
-	/*WCHAR* setName = (WCHAR*)malloc(sizeof(WCHAR) * 3);
+	WCHAR* setName = (WCHAR*)malloc(sizeof(WCHAR) * 3);
 	setName = L"세구\0";
-	name = setName;*/
-	//ReadStory();
+	name = setName;
+	ReadStory(1);
 
 	/*WCHAR* setName = (WCHAR*)malloc(sizeof(WCHAR) * 3);
 	setName = L"세구";
 	name = setName;
 	Intro();*/
 	//GameIntro();
-
 
 	PlayAudio(L"bgm/ost", true);
 	int type = Index();

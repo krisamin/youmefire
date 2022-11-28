@@ -49,7 +49,8 @@ inline void FadeAudio(WCHAR* alias, int from, int to) {
 inline void InitAudio() {
 	OpenAudio(L"sounds/bgm/ost.mp3", L"bgm/ost");
 	OpenAudio(L"sounds/bgm/yurusu.mp3", L"bgm/yurusu");
-	OpenAudio(L"sounds/bgm/それぞれの大晦日.mp3", L"bgm/intro");
+	OpenAudio(L"sounds/bgm/intro.mp3", L"bgm/intro");
+	OpenAudio(L"sounds/bgm/prologue1.mp3", L"bgm/prologue1");
 
 	OpenAudio(L"sounds/effect/button.mp3", L"effect/button");
 	OpenAudio(L"sounds/effect/jab.mp3", L"effect/jab");
