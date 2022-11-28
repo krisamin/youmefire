@@ -36,7 +36,7 @@
     <ClCompile Include="newgame.c">
       <Filter>Source Files\screens</Filter>
     </ClCompile>
-    <ClCompile Include="viichanintro.c">
+    <ClCompile Include="intro.c">
       <Filter>Source Files\screens</Filter>
     </ClCompile>
   </ItemGroup>

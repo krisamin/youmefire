@@ -132,7 +132,7 @@
     <ClCompile Include="main.c" />
     <ClCompile Include="newgame.c" />
     <ClCompile Include="utils.c" />
-    <ClCompile Include="viichanintro.c" />
+    <ClCompile Include="intro.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="easyDisplay.h" />

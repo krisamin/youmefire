@@ -95,15 +95,19 @@ inline void PutBitmapToBackDC(HDC backDC, HDC consoleDC, Layer image, UINT trans
 	const int width = bitmapSize.width;
 	const int height = bitmapSize.height;
 
-	if (image.opacity == 100) {
-		TransparentBlt(backDC, x, y, width, height, bitmapDC, 0, 0, bitmapSize.width, bitmapSize.height, transparentColor);
-	} else {
-		const HDC alphaDC = CreateNewBackDC(consoleDC);
-		BitBlt(alphaDC, 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, backDC, 0, 0, SRCCOPY);
-		BitBlt(alphaDC, x, y, width, height, bitmapDC, 0, 0, SRCPAINT);
-		AlphaBlend(backDC, 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, alphaDC, 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, GetBlendFunction(255 * image.opacity / 100));
-		DeleteDC(alphaDC);
-	}
+	AlphaBlend(backDC, x, y, width, height, bitmapDC, 0, 0, width, height, GetBlendFunction(255 * image.opacity / 100));
+	//if (image.opacity == 100) {
+	//	TransparentBlt(backDC, x, y, width, height, bitmapDC, 0, 0, bitmapSize.width, bitmapSize.height, transparentColor);
+	//} else {
+	//	const HDC alphaDC = CreateNewBackDC(consoleDC);
+	//	//TransparentBlt(alphaDC, x, y, WINDOW_WIDTH, WINDOW_HEIGHT, backDC, 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, transparentColor);
+	//	//TransparentBlt(alphaDC, x, y, width, height, bitmapDC, 0, 0, width, height, transparentColor);
+	//	AlphaBlend(backDC, x, y, width, height, bitmapDC, 0, 0, width, height, GetBlendFunction(255 * image.opacity / 100));
+	//	/*BitBlt(alphaDC, 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, backDC, 0, 0, SRCCOPY);
+	//	BitBlt(alphaDC, x, y, width, height, bitmapDC, 0, 0, SRCPAINT);
+	//	AlphaBlend(backDC, 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, alphaDC, 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, GetBlendFunction(255 * image.opacity / 100));*/
+	//	DeleteDC(alphaDC);
+	//}
 
 	DeleteObject(bitmap);
 	DeleteDC(bitmapDC);
@@ -166,4 +170,4 @@ inline void _render(EasyImage* self) {
 	DeleteDC(backDC);
 }
 
-static const EasyImage DEFAULT_EASY_IMAGE = { NULL, NULL, 0, RGB(0,0,0), NULL, NULL, _setLayer, _reset, _initialize, _render, NULL };
+static const EasyImage DEFAULT_EASY_IMAGE = { NULL, NULL, 0, RGB(0, 0, 0), NULL, NULL, _setLayer, _reset, _initialize, _render, NULL };

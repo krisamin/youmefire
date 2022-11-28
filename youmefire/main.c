@@ -19,7 +19,7 @@ int main() {
 	MainProcess();
 	//Sleep(1000);
 
-	//IntroGame();
+	//GameIntro();
 
 	PlayAudio(L"music/ost", true);
 	int type = Index();

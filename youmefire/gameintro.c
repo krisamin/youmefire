@@ -1,6 +1,6 @@
 #include "easyDefine.h"
 
-int IntroGame() {
+int GameIntro() {
 	Layer background = { true, 0, L"image", L"images/solid/101010.bmp", 0, 0, 100 };
 
 	easyImage.reset(&easyImage);
