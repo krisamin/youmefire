@@ -1031,11 +1031,80 @@
 
 #IMAGE:HIDER:OPACITY:SET:100
 #IMAGE:RENDER
-#AUDIO:bgm/crisis1:START:BGM
-#AUDIO:bgm/crisis1:VOLUME:FADE:0:1000
+#AUDIO:bgm/climax1:START:BGM
+#AUDIO:bgm/climax1:VOLUME:FADE:0:1000
+
+#IMAGE:BACKGROUND:PATH:images/solid/101010.bmp
+#IMAGE:HIDER:OPACITY:SET:0
+#SELECT:1:이런 XX놈이!
+
+#IMAGE:HIDER:OPACITY:SET:100
+#TEXT:HOVER:참을 수 없던 나는, 누나에게 막말을 하던 그 남자를 때렸다.
+#CLICK
+
+#TEXT:HOVER:그 남자가 이런 말을 누나에게 하지 못하도록, 더 세게 때렸다.
+#CLICK
+
+#TEXT:HOVER:그러자, 누나가 말했다.
+#CLICK
+
+#IMAGE:BACKGROUND:PATH:images/screen/jingburger/angry.bmp
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:100:0
+
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:야 경훈!!! 너 진짜 미쳤어?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:누나한테.. 너무 막말을 해서 화가 나서 어쩔 수 없었어..
+
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:너 이런 애인줄 몰랐어.. 당분간 나한테 연락하지 마.
+#CLICK
+
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#AUDIO:bgm/climax1:VOLUME:FADE:1000:0
+#AUDIO:bgm/climax1:STOP
+
+#IMAGE:RESET
+#IMAGE:RENDER
+#JUMP:ENDING-J-A
 
 
 
+
+
+#END
+==========================================================================================
+#POINT:ENDING-J-A
+#SECTION:ENDING-J-A
+
+#IMAGE:HIDER:OPACITY:SET:100
+#IMAGE:RENDER
+#AUDIO:bgm/badending:START:BGM
+#AUDIO:bgm/badending:VOLUME:FADE:0:1000
+
+#TEXT:HOVER:평소와 똑같은 겨울.
+#SLEEP:3000
+
+#TEXT:HOVER:학원들은 겨울방학 특강을 시작했고, 나 역시도 그 반복의 일원으로 참여하여 점차 적응해나갔다.
+#SLEEP:4000
+
+#TEXT:HOVER:이 쯤이면, 징버거 누나가 이사를 하고 나에게 연락을 했을텐데, 연락은 오지 않았다.
+#SLEEP:4000
+
+#TEXT:HOVER:시린 듯이 추워진 내 마음과 더불어, 옆 자리의 공허함은 점차 더해져만 갔다.
+#SLEEP:4000
+
+#TEXT:HOVER:그날, 그 남자를 때리지 않았다면, 이 겨울은 조금이나마 달라졌을까.
+#SLEEP:4000
+
+#TEXT:HOVER:그렇게 시린 일상 속에서, 슬픈 후회를 하며 하루를 끝냈다.
+#CLICK
+
+#AUDIO:bgm/badending:VOLUME:FADE:1000:0
+#AUDIO:bgm/badending:STOP
 
 
 
