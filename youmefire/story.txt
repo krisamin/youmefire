@@ -52,7 +52,6 @@
 #CLICK
 
 #IMAGE:HIDER:OPACITY:FADE:80:100
-#IMAGE:BACKGROUND:DISABLE
 
 #TEXT:HOVER:못 한 짐정리를 마저 하고, 쉬려던 찰나,
 #CLICK
@@ -61,7 +60,6 @@
 
 #SLEEP:1000
 
-#IMAGE:BACKGROUND:ENABLE
 #IMAGE:BACKGROUND:PATH:images/screen/intro/calling.bmp
 #IMAGE:HIDER:OPACITY:FADE:100:80
 
@@ -79,7 +77,6 @@
 #MACRO:DIALOG:HIDE
 
 #IMAGE:HIDER:OPACITY:FADE:0:100
-#IMAGE:BACKGROUND:DISABLE
 
 #AUDIO:effect/doing:START:EFFECT
 
@@ -100,10 +97,8 @@
 #AUDIO:bgm/prologue1:START:BGM
 #AUDIO:bgm/prologue1:VOLUME:FADE:0:1000
 
-#IMAGE:BACKGROUND:ENABLE
 #IMAGE:BACKGROUND:PATH:images/screen/prologue/jingburger1.bmp
 #IMAGE:HIDER:OPACITY:FADE:100:80
-
 #TEXT:HOVER:반 년만에 징버거 누나를 만났다.
 #CLICK
 
@@ -121,27 +116,158 @@
 #TEXT:DIALOG:오늘 밥은 누나가 살게 ㅎㅎ 뭐 먹고 싶어?
 #CLICK
 
-#SELECT:3:와 너무 좋아요:버거땅 최고다:헤으으으응
+#MACRO:DIALOG:HIDE
+#SELECT:1:누나 진짜 오랜만이야! 나는 아무거나 괜찮아!
+#MACRO:DIALOG:JINGBURGER
+
+#TEXT:DIALOG:오늘 밥은 누나가 살게 ㅎㅎ 뭐 먹고 싶어?
+#CLICK
+
+#TEXT:DIALOG:너 여기 오랜만에 오는거라 아무것도 모르지? 여기 엄청 많이 바뀌었어
+#CLICK
+
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:사실 2주만에 오는거라, 뭐가 바뀌었는지는 대충 알고 있었다.
+#CLICK
+
+#TEXT:HOVER:그치만, 나는 오랜만에 만난 징버거 누나와 한 마디라도 더 나누고 싶은 마음에 굳이 말하지는 않았다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:음 요즘은 여기 뭐가 맛있어? 중학교때 이 근처 학원 다닐때는 돈까스집 많이 갔는데
+#MACRO:DIALOG:JINGBURGER
+
+#TEXT:DIALOG:그 집 코로나때문에 없어지고, 그 자리에 피자집이 생겼어, 한번 가볼래?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:좋아!
+
+#IMAGE:HIDER:OPACITY:FADE:0:100
+
+#TEXT:HOVER:나는 징버거와 함께 근처에 있는 피자집에 들어갔다.
+#CLICK
+
+#TEXT:HOVER:나와 징버거 누나는 여기서 제일 잘 나가는 메뉴를 시킨 후, 서로의 근황에 대해 이야기했다.
+#CLICK
+
+#IMAGE:BACKGROUND:PATH:images/screen/prologue/jingburger2.bmp
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:100:0
+
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:너네 학교 집으로 잘 안 보내 주잖아.. 오늘 어떻게 나온거야?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:아 무슨 모의고사 끝난다고 애들 다 집 보내줬어.
+#SLEEP:500
+#SELECT:1:누나는 수능 잘 봤어?
+
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:실례가 될 수 있었지만, 이 정도 쯤이야 물어볼 수 있는 사이기에 조심스러웠지만 물어봤다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:다행히 잘 봤어.
+#CLICK
+
+#TEXT:DIALOG:우리 시험장에 모히칸 머리 하고 온 또라이 있었는데..
+#CLICK
+
+#TEXT:DIALOG:그래도 시험 시작하니까 집중 잘 되서 괜찮게 봤어.
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:다행이네.. 어느 대학 준비하고 있어?
+#MACRO:DIALOG:JINGBURGER
+
+#TEXT:DIALOG:고려대 디조과 준비하고 있어…
+#CLICK
+
+#TEXT:DIALOG:수능도 괜찮게 나왔고 포트폴리오도 계속 준비하고 있지!
+#CLICK
+
+#TEXT:DIALOG:넌 요즘 뭐해?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:2:그냥 이것저것 학교에서 프로젝트 하고 있지..!:여긴 내신 따긴 이미 글러먹어서, 그냥 정시파이터로 살면서 정시 준비나 할까 고민하고 있어…
 #MACRO:DIALOG:JINGBURGER
 
 #JUMP:@SELECT
 
 #POINT:@1
-#TEXT:DIALOG:첫번째
+#TEXT:DIALOG:역시.. 믓지다 믓져 내 동생!!
 #JUMP:END
 
 #POINT:@2
-#TEXT:DIALOG:두번째
-#JUMP:END
-
-#POINT:@3
-#TEXT:DIALOG:세번째
+#TEXT:DIALOG:너 미쳤냐 ㅋㅋㅋ 그냥 수시던 정시던 놓지 말고 꾸준히 해 ㅋㅋㅋ
 #JUMP:END
 
 #POINT:END
 #CLICK
 
-#TEXT:DIALOG:나갔음
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:그렇게 누나랑 서로 평소에 하고 있는 이야기를 하고 보니, 벌써 피자를 다 먹었다.
+#CLICK
+
+#IMAGE:HIDER:OPACITY:FADE:80:100
+#TEXT:HOVER:피자를 다 먹고 나서, 누나와 커피숍을 갔다.
+#CLICK
+
+#IMAGE:BACKGROUND:PATH:images/screen/prologue/jingburger3.bmp
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:100:0
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:커피는 내가 살게. 누나 밥 샀잖아 ㅋㅋㅋ
+#MACRO:DIALOG:JINGBURGER
+
+#TEXT:DIALOG:엥 너 용돈 많이 못 받잖아 괜찮겠어?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:이래 보여도 얼마전에 대회에서 상금 좀 탔거든!!! 그니까 얼른 드셔..
+#MACRO:DIALOG:JINGBURGER
+
+#TEXT:DIALOG:올ㅋㅋ 너 좀 되냐?
+#CLICK
+
+#TEXT:DIALOG:아 맞다! 너 나 어디 사는 지는 알아?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:누나 여기서 좀 걸리지 않아?
+#SLEEP:500
+#SELECT:1:영남역이면 여기까지 진짜 오래걸릴텐데..
+#MACRO:DIALOG:JINGBURGER
+
+#TEXT:DIALOG:그래서 나 이 동네 근처로 자취방 하나 구할려고! 대학 합격하면 이 근처로 이사 올 거 같아!
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:이제 그럼 자주 볼 수 있겠네 ㅋㅋㅋㅋ 겨울방학 되면 우리 자주 볼까??
+#MACRO:DIALOG:JINGBURGER
+
+#TEXT:DIALOG:얘가 뭐래는거야 ㅋㅋㅋ 와 벌써 지금 9시야 나 막차 때문에 슬슬 가야할 거 같아!
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:아 시간이 벌써 그렇게 됐네.. 잘 가!
+#IMAGE:HIDER:OPACITY:FADE:0:100
+
+#TEXT:HOVER:그렇게 급하게 징버거 누나와 인사를 나누고, 나도 집으로 돌아갔다.
+#CLICK
+
+#TEXT:HOVER:징버거 누나가 이 동네 근처로 이사온다니, 기대하진 않았지만 생각보다는 기쁜 소식이였다.
 #CLICK
 
 #END

@@ -159,12 +159,6 @@ int ReadStory(int section) {
 			for (int i = 0; i < count; i++) {
 				selectList[i] = wcstok(NULL, L":", &buffer);
 			}
-			dialog.enable = false;
-			nameTag.enable = false;
-			dialogText.enable = false;
-			easyImage.setLayer(&easyImage, dialog);
-			easyImage.setLayer(&easyImage, nameTag);
-			easyImage.setLayer(&easyImage, dialogText);
 
 			while (true) {
 				if (count == 1) {
@@ -247,6 +241,7 @@ int ReadStory(int section) {
 				}
 			}
 			PlayAudio(L"effect/button", false);
+			mouseS = false;
 			int index = 11;
 			while (index < 20) {
 				Layer reset = { false, index ++, L"image", L"", 0, 0, 0 };
