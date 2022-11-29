@@ -17,9 +17,9 @@ WCHAR* ReadStoryFile() {
 	return temp;
 }
 
-int ReadStory(int section) {
-	WCHAR sectionList[5][15] = {L"INTRO", L"PROLOGUE-J", L"PROLOGUE-V", L"INTERLUDE", L"HEROINE" };
-	wprintf(L"%s", sectionList[section]);
+int ReadStory(WCHAR* startSection) {
+	/*WCHAR sectionList[5][15] = {L"INTRO", L"PROLOGUE-J", L"PROLOGUE-V", L"INTERLUDE", L"HEROINE" };
+	wprintf(L"%s", sectionList[section]);*/
 
 	Layer background = { true, 0, L"image", L"images/solid/101010.bmp", 0, 0, 100 };
 	Layer dialog = { true, 3, L"image", L"images/dialog/dialog.bmp", 72, 700, 80 };
@@ -46,7 +46,7 @@ int ReadStory(int section) {
 		if (!started) {
 			if (wcscmp(command, L"#SECTION") == 0) {
 				WCHAR* sectionName = wcstok(NULL, L":", &buffer);
-				if (wcscmp(sectionName, sectionList[section]) == 0) {
+				if (wcscmp(sectionName, startSection) == 0) {
 					started = true;
 				}
 			}
@@ -82,6 +82,9 @@ int ReadStory(int section) {
 			Layer* target = NULL;
 			if (wcscmp(type, L"RENDER") == 0) {
 				easyImage.render(&easyImage);
+			}
+			else if (wcscmp(type, L"RESET") == 0) {
+				easyImage.reset(&easyImage);
 			}
 			else if (wcscmp(type, L"HIDER") == 0) {
 				target = &hider;
@@ -281,7 +284,7 @@ int ReadStory(int section) {
 			WCHAR* type = wcstok(NULL, L":", &buffer);
 			if (wcscmp(type, L"DIALOG") == 0) {
 				type = wcstok(NULL, L":", &buffer);
-				if (wcscmp(type, L"JINGBURGER") == 0 || wcscmp(type, L"VIICHAN") == 0 || wcscmp(type, L"JURURU") == 0 || wcscmp(type, L"TEACHER") == 0) {
+				if (wcscmp(type, L"JINGBURGER") == 0 || wcscmp(type, L"VIICHAN") == 0 || wcscmp(type, L"JURURU") == 0 || wcscmp(type, L"TEACHER") == 0 || wcscmp(type, L"UNKNOWN") == 0) {
 					dialog.enable = true;
 					nameTag.enable = true;
 					if (wcscmp(type, L"VIICHAN") == 0) {
@@ -295,6 +298,9 @@ int ReadStory(int section) {
 					}
 					else if (wcscmp(type, L"TEACHER") == 0) {
 						nameTag.name = L"images/dialog/teacher.bmp";
+					}
+					else if (wcscmp(type, L"UNKNOWN") == 0) {
+						nameTag.name = L"images/dialog/unknown.bmp";
 					}
 					easyImage.setLayer(&easyImage, dialog);
 					easyImage.setLayer(&easyImage, nameTag);

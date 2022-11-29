@@ -59,7 +59,7 @@ int NewGame() {
 				PlayAudio(L"effect/button", false);
 				mouseS = false;
 				StopAudio(L"bgm/ost");
-				ReadStory(0);
+				ReadStory(L"INTRO");
 			}
 		}
 		else {

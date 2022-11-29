@@ -54,6 +54,9 @@ inline void InitAudio() {
 	OpenAudio(L"sounds/bgm/prologue2.mp3", L"bgm/prologue2");
 	OpenAudio(L"sounds/bgm/interlude.mp3", L"bgm/interlude");
 	OpenAudio(L"sounds/bgm/jingburger1.mp3", L"bgm/jingburger1");
+	OpenAudio(L"sounds/bgm/crisis1.mp3", L"bgm/crisis1");
+	OpenAudio(L"sounds/bgm/crisis2.mp3", L"bgm/crisis2");
+	OpenAudio(L"sounds/bgm/crisis3.mp3", L"bgm/crisis3");
 
 	OpenAudio(L"sounds/effect/button.mp3", L"effect/button");
 	OpenAudio(L"sounds/effect/jab.mp3", L"effect/jab");
