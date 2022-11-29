@@ -36,9 +36,6 @@
     <ClCompile Include="newgame.c">
       <Filter>Source Files\screens</Filter>
     </ClCompile>
-    <ClCompile Include="intro.c">
-      <Filter>Source Files\screens</Filter>
-    </ClCompile>
     <ClCompile Include="jingburgerfirst.c">
       <Filter>Source Files\screens</Filter>
     </ClCompile>

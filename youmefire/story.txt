@@ -3,8 +3,8 @@
 ==========================================================================================
 #POINT:INTRO
 #SECTION:INTRO
-#IMAGE:HIDER:OPACITY:SET:100
 
+#IMAGE:HIDER:OPACITY:SET:100
 #AUDIO:bgm/intro:START:BGM
 #AUDIO:bgm/intro:VOLUME:FADE:0:1000
 
@@ -95,8 +95,8 @@
 #POINT:PROLOGUE-J
 #SLEEP:3000
 #SECTION:PROLOGUE-J
-#IMAGE:HIDER:OPACITY:SET:100
 
+#IMAGE:HIDER:OPACITY:SET:100
 #AUDIO:bgm/prologue1:START:BGM
 #AUDIO:bgm/prologue1:VOLUME:FADE:0:1000
 
@@ -142,8 +142,8 @@
 
 #MACRO:DIALOG:HIDE
 #SELECT:1:음 요즘은 여기 뭐가 맛있어? 중학교때 이 근처 학원 다닐때는 돈까스집 많이 갔는데
-#MACRO:DIALOG:JINGBURGER
 
+#MACRO:DIALOG:JINGBURGER
 #TEXT:DIALOG:그 집 코로나때문에 없어지고, 그 자리에 피자집이 생겼어, 한번 가볼래?
 #CLICK
 
@@ -463,8 +463,8 @@
 #POINT:INTERLUDE
 #SLEEP:3000
 #SECTION:INTERLUDE
-#IMAGE:HIDER:OPACITY:SET:100
 
+#IMAGE:HIDER:OPACITY:SET:100
 #AUDIO:bgm/interlude:START:BGM
 #AUDIO:bgm/interlude:VOLUME:FADE:0:1000
 
@@ -553,6 +553,9 @@
 #SECTION:STORY-J
 
 #IMAGE:HIDER:OPACITY:SET:100
+#AUDIO:bgm/jingburger1:START:BGM
+#AUDIO:bgm/jingburger1:VOLUME:FADE:0:1000
+
 #TEXT:HOVER:누나를 만난 이후, 12월이 됐다.
 #CLICK
 
@@ -562,10 +565,281 @@
 #TEXT:HOVER:징버거 누나는 원하는 대학에 붙었으려나…
 #CLICK
 
+#AUDIO:effect/alert:START:EFFECT
+#SLEEP:1000
+#IMAGE:BACKGROUND:PATH:images/screen/jingburger/calling.bmp
+#IMAGE:HIDER:OPACITY:FADE:100:80
+
 #TEXT:HOVER:이 생각을 하던 찰나, 징버거 누나한테 연락이 왔다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:|N아!!!!! 나 고려대 디조과 붙었어!!!!!!!! 붙은 기념으로 누나가 밥 사줄게! 나와!
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:오 누나 진짜 축하해!!! 정말 잘됐다!! 어디로 갈까
+
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:음.. 내 집으로 와! 어디 있는지 알지?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#AUDIO:effect/knock:START:EFFECT
+#SLEEP:1000
+#IMAGE:BACKGROUND:PATH:images/screen/jingburger/home.bmp
+#IMAGE:HIDER:OPACITY:FADE:100:80
+#TEXT:HOVER:징버거 누나 집에 가니, 누나 혼자 있었고 다른 사람은 있지 않았다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:|N아 왔어?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:집 진짜 깨끗하네! 설마 나 온다고 힘들게 치운거야?
+
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:조금? ㅋㅋㅋㅋ 뭐 먹을래? 누나가 시켜줄게?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:난 아무거나 상관없는데, 누나 좋아하는 햄버거 먹자!
+
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:좋아!
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:2:이사는 정확히 언제 쯤 해?:대학은 언제부터 들어가?
+#MACRO:DIALOG:JINGBURGER
+
+#JUMP:@SELECT
+
+#POINT:@1
+#TEXT:DIALOG:한 1월달에 할 거 같은데?
+#CLICK
+
+#TEXT:DIALOG:학교랑 조금 멀긴 해도 어렸을 때부터 너네 동네에 살았으니까 그 쪽으로 가는게 나을 거 같아서!
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:아 누나 다시 우리 동네로 온다니까 너무 좋다 ㅎㅎ
+#JUMP:END
+
+#POINT:@2
+#TEXT:DIALOG:개강하면 바로 가야지! 가기 전에 이것저것 준비 할 것도 많아..
+#CLICK
+#MACRO:DIALOG:HIDE
+#IMAGE:RENDER
+#JUMP:END
+
+#POINT:END
+#AUDIO:effect/dingdong:START:EFFECT
+#SLEEP:1000
+
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#TEXT:HOVER:초인종이 울렸다. 배달인 것 같다.
+#CLICK
+
+#IMAGE:BACKGROUND:PATH:images/screen/jingburger/happy.bmp
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:100:0
+
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:밥 왔다! 밥 먹장
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:역시 징버거 누나는 햄버거 전문가라 그런지, 엄청 맛있는 메뉴를 시켰다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#SELECT:1:와 이거 진짜 맛있다! 이거 뭐야?
+
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:그거 엄마손길 휠렛버거! 내 최애 햄버거야
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:어쩐지, 누나는 옛날부터 이 브랜드만 먹더라.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:아 맞다, 우리 과는 연말에 졸업 전시회라고, 그동안 만들던 작품같은거 전시하는게 있거든.
+#CLICK
+
+#TEXT:DIALOG:너 시간 되면 올래?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:누나도 나랑 비슷한 성격의 고등학교를 다니고 있었다.
+#CLICK
+
+#TEXT:HOVER:누나는 콘텐츠디자인과 인데, 매 년마다 3학년들이 디자인 전시회를 여는 것 같았다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#SELECT:1:오 좋아! 무슨 주제인데?
+
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:제목은 Beginning 이라고, 슬로건은 “우리의 첫 걸음에 초대합니다”야. ㅋㅋㅋ 어때?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:캬 너무 멋진데? 이게 징버거? 해냈다~ 해냈어~ 버거가 해냈어!
+
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:얘가 뭐래는거야 ㅋㅋㅋㅋㅋㅋㅋ
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:ㅋㅋㅋㅋㅋㅋ 그럼 누나는 뭐 전시해?
+
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:나는 모션그래픽 영상 만들었어! 내 고등학교 일생을 요약해서 나타냈달까..
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:오 진짜 멋지다! 대학 포트폴리오도 그거 낸거야?
+
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:이거랑 이것 저것 몇 개 더 있지!
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:누나가 좋아하는 걸 이야기하는 모습은, 세상 그 어떤 것보다도 아름다워 보인다.
+#CLICK
+
+#TEXT:HOVER:이렇게 사랑에 빠지는 건가…
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:아 그럼 내가 전시회 티켓 줄게 잠시만!
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:엥 친구 말로는 누나 학교네 졸업 전시회는 티켓 필요 없다던데…
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:쨘! 내가 너 주려고 VIP 티켓 직접 만들었어! 어때?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:누나가 만든 VIP 티켓은 정말 예뻤다… 누나의 모습..처럼.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#SELECT:1:너무 예뻐서.. 말이 안 나오는데 누나?
+
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:넌 초등학교때부터 나랑 알고 지냈으니까 특별히 선물하는거야~ 전시회 꼭 와야해!
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:그렇게 우린 이야기를 하면서, 금세 밥을 다 먹었다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#SELECT:1:누나 밥 먹은건 내가 치워줄게!
+
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:아니야 같이 치우자~
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:치우고 밖에 산책 나가자!
+
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:좋아!
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#TEXT:HOVER:우린 먹은걸 치우고 나서, 같이 산책을 나갔다.
+#CLICK
+
+#IMAGE:BACKGROUND:PATH:images/screen/jingburger/out.bmp
+#IMAGE:HIDER:OPACITY:FADE:100:80
+#TEXT:HOVER:누나는 산용역 근처에 살아서, 집 주변에 괜찮은 장소가 많았다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#SELECT:1:저기 커피숍은 새로 생긴거야? 얼마 전에 이 근처 왔을때는 없었던 거 같은데..
+
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:맞아! 한번 가봤는데 괜찮더라. 저기 잠깐 들어갈래?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:음료수는 내가 살게!
+
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:누나와 음료수를 마시며 시간을 보내니, 벌써 가야할 시간이 다 됐다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#SELECT:1:앗! 누나 나 지금 안 가면 버스 끊겨서.. 지금 가야할 것 같아!
+
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:아 그래 잘가! 전시회 때 보자!
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#TEXT:HOVER:그렇게 징버거 누나와 인사를 하고 집에 왔다.
+
+#AUDIO:bgm/jingburger1:VOLUME:FADE:1000:0
+#AUDIO:bgm/jingburger1:STOP
 #CLICK
 
 
 
 
+
 #END
+==========================================================================================
+#POINT:STORY-J
+#SECTION:STORY-J
+
+#IMAGE:HIDER:OPACITY:SET:100
+#AUDIO:bgm/jingburger1:START:BGM
+#AUDIO:bgm/jingburger1:VOLUME:FADE:0:1000
+
+
+
+
+
+
+
+
+#END
+
+|# 흐미;; 살려주세요...

@@ -134,7 +134,6 @@
     <ClCompile Include="newgame.c" />
     <ClCompile Include="readstory.c" />
     <ClCompile Include="utils.c" />
-    <ClCompile Include="intro.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="easyDisplay.h" />

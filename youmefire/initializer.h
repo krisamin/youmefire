@@ -118,7 +118,7 @@ inline void initialize() {
 	SetProcessDPIAware();
   HideCursor();
   HideScrollBar();
-	SetConsole(WINDOW_WIDTH, WINDOW_HEIGHT, true);
+	SetConsole(WINDOW_WIDTH, WINDOW_HEIGHT, false);
   HideCursor();
   HideScrollBar();
   setlocale(LC_ALL, "KOREAN");
