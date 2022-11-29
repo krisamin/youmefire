@@ -46,7 +46,7 @@ int NewGame() {
 	while (true) {
 		if (IsInPixel(629, 809, 341, 91)) {
 			currentMenu = 1;
-			if (mouseC & mouseS) {
+			if (mouseC && mouseS) {
 				PlayAudio(L"effect/button", false);
 				mouseS = false;
 				name = GetRandomName();
@@ -55,7 +55,7 @@ int NewGame() {
 		}
 		else if (IsInPixel(1018, 809, 274, 91)) {
 			currentMenu = 2;
-			if (mouseC & mouseS) {
+			if (mouseC && mouseS) {
 				PlayAudio(L"effect/button", false);
 				mouseS = false;
 				StopAudio(L"bgm/ost");
