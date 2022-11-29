@@ -1,9 +1,9 @@
-#include "easyDefine.h"
+#include "../headers/easyDefine.h"
 
 WCHAR* ReadStoryFile() {
 	WCHAR* temp = (WCHAR*)malloc(sizeof(WCHAR) * 0);
 	FILE* fp;
-	fopen_s(&fp, "story.txt", "r,ccs=UTF-8");
+	fopen_s(&fp, "data/story.txt", "r,ccs=UTF-8");
 
 	int length = 0;
 	while (true) {

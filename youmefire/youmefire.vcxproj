@@ -127,30 +127,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="index.c" />
-    <ClCompile Include="gameintro.c" />
-    <ClCompile Include="jingburgerfirst.c" />
-    <ClCompile Include="main.c" />
-    <ClCompile Include="newgame.c" />
-    <ClCompile Include="readstory.c" />
-    <ClCompile Include="utils.c" />
+    <ClCompile Include="source\gameintro.c" />
+    <ClCompile Include="source\index.c" />
+    <ClCompile Include="source\main.c" />
+    <ClCompile Include="source\newgame.c" />
+    <ClCompile Include="source\readstory.c" />
+    <ClCompile Include="source\utils.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="easyDisplay.h" />
-    <ClInclude Include="easyAudio.h" />
-    <ClInclude Include="easyDefine.h" />
-    <ClInclude Include="easyImage.h" />
-    <ClInclude Include="easyMouse.h" />
-    <ClInclude Include="global.h" />
-    <ClInclude Include="initializer.h" />
-    <ClInclude Include="utils.h" />
+    <ClInclude Include="headers\easyAudio.h" />
+    <ClInclude Include="headers\easyDefine.h" />
+    <ClInclude Include="headers\easyDisplay.h" />
+    <ClInclude Include="headers\easyImage.h" />
+    <ClInclude Include="headers\easyMouse.h" />
+    <ClInclude Include="headers\global.h" />
+    <ClInclude Include="headers\initializer.h" />
+    <ClInclude Include="headers\utils.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="names.txt" />
-    <Text Include="story.txt" />
+    <Text Include="data\names.txt" />
+    <Text Include="data\story.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

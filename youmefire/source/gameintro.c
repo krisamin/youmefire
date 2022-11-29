@@ -1,4 +1,4 @@
-#include "easyDefine.h"
+#include "../headers/easyDefine.h"
 
 int GameIntro() {
 	Layer background = { true, 0, L"image", L"images/solid/101010.bmp", 0, 0, 100 };

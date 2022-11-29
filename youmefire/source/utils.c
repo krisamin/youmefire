@@ -1,4 +1,4 @@
-#include "easyDefine.h"
+#include "../headers/easyDefine.h"
 
 #include <stdlib.h>
 #include <assert.h>

@@ -1,4 +1,4 @@
-#include "easyDefine.h"
+#include "../headers/easyDefine.h"
 
 int IsInPixel(int x, int y, int lenX, int lenY) {
 	if (mouseX >= x && mouseX <= x + lenX && mouseY >= y && mouseY <= y + lenY) {
@@ -26,10 +26,10 @@ int main() {
 	//wcs[lstrlenW(content)] = '\0';
 	//wprintf(L"%c\n", wcs[0]);
 
-	WCHAR* setName = (WCHAR*)malloc(sizeof(WCHAR) * 3);
+	/*WCHAR* setName = (WCHAR*)malloc(sizeof(WCHAR) * 3);
 	setName = L"세구\0";
 	name = setName;
-	ReadStory(4);
+	ReadStory(4);*/
 
 	/*WCHAR* setName = (WCHAR*)malloc(sizeof(WCHAR) * 3);
 	setName = L"세구";

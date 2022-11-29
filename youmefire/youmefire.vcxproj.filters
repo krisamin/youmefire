@@ -21,62 +21,59 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.c">
+    <ClCompile Include="source\readstory.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="index.c">
+    <ClCompile Include="source\main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\gameintro.c">
       <Filter>Source Files\screens</Filter>
     </ClCompile>
-    <ClCompile Include="utils.c">
+    <ClCompile Include="source\index.c">
+      <Filter>Source Files\screens</Filter>
+    </ClCompile>
+    <ClCompile Include="source\newgame.c">
+      <Filter>Source Files\screens</Filter>
+    </ClCompile>
+    <ClCompile Include="source\utils.c">
       <Filter>Source Files\others</Filter>
-    </ClCompile>
-    <ClCompile Include="gameintro.c">
-      <Filter>Source Files\screens</Filter>
-    </ClCompile>
-    <ClCompile Include="newgame.c">
-      <Filter>Source Files\screens</Filter>
-    </ClCompile>
-    <ClCompile Include="jingburgerfirst.c">
-      <Filter>Source Files\screens</Filter>
-    </ClCompile>
-    <ClCompile Include="readstory.c">
-      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="easyDisplay.h">
+    <ClInclude Include="headers\initializer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="easyAudio.h">
+    <ClInclude Include="headers\utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="easyMouse.h">
+    <ClInclude Include="headers\easyAudio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="easyImage.h">
+    <ClInclude Include="headers\easyDefine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="initializer.h">
+    <ClInclude Include="headers\easyDisplay.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="utils.h">
+    <ClInclude Include="headers\easyImage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="global.h">
+    <ClInclude Include="headers\easyMouse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="easyDefine.h">
-      <Filter>Source Files\others</Filter>
+    <ClInclude Include="headers\global.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="names.txt">
+    <Text Include="data\names.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="story.txt">
+    <Text Include="data\story.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

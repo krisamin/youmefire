@@ -1,4 +1,4 @@
-#include "easyDefine.h"
+#include "../headers/easyDefine.h"
 
 //#include <cstdio>
 #include <stdlib.h>
@@ -8,7 +8,7 @@ WCHAR* GetRandomName() {
 	WCHAR* temp = (WCHAR*)malloc(sizeof(WCHAR) * 0);
 	WCHAR* pLine;
 	FILE* fp;
-	fopen_s(&fp, "names.txt", "r,ccs=UTF-8");
+	fopen_s(&fp, "data/names.txt", "r,ccs=UTF-8");
 
 	int length = 0;
 	while (true) {
