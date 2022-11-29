@@ -11,7 +11,7 @@ int Index() {
 		if (currentPage == 1) {
 			if (IsInPixel(825, 765, 270, 50)) {
 				currentMenu = 1;
-				if (mouseC & mouseS) {
+				if (mouseC && mouseS) {
 					PlayAudio(L"effect/button", false);
 					mouseS = false;
 					currentPage = 3;
@@ -30,7 +30,7 @@ int Index() {
 			}
 			else if (IsInPixel(825, 850, 270, 50)) {
 				currentMenu = 2;
-				if (mouseC & mouseS) {
+				if (mouseC && mouseS) {
 					PlayAudio(L"effect/button", false);
 					mouseS = false;
 					currentPage = 2;

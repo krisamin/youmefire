@@ -1,14 +1,12 @@
 
-#START
-
+#END
 ==========================================================================================
 #POINT:INTRO
 #SECTION:INTRO
+#IMAGE:HIDER:OPACITY:SET:100
 
 #AUDIO:bgm/intro:START:BGM
 #AUDIO:bgm/intro:VOLUME:FADE:0:1000
-
-#IMAGE:HIDER:OPACITY:SET:100
 
 #TEXT:HOVER:주인공은 기숙사 고등학생이다.
 #CLICK
@@ -92,10 +90,12 @@
 
 
 
+#END
 ==========================================================================================
 #POINT:PROLOGUE-J
 #SLEEP:3000
 #SECTION:PROLOGUE-J
+#IMAGE:HIDER:OPACITY:SET:100
 
 #AUDIO:bgm/prologue1:START:BGM
 #AUDIO:bgm/prologue1:VOLUME:FADE:0:1000
@@ -282,10 +282,12 @@
 
 
 
+#END
 ==========================================================================================
 #POINT:PROLOGUE-V
-#SLEEP:1000
+#SLEEP:3000
 #SECTION:PROLOGUE-V
+#IMAGE:HIDER:OPACITY:SET:100
 
 #AUDIO:bgm/prologue2:START:BGM
 #AUDIO:bgm/prologue2:VOLUME:FADE:0:1000
@@ -447,7 +449,121 @@
 
 #AUDIO:bgm/prologue2:VOLUME:FADE:1000:0
 #AUDIO:bgm/prologue2:STOP
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:100
 
+#JUMP:INTERLUDE
+
+
+
+
+
+#END
+==========================================================================================
+#POINT:INTERLUDE
+#SLEEP:3000
+#SECTION:INTERLUDE
+#IMAGE:HIDER:OPACITY:SET:100
+
+#AUDIO:bgm/interlude:START:BGM
+#AUDIO:bgm/interlude:VOLUME:FADE:0:1000
+
+#TEXT:HOVER:졸려 죽겠는데, 어디선가 담임 선생님의 목소리가 들린다
+#CLICK
+
+#IMAGE:BACKGROUND:PATH:images/solid/101010.bmp
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:SET:0
+#MACRO:DIALOG:TEACHER
+#TEXT:DIALOG:|N아~ 밥먹고 학교가야지!!!!
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:SET:100
+#TEXT:HOVER:아 어차피 오늘 방학식인데..
+#CLICK
+
+#TEXT:HOVER:조금 더 자고 싶지만, 어차피 깨우실 거 같아서 그냥 일어났다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:BACKGROUND:PATH:images/screen/interlude/class.bmp
+#IMAGE:HIDER:OPACITY:FADE:100:0
+#MACRO:DIALOG:TEACHER
+#TEXT:DIALOG:오늘은 밥을 빨리 드시고 청소를 빨리 하시고 오세요. 오늘 나 종례 1등 할거야!!
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:전체 귀가날이면 항상 하시는 말씀이다.
+#CLICK
+
+#TEXT:HOVER:어쨌든, 드디어 고등학교 1학년이 끝난다니, 조금 실감이 되지 않았다.
+#CLICK
+
+#AUDIO:effect/snow:START:EFFECT
+#IMAGE:HIDER:OPACITY:FADE:80:100
+#TEXT:HOVER:방학식이 끝나고, 집으로 오면서 보는 동네의 풍경은 사뭇 달랐다.
+#CLICK
+
+#IMAGE:BACKGROUND:PATH:images/screen/interlude/snow.bmp
+#IMAGE:HIDER:OPACITY:FADE:100:80
+#TEXT:HOVER:첫 눈이 와서 그런가, 마음 속 한 켠에 있는 누군가가 생각이 날 듯 말 듯 했다.
+#CLICK
+
+#AUDIO:effect/snow:STOP
+#AUDIO:bgm/interlude:VOLUME:FADE:1000:0
+#AUDIO:bgm/interlude:STOP
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:100
+
+#JUMP:HEROINE
+
+
+
+
+
+#END
+==========================================================================================
+#POINT:HEROINE
+#SLEEP:3000
+#SECTION:HEROINE
+
+#HEROINE
+
+
+
+
+
+#END
+==========================================================================================
+#POINT:STORY-V
+#SECTION:STORY-V
+
+#IMAGE:HIDER:OPACITY:SET:100
+#CLICK
+
+
+
+
+
+#END
+==========================================================================================
+#POINT:STORY-J
+#SECTION:STORY-J
+
+#IMAGE:HIDER:OPACITY:SET:100
+#TEXT:HOVER:누나를 만난 이후, 12월이 됐다.
+#CLICK
+
+#TEXT:HOVER:12월달이라 그런지 날씨가 많이 쌀쌀해지고, 입시의 계절이 온 것 같다.
+#CLICK
+
+#TEXT:HOVER:징버거 누나는 원하는 대학에 붙었으려나…
+#CLICK
+
+#TEXT:HOVER:이 생각을 하던 찰나, 징버거 누나한테 연락이 왔다.
+#CLICK
 
 
 

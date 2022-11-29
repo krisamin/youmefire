@@ -18,7 +18,7 @@ WCHAR* ReadStoryFile() {
 }
 
 int ReadStory(int section) {
-	WCHAR sectionList[3][15] = {L"INTRO", L"PROLOGUE-J", L"PROLOGUE-V" };
+	WCHAR sectionList[5][15] = {L"INTRO", L"PROLOGUE-J", L"PROLOGUE-V", L"INTERLUDE", L"HEROINE" };
 	wprintf(L"%s", sectionList[section]);
 
 	Layer background = { true, 0, L"image", L"images/solid/101010.bmp", 0, 0, 100 };
@@ -52,19 +52,19 @@ int ReadStory(int section) {
 			}
 			continue;
 		}
-		if (wcscmp(command, L"#START") == 0) {
-			printf("START\n");
-		}
-		else if (wcscmp(command, L"#END") == 0) {
-			return 0;
-		}
-		else if (jump) {
+
+		if (jump) {
 			if (wcscmp(command, L"#POINT") == 0) {
 				WCHAR* point = wcstok(NULL, L":", &buffer);
 				if (wcscmp(point, jump) == 0) {
 					jump = NULL;
 				}
 			}
+		}
+		else if (wcscmp(command, L"#END") == 0) {
+			printf("Exit by #END");
+			Sleep(2000);
+			return 0;
 		}
 		else if (wcscmp(command, L"#JUMP") == 0) {
 			WCHAR* type = wcstok(NULL, L":", &buffer);
@@ -281,7 +281,7 @@ int ReadStory(int section) {
 			WCHAR* type = wcstok(NULL, L":", &buffer);
 			if (wcscmp(type, L"DIALOG") == 0) {
 				type = wcstok(NULL, L":", &buffer);
-				if (wcscmp(type, L"JINGBURGER") == 0 || wcscmp(type, L"VIICHAN") == 0 || wcscmp(type, L"JURURU") == 0) {
+				if (wcscmp(type, L"JINGBURGER") == 0 || wcscmp(type, L"VIICHAN") == 0 || wcscmp(type, L"JURURU") == 0 || wcscmp(type, L"TEACHER") == 0) {
 					dialog.enable = true;
 					nameTag.enable = true;
 					if (wcscmp(type, L"VIICHAN") == 0) {
@@ -292,6 +292,9 @@ int ReadStory(int section) {
 					}
 					else if (wcscmp(type, L"JURURU") == 0) {
 						nameTag.name = L"images/dialog/jururu.bmp";
+					}
+					else if (wcscmp(type, L"TEACHER") == 0) {
+						nameTag.name = L"images/dialog/teacher.bmp";
 					}
 					easyImage.setLayer(&easyImage, dialog);
 					easyImage.setLayer(&easyImage, nameTag);
@@ -304,6 +307,48 @@ int ReadStory(int section) {
 					easyImage.setLayer(&easyImage, dialogText);
 					easyImage.setLayer(&easyImage, nameTag);
 				}
+			}
+		}
+		else if (wcscmp(command, L"#HEROINE") == 0) {
+			printf("HEROINE SELECT");
+			easyImage.reset(&easyImage);
+			int heroineSelect = 0;
+			int hovering = false;
+			while (true) {
+				if (IsInPixel(600, 377, 280, 366) && mouseC && mouseS) {
+					mouseS = false;
+					PlayAudio(L"effect/button", false);
+					heroineSelect = 1;
+				}
+				else if (IsInPixel(1040, 377, 280, 366) && mouseC && mouseS) {
+					mouseS = false;
+					PlayAudio(L"effect/button", false);
+					heroineSelect = 2;
+				}
+				if (IsInPixel(780, 843, 380, 91)) {
+					hovering = true;
+					if (mouseC && mouseS) {
+						mouseS = false;
+						PlayAudio(L"effect/button", false);
+						if (heroineSelect == 1) {
+							jump = L"STORY-V";
+						}
+						else if (heroineSelect == 2) {
+							jump = L"STORY-J";
+						}
+						easyImage.reset(&easyImage);
+						break;
+					}
+				}
+				else {
+					hovering = false;
+				}
+				WCHAR* imgPath = (WCHAR*)malloc(100);
+				wsprintf(imgPath, L"images/screen/heroine/%d%d.bmp", heroineSelect, (hovering&& heroineSelect) ? 1 : 0);
+				Layer background = { true, 0, L"image", imgPath, 0, 0, 100 };
+
+				easyImage.setLayer(&easyImage, background);
+				easyImage.render(&easyImage);
 			}
 		}
 		else if (wcscmp(command, L"#CLICK") == 0) {
