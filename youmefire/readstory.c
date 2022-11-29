@@ -18,7 +18,7 @@ WCHAR* ReadStoryFile() {
 }
 
 int ReadStory(int section) {
-	WCHAR sectionList[2][10] = {L"INTRO", L"PROLOGUE"};
+	WCHAR sectionList[3][15] = {L"INTRO", L"PROLOGUE-J", L"PROLOGUE-V" };
 	wprintf(L"%s", sectionList[section]);
 
 	Layer background = { true, 0, L"image", L"images/solid/101010.bmp", 0, 0, 100 };
@@ -162,7 +162,7 @@ int ReadStory(int section) {
 
 			while (true) {
 				if (count == 1) {
-					Layer option1 = { true, 11, L"image", L"images/dialog/select.bmp", 360, 493, 60 };
+					Layer option1 = { true, 11, L"image", L"images/dialog/select.bmp", 160, 493, 60 };
 					Layer option1Text = { true, 16, L"text", L"Pretendard SemiBold", 960, 493 + 22, 100, selectList[0], 50, 400, 0, TA_CENTER, 2, RGB(255, 255, 255) };
 					int hover = 0;
 					if (IsInPixel(360, 493, 1200, 94)) {
@@ -177,8 +177,8 @@ int ReadStory(int section) {
 					easyImage.render(&easyImage);
 				}
 				if (count == 2) {
-					Layer option1 = { true, 11, L"image", L"images/dialog/select.bmp", 360, 421, 60 };
-					Layer option2 = { true, 12, L"image", L"images/dialog/select.bmp", 360, 565, 60 };
+					Layer option1 = { true, 11, L"image", L"images/dialog/select.bmp", 160, 421, 60 };
+					Layer option2 = { true, 12, L"image", L"images/dialog/select.bmp", 160, 565, 60 };
 					Layer option1Text = { true, 16, L"text", L"Pretendard SemiBold", 960, 421 + 22, 100, selectList[0], 50, 400, 0, TA_CENTER, 2, RGB(255, 255, 255) };
 					Layer option2Text = { true, 17, L"text", L"Pretendard SemiBold", 960, 565 + 22, 100, selectList[1], 50, 400, 0, TA_CENTER, 2, RGB(255, 255, 255) };
 					int hover = 0;
@@ -203,9 +203,9 @@ int ReadStory(int section) {
 					easyImage.render(&easyImage);
 				}
 				if (count == 3) {
-					Layer option1 = { true, 11, L"image", L"images/dialog/select.bmp", 360, 349, 60 };
-					Layer option2 = { true, 12, L"image", L"images/dialog/select.bmp", 360, 493, 60 };
-					Layer option3 = { true, 13, L"image", L"images/dialog/select.bmp", 360, 637, 60 };
+					Layer option1 = { true, 11, L"image", L"images/dialog/select.bmp", 160, 349, 60 };
+					Layer option2 = { true, 12, L"image", L"images/dialog/select.bmp", 160, 493, 60 };
+					Layer option3 = { true, 13, L"image", L"images/dialog/select.bmp", 160, 637, 60 };
 					Layer option1Text = { true, 16, L"text", L"Pretendard SemiBold", 960, 349 + 22, 100, selectList[0], 50, 400, 0, TA_CENTER, 2, RGB(255, 255, 255) };
 					Layer option2Text = { true, 17, L"text", L"Pretendard SemiBold", 960, 493 + 22, 100, selectList[1], 50, 400, 0, TA_CENTER, 2, RGB(255, 255, 255) };
 					Layer option3Text = { true, 18, L"text", L"Pretendard SemiBold", 960, 637 + 22, 100, selectList[2], 50, 400, 0, TA_CENTER, 2, RGB(255, 255, 255) };
@@ -281,7 +281,7 @@ int ReadStory(int section) {
 			WCHAR* type = wcstok(NULL, L":", &buffer);
 			if (wcscmp(type, L"DIALOG") == 0) {
 				type = wcstok(NULL, L":", &buffer);
-				if (wcscmp(type, L"JINGBURGER") == 0 || wcscmp(type, L"VIICHAN") == 0) {
+				if (wcscmp(type, L"JINGBURGER") == 0 || wcscmp(type, L"VIICHAN") == 0 || wcscmp(type, L"JURURU") == 0) {
 					dialog.enable = true;
 					nameTag.enable = true;
 					if (wcscmp(type, L"VIICHAN") == 0) {
@@ -289,6 +289,9 @@ int ReadStory(int section) {
 					}
 					else if (wcscmp(type, L"JINGBURGER") == 0) {
 						nameTag.name = L"images/dialog/jingburger.bmp";
+					}
+					else if (wcscmp(type, L"JURURU") == 0) {
+						nameTag.name = L"images/dialog/jururu.bmp";
 					}
 					easyImage.setLayer(&easyImage, dialog);
 					easyImage.setLayer(&easyImage, nameTag);
@@ -311,6 +314,4 @@ int ReadStory(int section) {
 			Sleep(sleep);
 		}
 	}
-
-	Sleep(1000000);
 }

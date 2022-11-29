@@ -45,7 +45,7 @@ void StepPrint(WCHAR* string, Layer* layer) {
 			easyImage.render(&easyImage);
 			break;
 		}
-		if (count >= 0) {
+		if (count >= 10) {
 			count = 0;
 			layer->text = SubStr(string, 0, index++);
 			easyImage.setLayer(&easyImage, *layer);

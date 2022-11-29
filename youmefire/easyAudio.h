@@ -51,9 +51,11 @@ inline void InitAudio() {
 	OpenAudio(L"sounds/bgm/yurusu.mp3", L"bgm/yurusu");
 	OpenAudio(L"sounds/bgm/intro.mp3", L"bgm/intro");
 	OpenAudio(L"sounds/bgm/prologue1.mp3", L"bgm/prologue1");
+	OpenAudio(L"sounds/bgm/prologue2.mp3", L"bgm/prologue2");
 
 	OpenAudio(L"sounds/effect/button.mp3", L"effect/button");
 	OpenAudio(L"sounds/effect/jab.mp3", L"effect/jab");
 	OpenAudio(L"sounds/effect/calling.mp3", L"effect/calling");
 	OpenAudio(L"sounds/effect/doing.mp3", L"effect/doing");
+	OpenAudio(L"sounds/effect/alert.mp3", L"effect/alert");
 }

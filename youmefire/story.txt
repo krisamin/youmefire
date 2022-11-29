@@ -1,6 +1,8 @@
 
 #START
 
+==========================================================================================
+#POINT:INTRO
 #SECTION:INTRO
 
 #AUDIO:bgm/intro:START:BGM
@@ -84,15 +86,16 @@
 
 #AUDIO:bgm/intro:VOLUME:FADE:1000:0
 #AUDIO:bgm/intro:STOP
+#JUMP:PROLOGUE-J
 
 
 
 
+
+==========================================================================================
+#POINT:PROLOGUE-J
 #SLEEP:3000
-
-
-
-#SECTION:PROLOGUE
+#SECTION:PROLOGUE-J
 
 #AUDIO:bgm/prologue1:START:BGM
 #AUDIO:bgm/prologue1:VOLUME:FADE:0:1000
@@ -126,6 +129,7 @@
 #TEXT:DIALOG:너 여기 오랜만에 오는거라 아무것도 모르지? 여기 엄청 많이 바뀌었어
 #CLICK
 
+#MACRO:DIALOG:HIDE
 #IMAGE:HIDER:OPACITY:FADE:0:80
 #TEXT:HOVER:사실 2주만에 오는거라, 뭐가 바뀌었는지는 대충 알고 있었다.
 #CLICK
@@ -269,5 +273,183 @@
 
 #TEXT:HOVER:징버거 누나가 이 동네 근처로 이사온다니, 기대하진 않았지만 생각보다는 기쁜 소식이였다.
 #CLICK
+
+#AUDIO:bgm/prologue1:VOLUME:FADE:1000:0
+#AUDIO:bgm/prologue1:STOP
+#JUMP:PROLOGUE-V
+
+
+
+
+
+==========================================================================================
+#POINT:PROLOGUE-V
+#SLEEP:1000
+#SECTION:PROLOGUE-V
+
+#AUDIO:bgm/prologue2:START:BGM
+#AUDIO:bgm/prologue2:VOLUME:FADE:0:1000
+
+#TEXT:HOVER:집에서 쉬면서 인스타를 보던 도중, 어디서 많이 본 아이디한테 팔로우가 왔다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:BACKGROUND:PATH:images/screen/prologue/viichan1.bmp
+#IMAGE:HIDER:OPACITY:FADE:100:0
+#SELECT:1:viichan6님이 나에게 팔로우를 요청했습니다..? 이게 뭐지? 일단 받아볼까?
+
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:함께 팔로우하는 친구를 보니, 중학교 때 친구들이 많았다.
+#CLICK
+
+#TEXT:HOVER:인스타에는 아무 이름도 써져 있지 않았고, 소개글을 보니 “06 / 상포고”라 써져있었다.
+#CLICK
+
+#TEXT:HOVER:아마 동네 일반고 다니는 친구 인가 보다.
+#CLICK
+
+#TEXT:HOVER:큰 의심 하지 않고 팔로우를 받았다.
+#CLICK
+
+#AUDIO:effect/alert:START:EFFECT
+#SLEEP:1000
+
+#TEXT:HOVER:팔로우를 받고 얼마 지나지 않아서, 그 친구가 아까 징버거 누나랑 올린 내 스토리에 답장을 했다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:거기 피자집 괜찮던데..!
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:팔로우 하자마자 스토리에 답장을 하네.. 얘 뭐지? 싶었지만, 그냥 평범하게 답장을 해줬다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#SELECT:1:응 거기 잘 나가는 메뉴 먹었는데 맛있더라
+
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:ㅋㅋㅋㅋㅋ아 너 나 알아???
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:???
+#CLICK
+
+#TEXT:HOVER:진짜 뭐지 싶어서 이 친구의 하이라이트를 들어가 보니, 어디서 본 거 같지만 정확히 누구인진 기억 안 났다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#SELECT:1:너 하이라이트 보니까 르르랑 사진 찍은거 있던데 르르랑 친해??
+
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:르르는 중학교 때부터 친했어!
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:엥 너 상포중학교 나왔어?
+
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:상포중학교에 있었지..! 너 1학년 4반 아니였어??
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:??
+#CLICK
+
+#IMAGE:HIDER:OPACITY:FADE:80:100
+#TEXT:HOVER:이 친구 진짜 누군지 모르겠어서 중학교 때 유일하게 친하게 지냈던 여사친인 주르르한테 연락했다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:BACKGROUND:PATH:images/screen/prologue/jururu1.bmp
+#IMAGE:HIDER:OPACITY:FADE:100:0
+#SELECT:1:야야야야야 주르르 비챤이 누구임???
+
+#MACRO:DIALOG:JURURU
+#TEXT:DIALOG:비챤 걔 중1때 우리랑 같은 반이였다가 전학 갔잖아
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:엥 얘가 우리 중학교 였다고??
+
+#MACRO:DIALOG:JURURU
+#TEXT:DIALOG:아 얼굴 많이 변해서 못 알아볼수도 있겠네
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:뭔가 어렴풋이 기억이 날 것 같으면서도, 기억이 나지 않았다.
+#CLICK
+
+#IMAGE:HIDER:OPACITY:FADE:80:100
+#TEXT:HOVER:일단 주르르한테 들은거로 저 친구에게 답장을 했다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:BACKGROUND:PATH:images/screen/prologue/viichan1.bmp
+#IMAGE:HIDER:OPACITY:FADE:100:0
+#SELECT:1:아.. 그 같은 반이였다가 중1때 전학 간 비챤이란 친구인가?
+
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:ㅋㅋㅋㅋ맞아 많이 변해서 못 알아봤구나… 나 너 만나고 싶은데 언제 시간 돼?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:갑자기 만나자고…?
+#CLICK
+
+#TEXT:HOVER:얘 진짜 뭐지?
+#CLICK
+
+#TEXT:HOVER:뭐 주르르랑 친하기도 하니, 한번 만나보기로 했다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#SELECT:1:다음주가 방학식이라 다음주 되면 주말 아무때나 시간 괜찮아!
+
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:음 그럼 다음주 토요일에 상포역에서 볼래??
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:좋아..!
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#TEXT:HOVER:근데 아무리 생각해도 에바참치여서, 주르르한테 도움을 청했다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:BACKGROUND:PATH:images/screen/prologue/jururu1.bmp
+#IMAGE:HIDER:OPACITY:FADE:100:0
+#SELECT:1:야 아니 비챤이라는 애 갑자기 나 보자는데 이거개에바아니냐
+
+#MACRO:DIALOG:JURURU
+#TEXT:DIALOG:ㅋㅋㅋㅋㅋㅋㅋ 한번 만나봐
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:아니 얘 만나는날 니 나오셈 개에바야진짜
+
+#MACRO:DIALOG:JURURU
+#TEXT:DIALOG:ㅇㅋㅇㅋ 내가 도와드림
+#CLICK
+
+#AUDIO:bgm/prologue2:VOLUME:FADE:1000:0
+#AUDIO:bgm/prologue2:STOP
+
+
+
+
 
 #END
