@@ -28,7 +28,7 @@
 
 #SLEEP:700
 
-#IMAGE:BACKGROUND:PATH:images/screen/intro/sorry.bmp
+#IMAGE:BACKGROUND:PATH:images/screen/viichan/sorry.bmp
 #IMAGE:HIDER:OPACITY:FADE:100:80
 
 #TEXT:HOVER:주인공은 어두운 회색 머리에, 검은색 머리핀을 한 여자와 부딪치게 된다.
@@ -61,7 +61,7 @@
 
 #SLEEP:1000
 
-#IMAGE:BACKGROUND:PATH:images/screen/intro/calling.bmp
+#IMAGE:BACKGROUND:PATH:images/screen/jingburger/calling1.bmp
 #IMAGE:HIDER:OPACITY:FADE:100:80
 
 #TEXT:HOVER:초등학교 때 부터 친하게 지내던 징버거 누나의 전화가 왔다.
@@ -104,7 +104,7 @@
 #AUDIO:bgm/prologue1:START:BGM
 #AUDIO:bgm/prologue1:VOLUME:FADE:0:1000
 
-#IMAGE:BACKGROUND:PATH:images/screen/prologue/jingburger1.bmp
+#IMAGE:BACKGROUND:PATH:images/screen/jingburger/prologue1.bmp
 #IMAGE:HIDER:OPACITY:FADE:100:80
 #TEXT:HOVER:반 년만에 징버거 누나를 만났다.
 #CLICK
@@ -162,7 +162,7 @@
 #TEXT:HOVER:나와 징버거 누나는 여기서 제일 잘 나가는 메뉴를 시킨 후, 서로의 근황에 대해 이야기했다.
 #CLICK
 
-#IMAGE:BACKGROUND:PATH:images/screen/prologue/jingburger2.bmp
+#IMAGE:BACKGROUND:PATH:images/screen/jingburger/prologue2.bmp
 #IMAGE:HOVERTEXT:DISABLE
 #IMAGE:HIDER:OPACITY:FADE:100:0
 
@@ -196,7 +196,7 @@
 #SELECT:1:다행이네.. 어느 대학 준비하고 있어?
 #MACRO:DIALOG:JINGBURGER
 
-#TEXT:DIALOG:고려대 디조과 준비하고 있어…
+#TEXT:DIALOG:고려대 디조과 준비하고 있어...
 #CLICK
 
 #TEXT:DIALOG:수능도 괜찮게 나왔고 포트폴리오도 계속 준비하고 있지!
@@ -206,7 +206,7 @@
 #CLICK
 
 #MACRO:DIALOG:HIDE
-#SELECT:2:그냥 이것저것 학교에서 프로젝트 하고 있지..!:여긴 내신 따긴 이미 글러먹어서, 그냥 정시파이터로 살면서 정시 준비나 할까 고민하고 있어…
+#SELECT:2:그냥 이것저것 학교에서 프로젝트 하고 있지..!:여긴 내신 따긴 이미 글러먹어서, 그냥 정시파이터로 살면서 정시 준비나 할까 고민하고 있어...
 #MACRO:DIALOG:JINGBURGER
 
 #JUMP:@SELECT
@@ -231,7 +231,7 @@
 #TEXT:HOVER:피자를 다 먹고 나서, 누나와 커피숍을 갔다.
 #CLICK
 
-#IMAGE:BACKGROUND:PATH:images/screen/prologue/jingburger3.bmp
+#IMAGE:BACKGROUND:PATH:images/screen/jingburger/prologue3.bmp
 #IMAGE:HOVERTEXT:DISABLE
 #IMAGE:HIDER:OPACITY:FADE:100:0
 
@@ -303,7 +303,7 @@
 #CLICK
 
 #IMAGE:HOVERTEXT:DISABLE
-#IMAGE:BACKGROUND:PATH:images/screen/prologue/viichan1.bmp
+#IMAGE:BACKGROUND:PATH:images/screen/viichan/prologue1.bmp
 #IMAGE:HIDER:OPACITY:FADE:100:0
 #SELECT:1:viichan6님이 나에게 팔로우를 요청했습니다..? 이게 뭐지? 일단 받아볼까?
 
@@ -403,17 +403,17 @@
 #CLICK
 
 #IMAGE:HOVERTEXT:DISABLE
-#IMAGE:BACKGROUND:PATH:images/screen/prologue/viichan1.bmp
+#IMAGE:BACKGROUND:PATH:images/screen/viichan/prologue1.bmp
 #IMAGE:HIDER:OPACITY:FADE:100:0
 #SELECT:1:아.. 그 같은 반이였다가 중1때 전학 간 비챤이란 친구인가?
 
 #MACRO:DIALOG:VIICHAN
-#TEXT:DIALOG:ㅋㅋㅋㅋ맞아 많이 변해서 못 알아봤구나… 나 너 만나고 싶은데 언제 시간 돼?
+#TEXT:DIALOG:ㅋㅋㅋㅋ맞아 많이 변해서 못 알아봤구나... 나 너 만나고 싶은데 언제 시간 돼?
 #CLICK
 
 #MACRO:DIALOG:HIDE
 #IMAGE:HIDER:OPACITY:FADE:0:80
-#TEXT:HOVER:갑자기 만나자고…?
+#TEXT:HOVER:갑자기 만나자고...?
 #CLICK
 
 #TEXT:HOVER:얘 진짜 뭐지?
@@ -439,7 +439,7 @@
 #CLICK
 
 #IMAGE:HOVERTEXT:DISABLE
-#IMAGE:BACKGROUND:PATH:images/screen/prologue/jururu1.bmp
+#IMAGE:BACKGROUND:PATH:images/screen/jururu/prologue1.bmp
 #IMAGE:HIDER:OPACITY:FADE:100:0
 #SELECT:1:야 아니 비챤이라는 애 갑자기 나 보자는데 이거개에바아니냐
 
@@ -496,7 +496,7 @@
 #CLICK
 
 #IMAGE:HOVERTEXT:DISABLE
-#IMAGE:BACKGROUND:PATH:images/screen/interlude/class.bmp
+#IMAGE:BACKGROUND:PATH:images/screen/other/class.bmp
 #IMAGE:HIDER:OPACITY:FADE:100:0
 #MACRO:DIALOG:TEACHER
 #TEXT:DIALOG:오늘은 밥을 빨리 드시고 청소를 빨리 하시고 오세요. 오늘 나 종례 1등 할거야!!
@@ -515,7 +515,7 @@
 #TEXT:HOVER:방학식이 끝나고, 집으로 오면서 보는 동네의 풍경은 사뭇 달랐다.
 #CLICK
 
-#IMAGE:BACKGROUND:PATH:images/screen/interlude/snow.bmp
+#IMAGE:BACKGROUND:PATH:images/screen/other/snow.bmp
 #IMAGE:HIDER:OPACITY:FADE:100:80
 #TEXT:HOVER:첫 눈이 와서 그런가, 마음 속 한 켠에 있는 누군가가 생각이 날 듯 말 듯 했다.
 #CLICK
@@ -574,7 +574,7 @@
 #TEXT:HOVER:12월달이라 그런지 날씨가 많이 쌀쌀해지고, 입시의 계절이 온 것 같다.
 #CLICK
 
-#TEXT:HOVER:징버거 누나는 원하는 대학에 붙었으려나…
+#TEXT:HOVER:징버거 누나는 원하는 대학에 붙었으려나...
 #CLICK
 
 #AUDIO:effect/alert:START:EFFECT
@@ -738,7 +738,7 @@
 #TEXT:HOVER:누나가 좋아하는 걸 이야기하는 모습은, 세상 그 어떤 것보다도 아름다워 보인다.
 #CLICK
 
-#TEXT:HOVER:이렇게 사랑에 빠지는 건가…
+#TEXT:HOVER:이렇게 사랑에 빠지는 건가...
 #CLICK
 
 #IMAGE:HOVERTEXT:DISABLE
@@ -749,7 +749,7 @@
 
 #MACRO:DIALOG:HIDE
 #IMAGE:HIDER:OPACITY:FADE:0:80
-#TEXT:HOVER:엥 친구 말로는 누나 학교네 졸업 전시회는 티켓 필요 없다던데…
+#TEXT:HOVER:엥 친구 말로는 누나 학교네 졸업 전시회는 티켓 필요 없다던데...
 #CLICK
 
 #IMAGE:HOVERTEXT:DISABLE
@@ -760,7 +760,7 @@
 
 #MACRO:DIALOG:HIDE
 #IMAGE:HIDER:OPACITY:FADE:0:80
-#TEXT:HOVER:누나가 만든 VIP 티켓은 정말 예뻤다… 누나의 모습..처럼.
+#TEXT:HOVER:누나가 만든 VIP 티켓은 정말 예뻤다... 누나의 모습..처럼.
 #CLICK
 
 #IMAGE:HOVERTEXT:DISABLE
@@ -980,7 +980,7 @@
 #TEXT:DIALOG:이 사람. 자기 애인 버려두고 다른 친구들이랑 노는 건 기본이요,
 #CLICK
 
-#TEXT:DIALOG:대학 간답시고 나 신경써주지도 않고 …
+#TEXT:DIALOG:대학 간답시고 나 신경써주지도 않고 ...
 #CLICK
 
 #MACRO:DIALOG:JINGBURGER
@@ -991,7 +991,7 @@
 #TEXT:DIALOG:뭐 그래서 니가 그 날 나한테 했던 말들이 잘했다는거야?
 #CLICK
 
-#TEXT:DIALOG:이런 XXX이…
+#TEXT:DIALOG:이런 XXX이...
 #CLICK
 
 #MACRO:DIALOG:HIDE
@@ -1111,5 +1111,233 @@
 
 
 #END
+==========================================================================================
+#POINT:CLIMAX-J-B
+#SECTION:CLIMAX-J-B
 
-|# 새벽 1시... 1000줄 돌파... 흐미;; 살려주세요...
+#IMAGE:HIDER:OPACITY:SET:100
+#IMAGE:RENDER
+#AUDIO:bgm/climax2:START:BGM
+#AUDIO:bgm/climax2:VOLUME:FADE:0:1000
+
+#IMAGE:BACKGROUND:PATH:images/solid/101010.bmp
+#IMAGE:HIDER:OPACITY:SET:0
+#SELECT:1:일단 누나, 밖으로 나가자.
+
+#IMAGE:HIDER:OPACITY:SET:100
+#TEXT:HOVER:나는 징버거 누나를 데리고 학교 바깥에 있는 테라스에 앉았다.
+#CLICK
+
+#IMAGE:BACKGROUND:PATH:images/screen/jingburger/sad.bmp
+#IMAGE:HIDER:OPACITY:FADE:100:80
+#TEXT:HOVER:그제서야, 징버거 누나가 울음을 터트렸다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:전시회.. 열심히 준비했는데.. 쟤 때문에...
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:어떻게 위로를 건네야 할지 막막했다.
+#CLICK
+
+#TEXT:HOVER:그 누구보다 하고 싶은거를 열심히 하던 누나였기 때문에, 나 역시 마음이 아팠다.
+#CLICK
+
+#TEXT:HOVER:누나는 그 어떤 때보다 슬퍼 보였다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#SELECT:1:괜찮아... 괜찮아..
+#SLEEP:500
+
+#SELECT:1:누나 옆에 내가 있잖아.
+#SLEEP:500
+
+#SELECT:1:그리고, 남 욕하고 저런 놈보다 누나가 훨씬 나아.
+#SLEEP:500
+
+#SELECT:1:얼마나 우리 누나가 착한데!
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#TEXT:HOVER:그러자 누나가 울음을 멈추고 조금 피식했다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:BACKGROUND:PATH:images/screen/jingburger/ok.bmp
+#IMAGE:HIDER:OPACITY:FADE:100:0
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:ㅋㅋㅋ 얘가 뭐래
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:누나가 갑자기 이야기를 꺼냈다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:경훈아. 고마워..
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:응? 왜?
+
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:그냥.. 내 전시회도 시간 내서 와주고, 나 위로도 해주고.. 고마워.
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:누나가 덥석 내 손을 잡았다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:너 덕분에 기분 좀 좋아졌다!
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#TEXT:HOVER:그러자 내가 누나를 껴앉았다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:BACKGROUND:PATH:images/solid/101010.bmp
+#IMAGE:HIDER:OPACITY:SET:0
+#SELECT:1:나는 누나만 기분 좋으면 됐어! 3년동안 고생했어!
+
+#IMAGE:HIDER:OPACITY:SET:100
+#TEXT:HOVER:그렇게 우리는 테라스 아래에서 알 수 없는 감정을 주고 받았다.
+#CLICK
+
+#AUDIO:bgm/climax2:VOLUME:FADE:1000:0
+#AUDIO:bgm/climax2:STOP
+
+#IMAGE:RESET
+#IMAGE:RENDER
+#JUMP:ENDING-J-B
+
+
+
+
+
+#END
+==========================================================================================
+#POINT:ENDING-J-B
+#SECTION:ENDING-J-B
+
+#IMAGE:HIDER:OPACITY:SET:100
+#IMAGE:RENDER
+#AUDIO:bgm/jingburgerending1:START:BGM
+#AUDIO:bgm/jingburgerending1:VOLUME:FADE:0:1000
+
+#TEXT:HOVER:징버거 누나와 나는 이 날 이후로 많이 친해졌다.
+#CLICK
+
+#TEXT:HOVER:누나와 영화 한 편을 보기로 했는데, 제목은 “누나, 동생, 청춘” 이였다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:BACKGROUND:PATH:images/screen/jingburger/cinema.bmp
+#IMAGE:HIDER:OPACITY:FADE:100:0
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:경훈이 왔어?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:응! 일단 팝콘부터 시킬까?
+
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:그래! 카라멜 팝콘으로 시키자! 내가 살게!
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#TEXT:HOVER:우리는 그렇게 팝콘을 사고, 앉아서 영화를 봤다.
+#CLICK
+
+#TEXT:HOVER:영화 내용은 주인공이 두 명의 이성 사이에서 고민하다,
+#CLICK
+
+#TEXT:HOVER:친하게 지내던 누나를 잡아 결국 누나와 청춘을 보내게 된다는 이야기였다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:100:0
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:영화 진짜 재밌었다! 그렇지?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:그니까.. 마지막에 주인공이 누나 선택할 때가 약간 감동적이였어.
+
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:옥상에 테라스 같은거 있던데 한번 가보자!
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:좋아!
+
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#TEXT:HOVER:나는 누나와 같이 옥상에 있는 테라스에 올라갔다.
+#CLICK
+
+#IMAGE:BACKGROUND:PATH:images/screen/jingburger/terrace.bmp
+#IMAGE:HIDER:OPACITY:FADE:100:80
+#TEXT:HOVER:엘리베이터에서 본 누나의 옆모습은, 너무 귀엽고 아름다웠다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:테라스 진짜 이쁘다 그치! 저기 노을 봐봐 너무 멋지다!
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:그니까! 진짜 잘 왔다..
+
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#AUDIO:bgm/jingburgerending1:VOLUME:FADE:1000:0
+#AUDIO:bgm/jingburgerending1:STOP
+#TEXT:HOVER:갑자기 누나가 내 손을 잡고, 사랑스러운 눈빛으로 내게 말을 건냈다,
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:BACKGROUND:PATH:images/solid/101010.bmp
+#IMAGE:HIDER:OPACITY:SET:0
+#MACRO:DIALOG:JINGBURGER
+#TEXT:DIALOG:경훈아, 누나가 하고 싶은 말이 있는데...
+#CLICK
+
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#AUDIO:bgm/jingburgerending2:START:BGM
+#AUDIO:bgm/jingburgerending2:VOLUME:FADE:0:1000
+#CLICK
+
+#AUDIO:bgm/jingburgerending2:VOLUME:FADE:1000:0
+#AUDIO:bgm/jingburgerending2:STOP
+
+#IMAGE:RESET
+#IMAGE:RENDER
+
+
+
+
+
+
+
+
+
+
+
+
+
+#END
+
+|# 1000줄 돌파... 흐미;; 살려주세요...
