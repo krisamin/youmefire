@@ -15,7 +15,7 @@ int Index() {
 				if (mouseC && mouseS) {
 					PlayAudio(L"effect/button", false);
 					mouseS = false;
-					if (CheckFileExists("data/user.txt")) {
+					if (CheckFileExists("data/save.txt")) {
 						currentPage = 3;
 						currentMenu = 0;
 					}
@@ -76,14 +76,13 @@ int Index() {
 					PlayAudio(L"effect/button", false);
 					mouseS = false;
 					WCHAR* buffer;
-					WCHAR* userData = GetReadFile("data/user.txt");
+					WCHAR* userData = GetReadFile("data/save.txt");
 					WCHAR* dataName = wcstok(userData, L":", &buffer);
 					WCHAR* dataSection = wcstok(NULL, L":", &buffer);
 					name = dataName;
+					StopAudio(L"bgm/ost");
 					ReadStory(dataSection);
-
-					/*wprintf(L"%s %s", dataName, dataSection);
-					Sleep(10000);*/
+					return 1;
 				}
 			}
 			else {

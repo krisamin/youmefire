@@ -46,7 +46,7 @@ void NewGame() {
 				PlayAudio(L"effect/button", false);
 				mouseS = false;
 				StopAudio(L"bgm/ost");
-				ReadStory(L"ENDING-V-A");
+				ReadStory(L"INTRO");
 				break;
 			}
 		}

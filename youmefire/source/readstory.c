@@ -66,6 +66,47 @@ void ReadStory(WCHAR* startSection) {
 				jump = type;
 			}
 		}
+		else if (wcscmp(command, L"#SECTION") == 0) {
+			Layer saving = { true, 23, L"image", L"images/screen/save/saving.bmp", 0, 0, 100 };
+			easyImage.setLayer(&easyImage, saving);
+			easyImage.render(&easyImage);
+			WCHAR* section = wcstok(NULL, L":", &buffer);
+			WCHAR* saveContent = (WCHAR*)malloc(sizeof(WCHAR) * 100);
+			wsprintf(saveContent, L"%s:%s:", name, section);
+			SaveFile("data/save.txt", saveContent);
+			Sleep(1000);
+			int currentHover = 0;
+			int oldHover = -1;
+			while (true) {
+				if (IsInPixel(562, 588, 380, 91)) {
+					currentHover = 1;
+					if (mouseC && mouseS) {
+						PlayAudio(L"effect/button", false);
+						break;
+					}
+				}
+				else if (IsInPixel(978, 588, 380, 91)) {
+					currentHover = 2;
+					if (mouseC && mouseS) {
+						PlayAudio(L"effect/button", false);
+						break;
+					}
+				}
+				else currentHover = 0;
+				if (currentHover != oldHover) {
+					oldHover = currentHover;
+					WCHAR* imgPath = (WCHAR*)malloc(100);
+					wsprintf(imgPath, L"images/screen/save/%d.bmp", currentHover);
+					saving.name = imgPath;
+					easyImage.setLayer(&easyImage, saving);
+					easyImage.render(&easyImage);
+				}
+			}
+			if (currentHover == 2) {
+				break;
+			}
+			easyImage.reset(&easyImage);
+		}
 		else if (wcscmp(command, L"#CREDIT") == 0) {
 			Layer overHider = { true, 24, L"image", L"images/solid/101010.bmp", 0, 0, 100 };
 			easyImage.setLayer(&easyImage, overHider);

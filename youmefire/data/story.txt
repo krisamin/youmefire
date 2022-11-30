@@ -378,7 +378,7 @@
 #CLICK
 
 #LAYER:HOVERTEXT:DISABLE
-#LAYER:BACKGROUND:PATH:images/screen/prologue/jururu1.bmp
+#LAYER:BACKGROUND:PATH:images/screen/jururu/prologue1.bmp
 #LAYER:HIDER:OPACITY:FADE:100:0
 #SELECT:1:야야야야야 주르르 비챤이 누구임???
 
@@ -537,7 +537,6 @@
 #END
 ==========================================================================================
 #POINT:HEROINE
-#SLEEP:3000
 #SECTION:HEROINE
 
 #HEROINE

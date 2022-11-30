@@ -77,8 +77,7 @@ void FadeImage(Layer* layer, int from, int to) {
 	}
 }
 
-int wcsrpl(const wchar_t* wstr, const wchar_t* wsubstr, const wchar_t* wrepl)
-{
+int wcsrpl(const wchar_t* wstr, const wchar_t* wsubstr, const wchar_t* wrepl) {
 	register int i = 0;
 	wchar_t* chr = NULL;
 	size_t sub_len = 0;
@@ -102,4 +101,14 @@ int wcsrpl(const wchar_t* wstr, const wchar_t* wsubstr, const wchar_t* wrepl)
 	}
 
 	return i;
+}
+
+
+int IsInPixel(int x, int y, int lenX, int lenY) {
+	if (mouseX >= x && mouseX <= x + lenX && mouseY >= y && mouseY <= y + lenY) {
+		return 1;
+	}
+	else {
+		return 0;
+	}
 }
