@@ -5,29 +5,16 @@
 
 // pick random name in names.txt file
 WCHAR* GetRandomName() {
-	WCHAR* temp = (WCHAR*)malloc(sizeof(WCHAR) * 0);
-	WCHAR* pLine;
-	FILE* fp;
-	fopen_s(&fp, "data/names.txt", "r,ccs=UTF-8");
-
-	int length = 0;
-	while (true) {
-		temp = (WCHAR*)realloc(temp, sizeof(WCHAR) * (length + 1));
-		temp[length] = fgetwc(fp);
-		if(temp[length] == WEOF) break;
-		length ++;
-	}
-	fclose(fp);
-
+	WCHAR* nameList = GetReadFile("data/names.txt");
 	WCHAR* buffer;
-	WCHAR* splitName = wcstok(temp, L"\n", &buffer);
+	WCHAR* splitName = wcstok(nameList, L"\n", &buffer);
 	int index = 0;
 	int inRand = rand() % 20;
 	while (splitName != NULL) {
 		if (inRand == index++) {
 			WCHAR* returnName = (WCHAR*)malloc(sizeof(WCHAR) * lstrlenW(splitName));
 			wcscpy(returnName, splitName);
-			free(temp);
+			free(nameList);
 			return returnName;
 		}
 		splitName = wcstok(NULL, L"\n", &buffer);

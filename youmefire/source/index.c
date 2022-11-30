@@ -6,6 +6,7 @@ int Index() {
 	int oldPage = -1;
 	int oldMenu = -1;
 
+	PlayAudio(L"bgm/ost", true);
 	easyImage.reset(&easyImage);
 	while (true) {
 		if (currentPage == 1) {

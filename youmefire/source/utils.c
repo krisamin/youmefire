@@ -62,7 +62,7 @@ void WaitClick() {
 	mouseS = false;
 }
 
-void FadeImage(int from, int to, Layer* layer) {
+void FadeImage(Layer* layer, int from, int to) {
 	int opacity = from;
 	layer->opacity = opacity;
 	easyImage.setLayer(&easyImage, *layer);

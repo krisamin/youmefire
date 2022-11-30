@@ -9,6 +9,7 @@
 #include "easyImage.h"
 #include "easyAudio.h"
 #include "easyMouse.h"
+#include "easyFile.h"
 
 #include "utils.h"
 #include "initializer.h"

@@ -138,6 +138,7 @@
     <ClInclude Include="headers\easyAudio.h" />
     <ClInclude Include="headers\easyDefine.h" />
     <ClInclude Include="headers\easyDisplay.h" />
+    <ClInclude Include="headers\easyFile.h" />
     <ClInclude Include="headers\easyImage.h" />
     <ClInclude Include="headers\easyMouse.h" />
     <ClInclude Include="headers\global.h" />

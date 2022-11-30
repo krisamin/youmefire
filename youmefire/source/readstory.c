@@ -1,22 +1,5 @@
 #include "../headers/easyDefine.h"
 
-inline WCHAR* ReadStoryFile() {
-	WCHAR* temp = (WCHAR*)malloc(sizeof(WCHAR) * 0);
-	FILE* fp;
-	fopen_s(&fp, "data/story.txt", "r,ccs=UTF-8");
-
-	int length = 0;
-	while (true) {
-		temp = (WCHAR*)realloc(temp, sizeof(WCHAR) * (length + 1));
-		temp[length] = fgetwc(fp);
-		if (temp[length] == WEOF) break;
-		length++;
-	}
-	fclose(fp);
-	temp[length] = "\0";
-	return temp;
-}
-
 int ReadStory(WCHAR* startSection) {
 	/*WCHAR sectionList[5][15] = {L"INTRO", L"PROLOGUE-J", L"PROLOGUE-V", L"INTERLUDE", L"HEROINE" };
 	wprintf(L"%s", sectionList[section]);*/
@@ -29,7 +12,7 @@ int ReadStory(WCHAR* startSection) {
 	Layer hoverText = { true, 20, L"text", L"Pretendard Bold", 960, 540, 100, L"", 50, 400, 0, TA_CENTER, 1, RGB(255, 255, 255) };
 	easyImage.reset(&easyImage);
 
-	WCHAR* story = ReadStoryFile();
+	WCHAR* story = GetReadFile("data/story.txt");
 
 	WCHAR* bufferLine;
 	WCHAR* splitLine = wcstok(story, L"\n", &bufferLine);
@@ -44,9 +27,9 @@ int ReadStory(WCHAR* startSection) {
 		WCHAR* command = wcstok(splitLine, L":", &buffer);
 
 		if (wcscmp(command, L"#STOP") == 0) {
-			printf("Exit by #STOP");
-			Sleep(2000);
-			return 0;
+			/*printf("Exit by #STOP");
+			Sleep(2000);*/
+			break;
 		}
 
 		if (!started) {
@@ -68,9 +51,9 @@ int ReadStory(WCHAR* startSection) {
 			}
 		}
 		else if (wcscmp(command, L"#END") == 0) {
-			printf("Exit by #END");
-			Sleep(2000);
-			return 0;
+			/*printf("Exit by #END");
+			Sleep(2000);*/
+			break;
 		}
 		else if (wcscmp(command, L"#JUMP") == 0) {
 			WCHAR* type = wcstok(NULL, L":", &buffer);
@@ -83,7 +66,41 @@ int ReadStory(WCHAR* startSection) {
 				jump = type;
 			}
 		}
-		else if (wcscmp(command, L"#IMAGE") == 0) {
+		else if (wcscmp(command, L"#CREDIT") == 0) {
+			Layer overHider = { true, 24, L"image", L"images/solid/101010.bmp", 0, 0, 100 };
+			easyImage.setLayer(&easyImage, overHider);
+			FadeImage(overHider, 0, 100);
+			easyImage.reset(&easyImage);
+			easyImage.setLayer(&easyImage, overHider);
+			easyImage.render(&easyImage);
+			Sleep(1000);
+
+			WCHAR* type = wcstok(NULL, L":", &buffer);
+			WCHAR* creditPath = (WCHAR*)malloc(sizeof(WCHAR) * 100);
+			wsprintf(creditPath, L"images/credit/%s.bmp", type);
+			Layer creditImage = { true, 25, L"image", creditPath, 0, 0, 100 };
+			easyImage.setLayer(&easyImage, creditImage);
+			FadeImage(creditImage, 0, 100);
+			Sleep(5000);
+
+			while (creditImage.y > -1960 - 1080) {
+				if (mouseC) creditImage.y -= 10;
+				else creditImage.y -= 2;
+				if(creditImage.y <= -1960 - 1080) creditImage.y = -1960 - 1080;
+				easyImage.setLayer(&easyImage, creditImage);
+				easyImage.render(&easyImage);
+			}
+
+			WCHAR* bgmName = (WCHAR*)malloc(sizeof(WCHAR) * 100);
+			wsprintf(bgmName, L"bgm/%sending", _wcslwr(type));
+			FadeAudio(bgmName, 1000, 0);
+			StopAudio(bgmName);
+
+			/*printf("Exit by #CREDIT");
+			Sleep(2000);*/
+			break;
+		}
+		else if (wcscmp(command, L"#LAYER") == 0) {
 			WCHAR* type = wcstok(NULL, L":", &buffer);
 			Layer* target = NULL;
 			if (wcscmp(type, L"RENDER") == 0) {
@@ -123,7 +140,7 @@ int ReadStory(WCHAR* startSection) {
 					else if (wcscmp(type, L"FADE") == 0) {
 						int from = _wtoi(wcstok(NULL, L":", &buffer));
 						int to = _wtoi(wcstok(NULL, L":", &buffer));
-						FadeImage(from, to, target);
+						FadeImage(target, from, to);
 					}
 				}
 				else if (wcscmp(type, L"PATH") == 0) {
@@ -322,7 +339,7 @@ int ReadStory(WCHAR* startSection) {
 			}
 		}
 		else if (wcscmp(command, L"#HEROINE") == 0) {
-			printf("HEROINE SELECT");
+			//printf("HEROINE SELECT");
 			easyImage.reset(&easyImage);
 			int heroineSelect = 0;
 			int hovering = false;
@@ -371,4 +388,6 @@ int ReadStory(WCHAR* startSection) {
 			Sleep(sleep);
 		}
 	}
+
+	free(story);
 }

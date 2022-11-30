@@ -12,7 +12,19 @@ int MainProcess() {
 	initialize();
 	InitAudio();
 	InitMouse();
-	InitImage(50);
+	InitImage(30);
+
+
+	WCHAR* setName = (WCHAR*)malloc(sizeof(WCHAR) * 3);
+	setName = L"세구\0";
+	name = setName;
+	ReadStory(L"ENDING-V-A");
+
+	GameIntro();
+	while (true) {
+		int type = Index();
+		if (!type) return 0;
+	}
 }
 
 int main() {
@@ -25,16 +37,4 @@ int main() {
 	//wcsncpy(wcs, content, size);
 	//wcs[lstrlenW(content)] = '\0';
 	//wprintf(L"%c\n", wcs[0]);
-
-	WCHAR* setName = (WCHAR*)malloc(sizeof(WCHAR) * 3);
-	setName = L"세구\0";
-	name = setName;
-	ReadStory(L"CRISIS-V-B");
-
-	GameIntro();
-
-	PlayAudio(L"bgm/ost", true);
-	int type = Index();
-	if (!type)return 0;
-	StopAudio(L"bgm/ost");
 }

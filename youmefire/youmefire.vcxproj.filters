@@ -65,6 +65,9 @@
     <ClInclude Include="headers\global.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="headers\easyFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />
