@@ -7,25 +7,6 @@
 
 // 구조체 선언
 typedef struct {
-	WCHAR* name;
-	int x, y;
-	int opacity;
-}Image;
-
-typedef struct {
-	WCHAR* name;
-	int x, y;
-	int opacity;
-	WCHAR* text;
-	int fontSize;
-	int fontWeight;
-	int fontAngle;
-	int fontAlignX;
-	int fontAlignY;
-	COLORREF fontColor;
-}Text;
-
-typedef struct {
 	bool enable;
 	int index;
 	WCHAR* type;
@@ -42,7 +23,6 @@ typedef struct {
 }Layer;
 
 typedef struct _EasyImage {
-	Image* images;
 	Layer* layer;
 	int count;
 	UINT transparentColor;
@@ -181,4 +161,4 @@ inline void _render(EasyImage* self) {
 	DeleteDC(backDC);
 }
 
-static const EasyImage DEFAULT_EASY_IMAGE = { NULL, NULL, 0, RGB(0, 0, 0), NULL, NULL, _setLayer, _reset, _initialize, _render, NULL };
+static const EasyImage DEFAULT_EASY_IMAGE = { NULL, 0, RGB(0, 0, 0), NULL, NULL, _setLayer, _reset, _initialize, _render, NULL };

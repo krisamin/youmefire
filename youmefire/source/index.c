@@ -105,11 +105,12 @@ int Index() {
 
 			/*TCHAR mousePosition[100];
 			wsprintf(mousePosition, TEXT("X: %-4d, Y: %-4d, C: %-2d, S: %-2d"), mouseX, mouseY, mouseC, mouseS);
-			Layer positionText = { true, "text", "D2Coding", 0, 0, 100, mousePosition, 50, 900, 0, TA_LEFT, 0, RGB(0, 0, 0) };
-			easyImage.setLayer(&easyImage, 1, positionText);*/
+			Layer positionText = { true, 20, L"text", L"Pretendard SemiBold", 10, 100, 100, L"", 50, 400, 0, TA_LEFT, 0, RGB(0, 0, 0) };
+			easyImage.setLayer(&easyImage, positionText);*/
 
 			easyImage.setLayer(&easyImage, background);
 			easyImage.render(&easyImage);
 		}
+		Sleep(1);
 	}
 }

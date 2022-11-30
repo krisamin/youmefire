@@ -62,7 +62,7 @@ void StepPrint(WCHAR* string, Layer* layer) {
 
 // 클릭 대기
 void WaitClick() {
-	while (!(mouseC & mouseS)) continue;
+	while (!(mouseC & mouseS)) Sleep(1);
 	mouseS = false;
 }
 
@@ -99,8 +99,7 @@ int wcsrpl(const wchar_t* wstr, const wchar_t* wsubstr, const wchar_t* wrepl) {
 	sub_len = wcslen(wsubstr);
 	repl_len = wcslen(wrepl);
 
-	for (i = 0; i < (int)sub_len && i < (int)repl_len; i++)
-	{
+	for (i = 0; i < (int)sub_len && i < (int)repl_len; i++)	{
 		*chr = wrepl[i];
 		chr++;
 		if (chr == '\0') break;

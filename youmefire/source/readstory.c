@@ -89,6 +89,7 @@ void ReadStory(WCHAR* startSection) {
 					currentHover = 1;
 					if (mouseC && mouseS) {
 						PlayAudio(L"effect/button", false);
+						mouseS = false;
 						break;
 					}
 				}
@@ -96,6 +97,7 @@ void ReadStory(WCHAR* startSection) {
 					currentHover = 2;
 					if (mouseC && mouseS) {
 						PlayAudio(L"effect/button", false);
+						mouseS = false;
 						break;
 					}
 				}
@@ -108,6 +110,7 @@ void ReadStory(WCHAR* startSection) {
 					easyImage.setLayer(&easyImage, saving);
 					easyImage.render(&easyImage);
 				}
+				Sleep(1);
 			}
 			if (currentHover == 2) {
 				break;
@@ -401,20 +404,20 @@ void ReadStory(WCHAR* startSection) {
 			int hovering = false;
 			while (true) {
 				if (IsInPixel(600, 377, 280, 366) && mouseC && mouseS) {
-					mouseS = false;
 					PlayAudio(L"effect/button", false);
+					mouseS = false;
 					heroineSelect = 1;
 				}
 				else if (IsInPixel(1040, 377, 280, 366) && mouseC && mouseS) {
-					mouseS = false;
 					PlayAudio(L"effect/button", false);
+					mouseS = false;
 					heroineSelect = 2;
 				}
 				if (IsInPixel(780, 843, 380, 91)) {
 					hovering = true;
 					if (mouseC && mouseS) {
-						mouseS = false;
 						PlayAudio(L"effect/button", false);
+						mouseS = false;
 						if (heroineSelect == 1) {
 							jump = L"STORY-V";
 						}

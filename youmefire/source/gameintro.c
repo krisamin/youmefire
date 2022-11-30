@@ -35,10 +35,6 @@ int GameIntro() {
 
 	int volume = 1000;
 
-	while (volume) {
-		VolumeAudio(L"bgm/yurusu", volume);
-		volume -= 10;
-		Sleep(10);
-	}
+	FadeAudio(L"bgm/yurusu", 1000, 0);
 	StopAudio(L"bgm/yurusu");
 }
