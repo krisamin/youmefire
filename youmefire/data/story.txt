@@ -746,7 +746,7 @@
 #IMAGE:HOVERTEXT:DISABLE
 #IMAGE:HIDER:OPACITY:FADE:80:0
 #MACRO:DIALOG:VIICHAN
-#TEXT:DIALOG:ㅋㅋㅋㅋㅋㅋㅋㅋ 경훈아 왜 그런 눈으로 봨ㅋㅋㅋㅋㅋㅋㅋㅋㅋ
+#TEXT:DIALOG:ㅋㅋㅋㅋㅋㅋㅋㅋ |N아 왜 그런 눈으로 봨ㅋㅋㅋㅋㅋㅋㅋㅋㅋ
 #CLICK
 
 #MACRO:DIALOG:HIDE
@@ -872,9 +872,9 @@
 
 #IMAGE:HOVERTEXT:DISABLE
 #IMAGE:BACKGROUND:PATH:images/screen/viichan/cinema.bmp
-#IMAGE:HIDER:OPACITY:FADE:100:0
+#IMAGE:HIDER:OPACITY:FADE:100:0s
 #MACRO:DIALOG:VIICHAN
-#TEXT:DIALOG:경훈아 왔어?
+#TEXT:DIALOG:|N아 왔어?
 #CLICK
 
 #MACRO:DIALOG:HIDE
@@ -948,7 +948,7 @@
 #IMAGE:BACKGROUND:PATH:images/solid/101010.bmp
 #IMAGE:HIDER:OPACITY:SET:0
 #MACRO:DIALOG:JURURU
-#TEXT:DIALOG:야 비챤 잘 되가냐?? 너 중1때 경훈이 좋아헀잖아 ㅎㅇㅌ~~
+#TEXT:DIALOG:야 비챤 잘 되가냐?? 너 중1때 |N이 좋아헀잖아 ㅎㅇㅌ~~
 #CLICK
 
 #MACRO:DIALOG:HIDE
@@ -1033,9 +1033,303 @@
 #TEXT:HOVER:들킨 것 같다… 솔직하게 말할까 아니면 숨길까..?
 #CLICK
 
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#SELECT:2:급한.. 연락 같길래 알려주려고 잠깐 봤어 미안해..:(침묵한다)
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#AUDIO:bgm/crisis1:VOLUME:FADE:1000:0
+#AUDIO:bgm/crisis1:STOP
+
+#IMAGE:RESET
+#IMAGE:RENDER
+
+#JUMP:@SELECT
+
+#POINT:@1
+#JUMP:CRISIS-V-A
+
+#POINT:@2
+#JUMP:CRISIS-V-B
 
 
+
+
+
+#END
+==========================================================================================
+#POINT:CRISIS-V-A
+#SECTION:CRISIS-V-A
+
+#IMAGE:HIDER:OPACITY:SET:100
+#IMAGE:RENDER
+#AUDIO:bgm/crisis2:START:BGM
+#AUDIO:bgm/crisis2:VOLUME:FADE:0:1000
+
+#IMAGE:BACKGROUND:PATH:images/screen/viichan/hmm.bmp
+#IMAGE:HIDER:OPACITY:FADE:100:0
+#SELECT:1:급한.. 연락 같길래 알려주려고 잠깐 봤어 미안해..
+
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:왜 남의 휴대폰을 맘대로 보고 그래? 너 좀 실망이다..
 #CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#TEXT:HOVER:비챤은 그렇게 화를 내고 집으로 가버렸다.
+#CLICK
+
+#TEXT:HOVER:나는 비챤의 휴대폰을 본 사실보다, 그 속의 내용때문에 아직도 어안이 벙벙했다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:BACKGROUND:PATH:images/solid/101010.bmp
+#IMAGE:HIDER:OPACITY:SET:0
+#SELECT:1:비챤이.. 왜 날 중학교 때...?
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:SET:100
+#TEXT:HOVER:그렇게 마음 속 큰 의문을 남기고 나 혼자 집으로 왔다.
+#CLICK
+
+#AUDIO:bgm/crisis2:VOLUME:FADE:1000:0
+#AUDIO:bgm/crisis2:STOP
+
+#IMAGE:RESET
+#IMAGE:RENDER
+#JUMP:CLIMAX-V-A
+
+
+
+
+
+#END
+==========================================================================================
+#POINT:CLIMAX-V-A
+#SECTION:CLIMAX-V-A
+
+#IMAGE:HIDER:OPACITY:SET:100
+#IMAGE:RENDER
+#AUDIO:bgm/climax2:START:BGM
+#AUDIO:bgm/climax2:VOLUME:FADE:0:1000
+
+#TEXT:HOVER:그렇게 비챤이랑 안 좋은 일이 있고 나서, 몇 주가 지났다.
+#CLICK
+
+#TEXT:HOVER:비챤에게 먼저 디엠이 오는 일은 없었고, 나 역시도 비챤에게 먼저 연락을 건넬 용기가 없었다.
+#CLICK
+
+#TEXT:HOVER:하지만, 그 날의 풀리지 않았던 의문들을 해결하기 위해, 내가 먼저 연락을 해보기로 했다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:BACKGROUND:PATH:images/screen/viichan/hi.bmp
+#IMAGE:HIDER:OPACITY:FADE:100:0
+#SELECT:1:나 궁금한거 있는데...
+
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:DM을 보내자마자, 보내기도 무섭게 비챤이 답장을 했다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:뭔데?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:너 혹시... 중학교 때 나 좋아 했었어...?
+
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:맞아...
+#CLICK
+
+#TEXT:DIALOG:사실.. 중1때부터 지금까지 널 잊은 적이 없어.
+#CLICK
+
+#TEXT:DIALOG:전학 가서도 너가 계속 생각나더라,
+#CLICK
+
+#TEXT:DIALOG:그래서 너랑 친해지고 싶었어
+#CLICK
+
+#TEXT:DIALOG:사실 너가 내 폰 본 날에, 솔직하게 안 말해줬으면 정 떨어질 뻔 했는데, 솔직하게 말해줘서 고마웠어.
+#CLICK
+
+#TEXT:DIALOG:그리고, 먼저 연락해줘서 고마워.
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:비챤의 솔직한 대답을 듣고, 나는 많이 놀랬다.
+#CLICK
+
+#TEXT:HOVER:더 솔직한 대답을 듣기 위해서, 비챤을 직접 봐야할 것 같다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#SELECT:1:지금 만날 수 있어?
+
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:응. 내가 너네 집 앞에 있을게
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#TEXT:HOVER:1층으로 내려가보니, 비챤이 앞에 와있었다.
+#CLICK
+
+#TEXT:HOVER:우리는 근처 놀이터 벤치로 자리를 옮겨 이야기를 이어나갔다.
+#CLICK
+
+#TEXT:HOVER:벤치에 가서, 내가 먼저 이야기를 꺼냈다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:100:0
+#SELECT:1:왜 좋아하게 된거야
+
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:중1때 과목하면서 할 일을 열심히 하는 너가 좋았어.. 목소리도 좋고
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:비챤과 나는 둘 다 얼굴이 빨개졌다.
+#CLICK
+
+#TEXT:HOVER:비챤이 낯을 많이 가리는 줄 알았는데, 솔직하게 말해줘서 의외였다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#SELECT:1:그랬구나. 내가 너한테 실수한 날 이후로 영영 못 볼 줄 알았어.
+
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:내가 먼저 연락하고 싶었는데, 용기가 안 나서 계속 참았거든. 근데 너가 먼저 연락해줘서 고마웠어.
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:내가 먼저 비챤에게 말을 꺼냈다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#SELECT:1:나도 너한테 호감 있었어. 처음 봤을 때 이후로 너가 재밌기도 했고...
+
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:그럼 우리 오늘부터 친구 하는거다?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#TEXT:HOVER:비챤과 나는 그렇게 벤치 아래서 사랑을 약속했다.
+#CLICK
+
+#AUDIO:bgm/climax2:VOLUME:FADE:1000:0
+#AUDIO:bgm/climax2:STOP
+
+#IMAGE:RESET
+#IMAGE:RENDER
+#JUMP:ENDING-V-A
+
+
+
+
+
+#END
+==========================================================================================
+#POINT:ENDING-V-A
+#SECTION:ENDING-V-A
+
+#IMAGE:HIDER:OPACITY:SET:100
+#IMAGE:RENDER
+#AUDIO:bgm/ending1:START:BGM
+#AUDIO:bgm/ending1:VOLUME:FADE:0:1000
+
+#TEXT:HOVER:이제는 여자친구가 된 비챤과, 남산으로 데이트를 가기로 했다.
+#CLICK
+
+#TEXT:HOVER:동네 지하철 역에서 만나, 같이 남산까지 가기로 했다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:BACKGROUND:PATH:images/screen/viichan/happy.bmp
+#IMAGE:HIDER:OPACITY:FADE:100:0
+#SELECT:1:먼저 와 있었네? 오래 기다렸어?
+
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:아니! 나도 방금 왔어 ㅎㅎ
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#TEXT:HOVER:그렇게 우리는 만나서, 같이 남산까지 갔다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:100:0
+#SELECT:1:먼저 정상까지 올라가는 사람이 음료수 사기? 어때!
+
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:내가 단숨에 이겨줄게 ㅋㅋ 해봐
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#TEXT:HOVER:내가 먼저 정상에 올라왔지만, 아무래도 여자친구를 이기는 건 좀 그래서 져주기로 했다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:100:0
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:헥헥… 엥..? 왜 안 가고 기다리고 있어?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:널 상대로 어떻게 지겠어 ㅎㅎㅎ 음료수는 내가 살게~
+
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:오~ 역시 |N이 내 남친다워 ㅎㅎ
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#TEXT:HOVER:그렇게 우리는 음료수를 먹고, 남산에 있는 약속 자물쇠를 쓰러 갔다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:100:0
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:우리도 이거 자물쇠 쓰자! 추억으로 남기고~
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:좋아좋아!
+
+#AUDIO:bgm/ending1:VOLUME:FADE:1000:0
+#AUDIO:bgm/ending1:STOP
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#AUDIO:bgm/viichanending:START:BGM
+#AUDIO:bgm/viichanending:VOLUME:FADE:0:1000
+#TEXT:HOVER:비챤 ❤️ |N
+#SLEEP:2000
+
+#TEXT:HOVER:자물쇠에 글씨 한 자 한자 써져갔다.
+#SLEEP:4000
+
+#TEXT:HOVER:글씨가 한 글자 씩 써저갈 때마다, 우리의 사랑도 무르익어 가는 것만 같았다.
+#SLEEP:4000
+
+#TEXT:HOVER:그렇게 나는 비챤과 행복한 청춘을 이어 나갈 수 있게 되었다.
+#CLICK
+
+
+
+
 
 #END
 ==========================================================================================
@@ -1339,7 +1633,7 @@
 #IMAGE:HIDER:OPACITY:FADE:100:0
 
 #MACRO:DIALOG:JINGBURGER
-#TEXT:DIALOG:경훈아 왔어?
+#TEXT:DIALOG:|N아 왔어?
 #CLICK
 
 #MACRO:DIALOG:HIDE
@@ -1531,7 +1825,7 @@
 #IMAGE:HIDER:OPACITY:FADE:100:0
 
 #MACRO:DIALOG:JINGBURGER
-#TEXT:DIALOG:야 경훈!!! 너 진짜 미쳤어?
+#TEXT:DIALOG:야 |N!!! 너 진짜 미쳤어?
 #CLICK
 
 #MACRO:DIALOG:HIDE
@@ -1659,7 +1953,7 @@
 #IMAGE:HOVERTEXT:DISABLE
 #IMAGE:HIDER:OPACITY:FADE:80:0
 #MACRO:DIALOG:JINGBURGER
-#TEXT:DIALOG:경훈아. 고마워..
+#TEXT:DIALOG:|N아. 고마워..
 #CLICK
 
 #MACRO:DIALOG:HIDE
@@ -1712,8 +2006,8 @@
 
 #IMAGE:HIDER:OPACITY:SET:100
 #IMAGE:RENDER
-#AUDIO:bgm/jingburgerending1:START:BGM
-#AUDIO:bgm/jingburgerending1:VOLUME:FADE:0:1000
+#AUDIO:bgm/ending1:START:BGM
+#AUDIO:bgm/ending1:VOLUME:FADE:0:1000
 
 #TEXT:HOVER:징버거 누나와 나는 이 날 이후로 많이 친해졌다.
 #CLICK
@@ -1725,7 +2019,7 @@
 #IMAGE:BACKGROUND:PATH:images/screen/jingburger/cinema.bmp
 #IMAGE:HIDER:OPACITY:FADE:100:0
 #MACRO:DIALOG:JINGBURGER
-#TEXT:DIALOG:경훈이 왔어?
+#TEXT:DIALOG:|N이 왔어?
 #CLICK
 
 #MACRO:DIALOG:HIDE
@@ -1781,8 +2075,8 @@
 #SELECT:1:그니까! 진짜 잘 왔다..
 
 #IMAGE:HIDER:OPACITY:FADE:0:100
-#AUDIO:bgm/jingburgerending1:VOLUME:FADE:1000:0
-#AUDIO:bgm/jingburgerending1:STOP
+#AUDIO:bgm/ending1:VOLUME:FADE:1000:0
+#AUDIO:bgm/ending1:STOP
 #TEXT:HOVER:갑자기 누나가 내 손을 잡고, 사랑스러운 눈빛으로 내게 말을 건냈다,
 #CLICK
 
@@ -1790,16 +2084,16 @@
 #IMAGE:BACKGROUND:PATH:images/solid/101010.bmp
 #IMAGE:HIDER:OPACITY:SET:0
 #MACRO:DIALOG:JINGBURGER
-#TEXT:DIALOG:경훈아, 누나가 하고 싶은 말이 있는데...
+#TEXT:DIALOG:|N아, 누나가 하고 싶은 말이 있는데...
 #CLICK
 
 #IMAGE:HIDER:OPACITY:FADE:0:100
-#AUDIO:bgm/jingburgerending2:START:BGM
-#AUDIO:bgm/jingburgerending2:VOLUME:FADE:0:1000
+#AUDIO:bgm/jingburgerending:START:BGM
+#AUDIO:bgm/jingburgerending:VOLUME:FADE:0:1000
 #CLICK
 
-#AUDIO:bgm/jingburgerending2:VOLUME:FADE:1000:0
-#AUDIO:bgm/jingburgerending2:STOP
+#AUDIO:bgm/jingburgerending:VOLUME:FADE:1000:0
+#AUDIO:bgm/jingburgerending:STOP
 
 #IMAGE:RESET
 #IMAGE:RENDER
@@ -1809,3 +2103,4 @@
 
 #STOP
 |# 1000줄 돌파... 흐미;; 살려주세요...
+|# 2000줄 돌파... 으아앙 살려주세요...

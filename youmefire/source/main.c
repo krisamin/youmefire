@@ -29,12 +29,8 @@ int main() {
 	WCHAR* setName = (WCHAR*)malloc(sizeof(WCHAR) * 3);
 	setName = L"세구\0";
 	name = setName;
-	ReadStory(L"CRISIS-V");
+	ReadStory(L"CRISIS-V-A");
 
-	/*WCHAR* setName = (WCHAR*)malloc(sizeof(WCHAR) * 3);
-	setName = L"세구";S
-	name = setName;
-	Intro();*/
 	GameIntro();
 
 	PlayAudio(L"bgm/ost", true);
