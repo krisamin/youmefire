@@ -1,6 +1,8 @@
 #include "../headers/easyDefine.h"
 
+// 게임 인트로
 int GameIntro() {
+	// 음악 시간에 맞춰 배경이 바뀐다.
 	Layer background = { true, 0, L"image", L"images/solid/101010.bmp", 0, 0, 100 };
 
 	easyImage.reset(&easyImage);

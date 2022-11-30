@@ -21,7 +21,7 @@ WCHAR* GetRandomName() {
 	}
 }
 
-
+// 새로운 게임 이름 설정 및 시작
 void NewGame() {
   name = GetRandomName();
 	int currentMenu = 0;
@@ -31,6 +31,7 @@ void NewGame() {
 
 	easyImage.reset(&easyImage);
 	while (true) {
+		// 마우스 위치 및 클릭
 		if (IsInPixel(629, 809, 341, 91)) {
 			currentMenu = 1;
 			if (mouseC && mouseS) {
@@ -54,7 +55,7 @@ void NewGame() {
 			currentMenu = 0;
 		}
 
-
+		// 배경 및 이름 업데이트
 		WCHAR* imgPath = (WCHAR*)malloc(sizeof(WCHAR) * 100);
 		wsprintf(imgPath, L"images/screen/newgame/%d.bmp", currentMenu);
 		Layer background = { true, 0, L"image", imgPath, 0, 0, 100 };

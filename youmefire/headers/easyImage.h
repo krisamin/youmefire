@@ -5,6 +5,7 @@
 #include <stdio.h>
 #pragma comment(lib, "msimg32.lib")
 
+// 구조체 선언
 typedef struct {
 	WCHAR* name;
 	int x, y;
@@ -60,6 +61,7 @@ typedef struct {
 	int width, height;
 }Size;
 
+// 비트맵 사이즈 반환
 inline Size GetBitmapSize(HBITMAP bitmap) {
 	BITMAP tmpBitmap;
 	GetObject(bitmap, sizeof(BITMAP), &tmpBitmap);
@@ -67,6 +69,7 @@ inline Size GetBitmapSize(HBITMAP bitmap) {
 	return bitmapSize;
 }
 
+// 빈 DC 생성
 inline HDC CreateNewBackDC(HDC compatibleDC) {
 	const HDC backDC = CreateCompatibleDC(compatibleDC);
 	const HBITMAP backBitmap = CreateCompatibleBitmap(compatibleDC, WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -75,6 +78,7 @@ inline HDC CreateNewBackDC(HDC compatibleDC) {
 	return backDC;
 }
 
+// 투명도를 위한 BF
 inline BLENDFUNCTION GetBlendFunction(int alpha) {
 	BLENDFUNCTION bf;
 	bf.AlphaFormat = AC_SRC_ALPHA;
@@ -84,6 +88,7 @@ inline BLENDFUNCTION GetBlendFunction(int alpha) {
 	return bf;
 }
 
+// 이미지 추가
 inline void PutBitmapToBackDC(HDC backDC, HDC consoleDC, Layer image, UINT transparentColor) {
 	const HDC bitmapDC = CreateCompatibleDC(backDC);
 	const HBITMAP bitmap = (HBITMAP)LoadImage(NULL, image.name, IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
@@ -113,6 +118,7 @@ inline void PutBitmapToBackDC(HDC backDC, HDC consoleDC, Layer image, UINT trans
 	DeleteDC(bitmapDC);
 }
 
+// 텍스트 추가
 inline void PutTextToBackDC(HDC backDC, HDC consoleDC, Layer text) {
 
 	const HFONT font = CreateFont(text.fontSize, 0, text.fontAngle, 0, text.fontWeight, 0, 0, 0, HANGEUL_CHARSET, 0, 0, 0, VARIABLE_PITCH | FF_ROMAN, text.name);
@@ -135,25 +141,30 @@ inline void PutTextToBackDC(HDC backDC, HDC consoleDC, Layer text) {
 	DeleteObject(font);
 }
 
+// 레이어 추가
 inline void _setLayer(EasyImage* self, Layer layer) {
 	self->layer[layer.index] = layer;
 }
 
+// 레이어 초기화
 inline void _reset(EasyImage* self) {
 	for (int i = 0; i < self->count; i++) {
 		self->layer[i].enable = false;
 	}
 }
 
+// 화면에 적용
 inline void ApplyToDC(HDC dstDC, HDC srcDC) {
 	BitBlt(dstDC, 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, srcDC, 0, 0, SRCCOPY);
 }
 
+// 초기화
 inline void _initialize(EasyImage* self) {
 	self->_windowHandle = GetConsoleWindow();
 	self->_consoleDC = GetDC(self->_windowHandle);
 }
 
+// 렌더링
 inline void _render(EasyImage* self) {
 	const HDC backDC = CreateNewBackDC(self->_consoleDC);
 	for (int _ = 0; _ < self->count; _++) {

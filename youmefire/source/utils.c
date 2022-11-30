@@ -5,6 +5,7 @@
 #include <string.h>
 #include <wchar.h>
 
+// 레이어 초기화
 void InitImage(int count) {
 	easyImage = DEFAULT_EASY_IMAGE;
 	easyImage.initialize(&easyImage);
@@ -17,6 +18,7 @@ void InitImage(int count) {
 	easyImage.render(&easyImage);
 }
 
+// 글씨 자르기
 WCHAR* SubStr(WCHAR* src, int m, int n) {
 	// 목적지 문자열의 길이를 얻는다.
 	int len = n - m;
@@ -35,6 +37,7 @@ WCHAR* SubStr(WCHAR* src, int m, int n) {
 	return dest;
 }
 
+// 서서히 출력
 void StepPrint(WCHAR* string, Layer* layer) {
 	int count = 0, index = 1;
 	while (true) {
@@ -57,11 +60,13 @@ void StepPrint(WCHAR* string, Layer* layer) {
 	}
 }
 
+// 클릭 대기
 void WaitClick() {
 	while (!(mouseC & mouseS)) continue;
 	mouseS = false;
 }
 
+// 이미지 패이딩
 void FadeImage(Layer* layer, int from, int to) {
 	int opacity = from;
 	layer->opacity = opacity;
@@ -77,6 +82,7 @@ void FadeImage(Layer* layer, int from, int to) {
 	}
 }
 
+// 글씨 치환
 int wcsrpl(const wchar_t* wstr, const wchar_t* wsubstr, const wchar_t* wrepl) {
 	register int i = 0;
 	wchar_t* chr = NULL;
@@ -103,7 +109,7 @@ int wcsrpl(const wchar_t* wstr, const wchar_t* wsubstr, const wchar_t* wrepl) {
 	return i;
 }
 
-
+// 마우스 위치 확인
 int IsInPixel(int x, int y, int lenX, int lenY) {
 	if (mouseX >= x && mouseX <= x + lenX && mouseY >= y && mouseY <= y + lenY) {
 		return 1;

@@ -1,14 +1,18 @@
 #include "../headers/easyDefine.h"
 
+// 첫 게임 화면
 int Index() {
+	// 화면 관련 변수
 	int currentPage = 1;
 	int currentMenu = 0;
 	int oldPage = -1;
 	int oldMenu = -1;
 
+	// 음악 재생
 	PlayAudio(L"bgm/ost", true);
 	easyImage.reset(&easyImage);
 	while (true) {
+		// 마우스 위치 및 클릭 처리
 		if (currentPage == 1) {
 			if (IsInPixel(825, 765, 270, 50)) {
 				currentMenu = 1;
@@ -90,6 +94,7 @@ int Index() {
 			}
 		}
 
+		// 화면 업데이트시 실행
 		if (currentPage != oldPage || currentMenu != oldMenu) {
 			oldPage = currentPage;
 			oldMenu = currentMenu;

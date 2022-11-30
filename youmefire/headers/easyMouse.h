@@ -6,6 +6,7 @@
 #include <process.h>
 #include <stdbool.h>
 
+// 마우스 클릭 및 위치
 inline void checkMouseStateThread(void* param) {
   HWND consoleWND = GetConsoleWindow();
   POINT mousePos;
@@ -30,6 +31,7 @@ inline void checkMouseStateThread(void* param) {
   }
 }
 
+// 마우스 초기화
 inline void InitMouse() {
   SetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), ENABLE_PROCESSED_INPUT | ENABLE_MOUSE_INPUT);
   _beginthread(checkMouseStateThread, 0, NULL);

@@ -1,5 +1,6 @@
 #include "../headers/easyDefine.h"
 
+// 스토리 읽기
 void ReadStory(WCHAR* startSection) {
 	/*WCHAR sectionList[5][15] = {L"INTRO", L"PROLOGUE-J", L"PROLOGUE-V", L"INTERLUDE", L"HEROINE" };
 	wprintf(L"%s", sectionList[section]);*/
@@ -12,6 +13,7 @@ void ReadStory(WCHAR* startSection) {
 	Layer hoverText = { true, 20, L"text", L"Pretendard Bold", 960, 540, 100, L"", 50, 400, 0, TA_CENTER, 1, RGB(255, 255, 255) };
 	easyImage.reset(&easyImage);
 
+	// 스토리 파일 읽기
 	WCHAR* story = GetReadFile("data/story.txt");
 
 	WCHAR* bufferLine;
@@ -26,12 +28,14 @@ void ReadStory(WCHAR* startSection) {
 		WCHAR* buffer;
 		WCHAR* command = wcstok(splitLine, L":", &buffer);
 
+		// 멈추기
 		if (wcscmp(command, L"#STOP") == 0) {
 			/*printf("Exit by #STOP");
 			Sleep(2000);*/
 			break;
 		}
 
+		// 중간부터 시작하기
 		if (!started) {
 			if (wcscmp(command, L"#SECTION") == 0) {
 				WCHAR* sectionName = wcstok(NULL, L":", &buffer);
@@ -42,6 +46,7 @@ void ReadStory(WCHAR* startSection) {
 			continue;
 		}
 
+		// 점프 받을 포인트
 		if (jump) {
 			if (wcscmp(command, L"#POINT") == 0) {
 				WCHAR* point = wcstok(NULL, L":", &buffer);
@@ -55,6 +60,7 @@ void ReadStory(WCHAR* startSection) {
 			Sleep(2000);*/
 			break;
 		}
+		// 점프
 		else if (wcscmp(command, L"#JUMP") == 0) {
 			WCHAR* type = wcstok(NULL, L":", &buffer);
 			if (wcscmp(type, L"@SELECT") == 0) {
@@ -66,6 +72,7 @@ void ReadStory(WCHAR* startSection) {
 				jump = type;
 			}
 		}
+		// 중간 저장
 		else if (wcscmp(command, L"#SECTION") == 0) {
 			Layer saving = { true, 23, L"image", L"images/screen/save/saving.bmp", 0, 0, 100 };
 			easyImage.setLayer(&easyImage, saving);
@@ -107,6 +114,7 @@ void ReadStory(WCHAR* startSection) {
 			}
 			easyImage.reset(&easyImage);
 		}
+		// 크레딧
 		else if (wcscmp(command, L"#CREDIT") == 0) {
 			Layer overHider = { true, 24, L"image", L"images/solid/101010.bmp", 0, 0, 100 };
 			easyImage.setLayer(&easyImage, overHider);
@@ -124,6 +132,7 @@ void ReadStory(WCHAR* startSection) {
 			FadeImage(creditImage, 0, 100);
 			Sleep(5000);
 
+			// 서서히 스크롤
 			while (creditImage.y > -1960 - 1080) {
 				if (mouseC) creditImage.y -= 10;
 				else creditImage.y -= 2;
@@ -141,6 +150,7 @@ void ReadStory(WCHAR* startSection) {
 			Sleep(2000);*/
 			break;
 		}
+		// 레이어 처리
 		else if (wcscmp(command, L"#LAYER") == 0) {
 			WCHAR* type = wcstok(NULL, L":", &buffer);
 			Layer* target = NULL;
@@ -199,6 +209,7 @@ void ReadStory(WCHAR* startSection) {
 				}
 			}
 		}
+		// 텍스트 관련
 		else if (wcscmp(command, L"#TEXT") == 0) {
 			WCHAR* type = wcstok(NULL, L":", &buffer);
 			Layer* target = NULL;
@@ -220,6 +231,7 @@ void ReadStory(WCHAR* startSection) {
 				StepPrint(content, *target);
 			}
 		}
+		// 사용자 선택지
 		else if (wcscmp(command, L"#SELECT") == 0) {
 			int count = _wtoi(wcstok(NULL, L":", &buffer));
 			WCHAR* selectList[5];
@@ -316,6 +328,7 @@ void ReadStory(WCHAR* startSection) {
 			}
 			easyImage.render(&easyImage);
 		}
+		// 오디오 처리
 		else if (wcscmp(command, L"#AUDIO") == 0) {
 			WCHAR* alias = wcstok(NULL, L":", &buffer);
 			WCHAR* command = wcstok(NULL, L":", &buffer);
@@ -344,6 +357,7 @@ void ReadStory(WCHAR* startSection) {
 				}
 			}
 		}
+		// 자동 반복 처리
 		else if (wcscmp(command, L"#MACRO") == 0) {
 			WCHAR* type = wcstok(NULL, L":", &buffer);
 			if (wcscmp(type, L"DIALOG") == 0) {
@@ -379,6 +393,7 @@ void ReadStory(WCHAR* startSection) {
 				}
 			}
 		}
+		// 히로인 선택
 		else if (wcscmp(command, L"#HEROINE") == 0) {
 			//printf("HEROINE SELECT");
 			easyImage.reset(&easyImage);
@@ -421,9 +436,11 @@ void ReadStory(WCHAR* startSection) {
 				easyImage.render(&easyImage);
 			}
 		}
+		// 클릭 대기
 		else if (wcscmp(command, L"#CLICK") == 0) {
 			WaitClick();
 		}
+		// 대기
 		else if (wcscmp(command, L"#SLEEP") == 0) {
 			int sleep = _wtoi(wcstok(NULL, L":", &buffer));
 			Sleep(sleep);

@@ -3,18 +3,21 @@
 #include <windows.h>
 #pragma comment(lib, "winmm.lib")
 
+// 오디오 열기
 inline void OpenAudio(WCHAR* fileName, WCHAR* alias) {
 	WCHAR command[100];
 	wsprintf(command, TEXT("open %s alias %s"), fileName, alias);
 	mciSendString(command, NULL, 0, 0);
 }
 
+// 오디오 정지
 inline void StopAudio(WCHAR* alias) {
 	WCHAR command[100];
 	wsprintf(command, TEXT("stop %s"), alias);
 	mciSendString(command, NULL, 0, NULL);
 }
 
+// 오디오 재생
 inline void PlayAudio(WCHAR* alias, int repeat) {
 	WCHAR command[100];
 	wsprintf(command, TEXT("seek %s to start"), alias);
@@ -26,12 +29,14 @@ inline void PlayAudio(WCHAR* alias, int repeat) {
 	mciSendString(command, NULL, 0, 0);
 }
 
+// 볼륨 설정
 inline void VolumeAudio(WCHAR* alias, int volume) {
 	WCHAR command[100];
 	wsprintf(command, TEXT("setaudio %s volume to %d"), alias, volume);
 	mciSendString(command, NULL, 0, 0);
 }
 
+// 오디오 페이드
 inline void FadeAudio(WCHAR* alias, int from, int to) {
 	int volume = from;
 	WCHAR command[100];
@@ -46,6 +51,7 @@ inline void FadeAudio(WCHAR* alias, int from, int to) {
 	}
 }
 
+// 초기화
 inline void InitAudio() {
 	OpenAudio(L"sounds/bgm/ost.mp3", L"bgm/ost");
 	OpenAudio(L"sounds/bgm/yurusu.mp3", L"bgm/yurusu");

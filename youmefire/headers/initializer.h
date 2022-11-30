@@ -10,6 +10,7 @@
 
 #pragma comment(lib, "msimg32.lib")
 
+// 콘솔의 헨들을 가져온다.
 inline void GetHandle() {
   CONSOLE_INPUT = GetStdHandle(((DWORD)-10));
   CONSOLE_OUTPUT = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -17,6 +18,7 @@ inline void GetHandle() {
   SetWindowLong(WINDOW_HANDLE, GWL_STYLE, GetWindowLong(WINDOW_HANDLE, GWL_STYLE) & ~WS_MAXIMIZEBOX & ~WS_SIZEBOX);
 }
 
+// 콘솔 사이즈를 설정한다.
 inline void SetConsole(int width, int height, bool fullscreen) {
   if (fullscreen) {
     keybd_event(VK_MENU, 0x38, 0, 0);
@@ -75,6 +77,7 @@ inline void SetConsole(int width, int height, bool fullscreen) {
   }
 }
 
+// 커서를 숨긴다.
 inline void HideCursor() {
   CONSOLE_CURSOR_INFO cursorInfo;
   GetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursorInfo);
@@ -82,6 +85,7 @@ inline void HideCursor() {
   SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursorInfo);
 }
 
+// 스크롤 바를 숨긴다.
 inline void HideScrollBar() {
   /*HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 
@@ -113,6 +117,7 @@ inline void HideScrollBar() {
   SetConsoleScreenBufferSize(handle, new_size);
 }
 
+// 기본적인 설정 메크로 해준다.
 inline void initialize() {
 	SetConsoleTitle(TEXT("Initialize"));
 

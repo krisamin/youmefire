@@ -21,9 +21,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\readstory.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="source\main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -37,6 +34,9 @@
       <Filter>Source Files\screens</Filter>
     </ClCompile>
     <ClCompile Include="source\utils.c">
+      <Filter>Source Files\others</Filter>
+    </ClCompile>
+    <ClCompile Include="source\readstory.c">
       <Filter>Source Files\others</Filter>
     </ClCompile>
   </ItemGroup>
