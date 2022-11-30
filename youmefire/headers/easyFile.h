@@ -16,3 +16,12 @@ inline WCHAR* GetReadFile(char* fileName) {
 	temp[length] = "\0";
 	return temp;
 }
+
+inline bool CheckFileExists(const char* fname) {
+	FILE* file;
+	if ((file = fopen(fname, "r"))) {
+		fclose(file);
+		return true;
+	}
+	return false;
+}

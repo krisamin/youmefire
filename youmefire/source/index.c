@@ -15,8 +15,14 @@ int Index() {
 				if (mouseC && mouseS) {
 					PlayAudio(L"effect/button", false);
 					mouseS = false;
-					currentPage = 3;
-					currentMenu = 0;
+					if (CheckFileExists("data/user.txt")) {
+						currentPage = 3;
+						currentMenu = 0;
+					}
+					else {
+						NewGame();
+						return 1;
+					}
 				}
 			}
 			else if (IsInPixel(825, 850, 270, 50)) {
@@ -69,6 +75,15 @@ int Index() {
 				if (mouseC & mouseS) {
 					PlayAudio(L"effect/button", false);
 					mouseS = false;
+					WCHAR* buffer;
+					WCHAR* userData = GetReadFile("data/user.txt");
+					WCHAR* dataName = wcstok(userData, L":", &buffer);
+					WCHAR* dataSection = wcstok(NULL, L":", &buffer);
+					name = dataName;
+					ReadStory(dataSection);
+
+					/*wprintf(L"%s %s", dataName, dataSection);
+					Sleep(10000);*/
 				}
 			}
 			else {

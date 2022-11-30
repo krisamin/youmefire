@@ -11,7 +11,7 @@
 #pragma comment(lib, "msimg32.lib")
 
 inline void GetHandle() {
-  CONSOLE_INPUT = GetStdHandle(STD_INPUT_HANDLE);
+  CONSOLE_INPUT = GetStdHandle(((DWORD)-10));
   CONSOLE_OUTPUT = GetStdHandle(STD_OUTPUT_HANDLE);
   WINDOW_HANDLE = GetConsoleWindow();
   SetWindowLong(WINDOW_HANDLE, GWL_STYLE, GetWindowLong(WINDOW_HANDLE, GWL_STYLE) & ~WS_MAXIMIZEBOX & ~WS_SIZEBOX);

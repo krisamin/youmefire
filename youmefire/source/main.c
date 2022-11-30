@@ -19,7 +19,7 @@ int MainProcess() {
 	name = setName;
 	ReadStory(L"ENDING-V-A");*/
 
-	GameIntro();
+	//GameIntro();
 	while (true) {
 		int type = Index();
 		if (!type) return 0;
