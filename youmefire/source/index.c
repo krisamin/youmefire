@@ -17,16 +17,6 @@ int Index() {
 					mouseS = false;
 					currentPage = 3;
 					currentMenu = 0;
-
-					/*return 1;
-					Layer nameScreen = { true, "image", "images/screen/index/30.bmp", 0, 0, 100 };
-					easyImage.setLayer(&easyImage, 2, nameScreen);
-					easyImage.render(&easyImage);
-					while (true) {
-						Layer name = { true, "text", "Pretendard Variable", 960, 496, 100, TEXT("제작자"), 80, 700, 0, TA_CENTER, 1, RGB(255, 255, 255) };
-						easyImage.setLayer(&easyImage, 3, name);
-						easyImage.render(&easyImage);
-					}*/
 				}
 			}
 			else if (IsInPixel(825, 850, 270, 50)) {
@@ -71,6 +61,7 @@ int Index() {
 					PlayAudio(L"effect/button", false);
 					mouseS = false;
 					NewGame();
+					return 1;
 				}
 			}
 			else if (IsInPixel(1101, 730, 50, 50)) {

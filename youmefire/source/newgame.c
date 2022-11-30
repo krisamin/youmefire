@@ -22,7 +22,7 @@ WCHAR* GetRandomName() {
 }
 
 
-int NewGame() {
+void NewGame() {
   name = GetRandomName();
 	int currentMenu = 0;
 	bool nameUpdate = true;
@@ -46,7 +46,8 @@ int NewGame() {
 				PlayAudio(L"effect/button", false);
 				mouseS = false;
 				StopAudio(L"bgm/ost");
-				ReadStory(L"INTRO");
+				ReadStory(L"ENDING-V-A");
+				break;
 			}
 		}
 		else {

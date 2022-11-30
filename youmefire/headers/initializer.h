@@ -14,6 +14,7 @@ inline void GetHandle() {
   CONSOLE_INPUT = GetStdHandle(STD_INPUT_HANDLE);
   CONSOLE_OUTPUT = GetStdHandle(STD_OUTPUT_HANDLE);
   WINDOW_HANDLE = GetConsoleWindow();
+  SetWindowLong(WINDOW_HANDLE, GWL_STYLE, GetWindowLong(WINDOW_HANDLE, GWL_STYLE) & ~WS_MAXIMIZEBOX & ~WS_SIZEBOX);
 }
 
 inline void SetConsole(int width, int height, bool fullscreen) {
@@ -61,6 +62,7 @@ inline void SetConsole(int width, int height, bool fullscreen) {
       int resizedWidth = width + left_border + right_border;
       int resizedHeight = height + top_border_with_title_bar + bottom_border;
       //printf("Size: %d %d\n", resizedWidth, resizedHeight);
+
       MoveWindow(
         WINDOW_HANDLE,
         displayWidth / 2 - resizedWidth / 2,
@@ -115,11 +117,10 @@ inline void initialize() {
 	SetConsoleTitle(TEXT("Initialize"));
 
   GetHandle();
+  HideScrollBar();
 	SetProcessDPIAware();
   HideCursor();
-  HideScrollBar();
 	SetConsole(WINDOW_WIDTH, WINDOW_HEIGHT, false);
-  HideCursor();
   HideScrollBar();
   setlocale(LC_ALL, "KOREAN");
   srand(time(NULL));

@@ -1,6 +1,6 @@
 #include "../headers/easyDefine.h"
 
-int ReadStory(WCHAR* startSection) {
+void ReadStory(WCHAR* startSection) {
 	/*WCHAR sectionList[5][15] = {L"INTRO", L"PROLOGUE-J", L"PROLOGUE-V", L"INTERLUDE", L"HEROINE" };
 	wprintf(L"%s", sectionList[section]);*/
 

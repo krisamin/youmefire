@@ -14,11 +14,10 @@ int MainProcess() {
 	InitMouse();
 	InitImage(30);
 
-
-	WCHAR* setName = (WCHAR*)malloc(sizeof(WCHAR) * 3);
+	/*WCHAR* setName = (WCHAR*)malloc(sizeof(WCHAR) * 3);
 	setName = L"세구\0";
 	name = setName;
-	ReadStory(L"ENDING-V-A");
+	ReadStory(L"ENDING-V-A");*/
 
 	GameIntro();
 	while (true) {
