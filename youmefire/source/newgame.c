@@ -40,7 +40,7 @@ int NewGame() {
 	int currentMenu = 0;
 	bool nameUpdate = true;
 
-	Layer nameLayer = { true, 1, L"text", L"Pretendard Variable", 960, 540, 100, TEXT(""), 96, 700, 0, TA_CENTER, 1, RGB(255, 255, 255)};
+	Layer nameLayer = { true, 1, L"text", L"Pretendard Bold", 960, 540, 100, TEXT(""), 96, 400, 0, TA_CENTER, 1, RGB(255, 255, 255)};
 
 	easyImage.reset(&easyImage);
 	while (true) {

@@ -1,6 +1,6 @@
 #include "../headers/easyDefine.h"
 
-WCHAR* ReadStoryFile() {
+inline WCHAR* ReadStoryFile() {
 	WCHAR* temp = (WCHAR*)malloc(sizeof(WCHAR) * 0);
 	FILE* fp;
 	fopen_s(&fp, "data/story.txt", "r,ccs=UTF-8");

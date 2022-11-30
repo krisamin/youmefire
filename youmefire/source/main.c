@@ -29,10 +29,10 @@ int main() {
 	WCHAR* setName = (WCHAR*)malloc(sizeof(WCHAR) * 3);
 	setName = L"세구\0";
 	name = setName;
-	ReadStory(L"HEROINE");
+	ReadStory(L"CRISIS-V");
 
 	/*WCHAR* setName = (WCHAR*)malloc(sizeof(WCHAR) * 3);
-	setName = L"세구";
+	setName = L"세구";S
 	name = setName;
 	Intro();*/
 	GameIntro();

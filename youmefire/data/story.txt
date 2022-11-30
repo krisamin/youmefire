@@ -850,6 +850,195 @@
 
 #END
 ==========================================================================================
+#POINT:CRISIS-V
+#SECTION:CRISIS-V
+
+#IMAGE:HIDER:OPACITY:SET:100
+#IMAGE:RENDER
+#AUDIO:bgm/crisis1:START:BGM
+#AUDIO:bgm/crisis1:VOLUME:FADE:0:1000
+
+#TEXT:HOVER:주르르와 셋이서 만났던 날 이후, 비챤과 나는 꾸준히 인스타 디엠을 하면서 친해져갔다.
+#CLICK
+
+#TEXT:HOVER:친해지기만 했을까.. 비챤의 외모에다가 성격에, 호감을 안 가질 수 없었다..
+#CLICK
+
+#TEXT:HOVER:그러다가, 어쩌다, 이번 주말에 비챤과 만나기로 약속을 잡았다.
+#CLICK
+
+#TEXT:HOVER:우리는 영화를 보기로 헀는데, 비챤과 보기로 했던 영화의 이름은 “누나, 동생, 청춘” 이였고, 장르는 로맨스였다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:BACKGROUND:PATH:images/screen/viichan/cinema.bmp
+#IMAGE:HIDER:OPACITY:FADE:100:0
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:경훈아 왔어?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:약속 장소에 가니, 비챤이 먼저 와있었다.
+#CLICK
+
+#TEXT:HOVER:비챤은 깔끔하고 이쁘게 차려입고 나왔다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#SELECT:1:오래 기다렸어?
+
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:아니..! 나도 방금 온거야 ㅎㅎ 팝콘부터 시킬까?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:그래!
+
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#TEXT:HOVER:비챤과 나는 먹을 것을 사고, 영화관에 들어가서 영화를 봤다.
+#CLICK
+
+#IMAGE:HIDER:OPACITY:FADE:100:80
+#TEXT:HOVER:영화는 주인공이 두 명의 이성 사이에서 고민하다, 결국 두 여자 다 놓쳐 남은 청춘을 슬프게 보낸다는 이야기였다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:영화 되게 슬프지 않았어?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:그러니까.. 영화 내용이 너무 슬퍼가지고 중간에 울었잖아...
+
+#SLEEP:500
+#SELECT:1:우니까 너무 배고프다 ㅋㅋㅋ 밥 뭐 먹을래
+
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:나 마제소바 너무 먹고 싶은데 저기 소바집 갈래?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:좋아!
+
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#TEXT:HOVER:그렇게 비챤과 나는 마제소바 집에 들어가 저녁을 단 둘이 먹게 되었다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:100:0
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:나 화장실 좀 갔다 올게!
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#TEXT:HOVER:비챤은 책상에 핸드폰을 올려두고 화장실을 갔다.
+#CLICK
+
+#TEXT:HOVER:엄청 급한 알림이 와 있는 것 같아서 휴대폰을 슬쩍 봤다.
+#CLICK
+
+#TEXT:HOVER:주르르였다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:BACKGROUND:PATH:images/solid/101010.bmp
+#IMAGE:HIDER:OPACITY:SET:0
+#MACRO:DIALOG:JURURU
+#TEXT:DIALOG:야 비챤 잘 되가냐?? 너 중1때 경훈이 좋아헀잖아 ㅎㅇㅌ~~
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:SET:100
+#TEXT:HOVER:엥...? 비챤이 날 좋아했었다고..? 그것도 중1때...?
+#CLICK
+
+#TEXT:HOVER:갑자기 마음 속에서 혼란이 오기 시작했다.
+#CLICK
+
+#TEXT:HOVER:마음 속의 혼란이 가시기도 전에, 비챤이 화장실에서 돌아왔다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:BACKGROUND:PATH:images/screen/viichan/hmm.bmp
+#IMAGE:HIDER:OPACITY:FADE:100:0
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:뭐하고 있었어..?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:으..음! 아무것..도 아니야!!!!
+
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:아... 당황한 티를 숨기지 못 했다... 갑자기 얼굴이 빨개지고..
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:무슨 일 있었어..?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:아무것도 아니야..! 밥 나왔으니까 밥 먹자…!
+
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:아무렇지 않은 척 말을 돌리고 밥을 먹기 시작했다.
+#CLICK
+
+#IMAGE:HIDER:OPACITY:FADE:80:100
+#TEXT:HOVER:밥을 다 먹고, 우리는 집에 같이 갔다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:100:0
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:밥은 맛있었어?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:어..으응
+
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:비챤의 표정이 좋지 않았다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:너 아까 나 화장실 갔을 때...
+#CLICK
+
+#TEXT:DIALOG:내 휴대폰 봤어..?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:앗..! 걸렸다.. 일단 아니라고 말해야겠다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#SELECT:1:아니야…! 진짜 안봤어...
+
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:그럼 왜 내 핸드폰에 온 알림이 없어져있어..?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:들킨 것 같다… 솔직하게 말할까 아니면 숨길까..?
+#CLICK
+
+
+
+#CLICK
+
+#END
+==========================================================================================
 #POINT:STORY-J
 #SECTION:STORY-J
 
@@ -1615,18 +1804,8 @@
 #IMAGE:RESET
 #IMAGE:RENDER
 
-
-
-
-
-
-
-
-
-
-
-
-
 #END
 
+
+#STOP
 |# 1000줄 돌파... 흐미;; 살려주세요...
