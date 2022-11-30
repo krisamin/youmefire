@@ -552,7 +552,297 @@
 #SECTION:STORY-V
 
 #IMAGE:HIDER:OPACITY:SET:100
+#IMAGE:RENDER
+#AUDIO:bgm/viichan1:START:BGM
+#AUDIO:bgm/viichan1:VOLUME:FADE:0:1000
+
+#TEXT:HOVER:어쩌다 보니, 비챤이랑 만나게 되었다.
 #CLICK
+
+#TEXT:HOVER:엄청 어색하지 않을까 고민했지만, 중학교 때 친했던 주르르가 같이 와준다니까, 조금은 안심이 되었다.
+#CLICK
+
+#IMAGE:BACKGROUND:PATH:images/screen/viichan/sorry.bmp
+#IMAGE:HIDER:OPACITY:FADE:100:80
+#TEXT:HOVER:도착을 하니, 비챤이 먼저 와 있었다. 어두운 회색 긴 머리에, 검은색 머리핀...
+#CLICK
+
+#TEXT:HOVER:아! 편의점에서 부딪혔던 그 여자였다...
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#SELECT:1:안녕..!! 되게 오랜만이다... 오래 기다렸어?
+
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:아니..! 한 5분 정도...?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:오래 기다린듯 한 표정이었지만, 5분 정도라는 말을 듣고 그런갑다 했다.
+#CLICK
+
+#IMAGE:HIDER:OPACITY:FADE:80:100
+#TEXT:HOVER:내가 온 뒤로 주르르가 도착했다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:BACKGROUND:PATH:images/screen/jururu/prologue1.bmp
+#IMAGE:HIDER:OPACITY:FADE:100:0
+
+#MACRO:DIALOG:JURURU
+#TEXT:DIALOG:콘르르~
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:요즘 밀고 있는 인사말인거 같다.
+#CLICK
+
+#TEXT:HOVER:왜 저럴까 싶다..
+#CLICK
+
+#TEXT:HOVER:주르르가 먼저 말을 꺼냈다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#MACRO:DIALOG:JURURU
+#TEXT:DIALOG:음 그럼 밥부터 먹으러 갈래? 피자집 가자!
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#TEXT:HOVER:저번에 버거누나랑 갔던 피자집을 다시 가게 되었다.
+#CLICK
+
+#IMAGE:HIDER:OPACITY:FADE:100:80
+#TEXT:HOVER:저번에 먹던 메뉴가 생각보다 맛있더서 난 똑같은 메뉴를 시켰다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#MACRO:DIALOG:JURURU
+#TEXT:DIALOG:너는 그거 먹고.. 여기에 상하이 로제 파스타랑 소보로 파스타도 주세요!
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#TEXT:HOVER:음식이 나오자, 주르르가 핸드폰을 꺼내 사진을 찍더니 나한테 물었다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#MACRO:DIALOG:JURURU
+#TEXT:DIALOG:야 너 인스타 아이디 뭐야?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#TEXT:HOVER:나는 내 인스타 아이디를 알려줬다.
+#CLICK
+
+#IMAGE:BACKGROUND:PATH:images/screen/viichan/cafe.bmp
+#IMAGE:HIDER:OPACITY:FADE:100:80
+#TEXT:HOVER:밥을 먹으면서 내가 먼저 비챤한테 말을 걸었다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#SELECT:1:그럼 상포중에 1학년까지 있다가 잠깐 전학간거야?
+
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:어 맞아..! 넌 나 어떻게 알고 있었어?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:르르가 알려줘서 어떤 애였는지만? 알게 됐어. 내가 중학교때 르르랑 밖에 친한 여자애가 없었어서..
+
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:나에 대해 섭섭한게 있었나?
+#CLICK
+
+#TEXT:HOVER:비챤이 조금 애처로운 눈빛으로 나를 바라봤다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:아.. 난 너 기억 많이 나는데!
+#CLICK
+
+#TEXT:DIALOG:그 디미고 간다고 중학교 1학년때부터 컴퓨터 어쩌고.. 열심히 준비했지 않았어?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:어 맞아! 어떻게 알았어?
+
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:난 다 알고 있지 ㅋㅋㅋㅋㅋ 난 너 기억 되게 많이 나던데? 여름 방학식날 쇼미 노래 부르고.....
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:야 야 그만해!!!!!!!!!!
+
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:ㅋㅋㅋㅋㅋㅎㅋㅎㅋㅎ
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:생각보다 비챤은 나에 대해 자세히 알고 있었다.
+#CLICK
+
+#TEXT:HOVER:내 흑역사 까지 너무 잘 알고 있어서 놀랐다..... 그리고
+#CLICK
+
+#TEXT:HOVER:날 보면서 웃는 비챤의 모습은 뭐랄까.. 너무 예뻤다.
+#CLICK
+
+#IMAGE:HIDER:OPACITY:FADE:80:100
+#TEXT:HOVER:주르르까지 셋이서 중학교 시절을 회상하며, 밥을 먹다 보니, 벌써 1시간이 훌쩍 지나 있었다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:BACKGROUND:PATH:images/screen/jururu/prologue1.bmp
+#IMAGE:HIDER:OPACITY:FADE:100:0
+#MACRO:DIALOG:JURURU
+#TEXT:DIALOG:야야 미쳤나봐! 우리 얼른 노래방 가자!!
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#TEXT:HOVER:비챤과 나 주르르는, 근처에 있는 노래방에 갔다.
+#CLICK
+
+#IMAGE:BACKGROUND:PATH:images/screen/jururu/karaoke.bmp
+#IMAGE:HIDER:OPACITY:FADE:100:80
+#TEXT:HOVER:주르르랑은 같이 몇 번 가봐서 무슨 취향인지 알지만, 비챤이랑은 처음 가서 무슨 취향인지 전혀 몰랐다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#MACRO:DIALOG:JURURU
+#TEXT:DIALOG:챤이 먼저 부를래?
+#CLICK
+
+#IMAGE:BACKGROUND:PATH:images/screen/viichan/karaoke.bmp
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:어.. 나 그거 불러도 돼?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:비챤이 갑자기 씹덕.... 스러운 노래를 불렀다...
+#CLICK
+
+#TEXT:HOVER:얘 좀 뭘 아는 것 같다...
+#CLICK
+
+#TEXT:HOVER:나랑 취향이 맞는 친구라니, 진짜 너무 친해지고 싶었다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:ㅋㅋㅋㅋㅋㅋㅋㅋ 경훈아 왜 그런 눈으로 봨ㅋㅋㅋㅋㅋㅋㅋㅋㅋ
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:아... 너무 내 취향인걸 들켜버렸나..
+#CLICK
+
+#TEXT:HOVER:비챤한테 내 눈빛을 들켜버렸다.
+#CLICK
+
+#TEXT:HOVER:옆에서 있던 주르르도 피식했다.
+#CLICK
+
+#TEXT:HOVER:우리는 그렇게 노래방에서 즐거운 시간을 보냈다.
+#CLICK
+
+#TEXT:HOVER:즐거운 시간만 보냈나, 비챤과 심리적으로 가까워진 기분이 들었다.
+#CLICK
+
+#IMAGE:HIDER:OPACITY:FADE:80:100
+#TEXT:HOVER:집에 갈 시간이 되어서, 노래방을 나와, 각자 집으로 가기로 했다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:BACKGROUND:PATH:images/screen/jururu/prologue1.bmp
+#IMAGE:HIDER:OPACITY:FADE:100:0
+#MACRO:DIALOG:JURURU
+#TEXT:DIALOG:난 방향이 달라서 먼저 갈게 잘 가~~~ 주바~~
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#TEXT:HOVER:주르르가 인사를 하고 먼저 갔다.
+#CLICK
+
+#IMAGE:BACKGROUND:PATH:images/screen/viichan/sorry.bmp
+#IMAGE:HIDER:OPACITY:FADE:100:80
+#TEXT:HOVER:비챤과 내가 단 둘이 남았다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:이쪽 방향이야?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:어어! 집이 OO아파트라
+
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:나도 그 아파트에 살아!! 어디 동이야?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:204동! 챤이 너는?
+
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:나는 208동! 우리 자주 볼 수 있겠네 ㅋㅋㅋ
+#CLICK
+
+#TEXT:DIALOG:그럼 기숙사 학교면, 우리 동네에서 좀 멀리 있는 학교겠네?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:아 그래도 차로 40분이면 가서 얼마 안 걸려.. ㅋㅋㅋ
+
+#SLEEP:500
+#SELECT:1:우리 학교는 애들이 잔류 많이 하는데, 난 주말마다 나오거든 ㅋㅋㅋ
+
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:오 그럼 너 주말마다 볼 수 있는거야?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:토요일만 볼 수 있어 ㅋㅋㅋ 일요일은 학교 다시 들어가야 해서..
+
+#IMAGE:HIDER:OPACITY:FADE:0:80
+#TEXT:HOVER:우리는 그렇게 이야기를 나눴고, 이야기를 나누다 보니 벌써 집 앞까지 왔다
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:벌써 집 앞이네! 디엠 할게! 잘가~
+#CLICK
+
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#TEXT:HOVER:비챤과 헤어지고 난 다시 집에 왔다.
+#CLICK
+
+#AUDIO:bgm/viichan1:VOLUME:FADE:1000:0
+#AUDIO:bgm/viichan1:STOP
+
+#IMAGE:RESET
+#IMAGE:RENDER
+#JUMP:CRISIS-V
 
 
 
@@ -579,7 +869,7 @@
 
 #AUDIO:effect/alert:START:EFFECT
 #SLEEP:1000
-#IMAGE:BACKGROUND:PATH:images/screen/jingburger/calling.bmp
+#IMAGE:BACKGROUND:PATH:images/screen/jingburger/calling2.bmp
 #IMAGE:HIDER:OPACITY:FADE:100:80
 
 #TEXT:HOVER:이 생각을 하던 찰나, 징버거 누나한테 연락이 왔다.
@@ -610,7 +900,6 @@
 
 #IMAGE:HOVERTEXT:DISABLE
 #IMAGE:HIDER:OPACITY:FADE:80:0
-
 #MACRO:DIALOG:JINGBURGER
 #TEXT:DIALOG:|N아 왔어?
 #CLICK
@@ -1005,7 +1294,7 @@
 #IMAGE:HOVERTEXT:DISABLE
 #IMAGE:HIDER:OPACITY:FADE:80:0
 #SELECT:2:알 수 없는 남자를 때린다.:누나를 데리고 밖으로 나간다.
-#IMAGE:HIDER:OPACITY:FADE:80:100
+#IMAGE:HIDER:OPACITY:FADE:0:100
 #AUDIO:bgm/crisis2:VOLUME:FADE:1000:0
 #AUDIO:bgm/crisis2:STOP
 
