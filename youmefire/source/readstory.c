@@ -43,6 +43,7 @@ int ReadStory(WCHAR* startSection) {
 		WCHAR* buffer;
 		WCHAR* command = wcstok(splitLine, L":", &buffer);
 
+		if (wcscmp(command, L"#STOP") == 0) {
 		if (!started) {
 			if (wcscmp(command, L"#SECTION") == 0) {
 				WCHAR* sectionName = wcstok(NULL, L":", &buffer);
