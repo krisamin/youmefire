@@ -1189,7 +1189,7 @@
 #SELECT:1:왜 좋아하게 된거야
 
 #MACRO:DIALOG:VIICHAN
-#TEXT:DIALOG:중1때 과목하면서 할 일을 열심히 하는 너가 좋았어.. 목소리도 좋고
+#TEXT:DIALOG:중1때 과묵하면서 할 일을 열심히 하는 너가 좋았어.. 목소리도 좋고
 #CLICK
 
 #MACRO:DIALOG:HIDE
