@@ -1316,7 +1316,7 @@
 #AUDIO:bgm/viichanending:START:BGM
 #AUDIO:bgm/viichanending:VOLUME:FADE:0:1000
 #TEXT:HOVER:비챤 ❤️ |N
-#SLEEP:2000
+#SLEEP:3000
 
 #TEXT:HOVER:자물쇠에 글씨 한 자 한자 써져갔다.
 #SLEEP:4000
@@ -1326,6 +1326,161 @@
 
 #TEXT:HOVER:그렇게 나는 비챤과 행복한 청춘을 이어 나갈 수 있게 되었다.
 #CLICK
+
+
+
+
+
+#END
+==========================================================================================
+#POINT:CRISIS-V-B
+#SECTION:CRISIS-V-B
+
+#IMAGE:HIDER:OPACITY:SET:100
+#IMAGE:RENDER
+#AUDIO:bgm/crisis2:START:BGM
+#AUDIO:bgm/crisis2:VOLUME:FADE:0:1000
+
+#IMAGE:BACKGROUND:PATH:images/screen/viichan/angry.bmp
+#IMAGE:HIDER:OPACITY:FADE:100:80
+#TEXT:HOVER:한참동안 대답을 하지 못했다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:HIDER:OPACITY:FADE:80:0
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:진짜 안 본거 맞아?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:진짜 안 봤어..! 맹세해
+
+#MACRO:DIALOG:VIICHAN
+#TEXT:DIALOG:음.. 알았어. 오늘 집은 나 혼자 갈게. 재밌었어.
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#TEXT:HOVER:비챤이 무뚝뚝하게 대답하고, 먼저 집에 갔다.
+#CLICK
+
+#AUDIO:bgm/crisis2:VOLUME:FADE:1000:0
+#AUDIO:bgm/crisis2:STOP
+
+#IMAGE:RESET
+#IMAGE:RENDER
+#JUMP:CLIMAX-V-B
+
+
+
+
+
+#END
+==========================================================================================
+#POINT:CLIMAX-V-B
+#SECTION:CLIMAX-V-B
+
+#IMAGE:HIDER:OPACITY:SET:100
+#IMAGE:RENDER
+#AUDIO:bgm/climax1:START:BGM
+#AUDIO:bgm/climax1:VOLUME:FADE:0:1000
+
+#TEXT:HOVER:비챤과 그 일이 있고 난 이후, 비챤에게 먼저 연락이 오는 날은 없었다.
+#CLICK
+
+#TEXT:HOVER:나 역시도 비챤에게 먼저 연락을 하는 일은 없었다.
+#CLICK
+
+#TEXT:HOVER:내가 연락을 받은 사람은, 뜻 밖에도 주르르였다.
+#CLICK
+
+#IMAGE:HOVERTEXT:DISABLE
+#IMAGE:BACKGROUND:PATH:images/screen/jururu/prologue1.bmp
+#IMAGE:HIDER:OPACITY:FADE:100:0
+#MACRO:DIALOG:JURURU
+#TEXT:DIALOG:너 미쳤어?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:왜 그래?
+
+#MACRO:DIALOG:JURURU
+#TEXT:DIALOG:왜 챤이 휴대폰을 맘대로 막 보고 그래?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:그 일 생긴지 꽤 지났는데 갑자기 왜 그래?
+
+#MACRO:DIALOG:JURURU
+#TEXT:DIALOG:하.. 너 진짜 눈치가 없냐
+#CLICK
+
+#TEXT:DIALOG:챤이가 너 중학교 때부터 좋아해서,
+#CLICK
+
+#TEXT:DIALOG:다시 이 동네 돌아왔을 때도 너 보고 싶어서 낯가림 심해도 먼저 연락하고 보자고 그랬잖아!
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:그런... 거였어?
+
+#MACRO:DIALOG:JURURU
+#TEXT:DIALOG:그래 이 눈치없는 놈아! 너 이제 비챤 못 봐
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#SELECT:1:왜..?
+
+#MACRO:DIALOG:JURURU
+#TEXT:DIALOG:상식적으로 오랫동안 좋아한 사람이 그렇게 정 떨어질 만한 짓 하면 보고 싶겠냐?
+#CLICK
+
+#MACRO:DIALOG:HIDE
+#IMAGE:HIDER:OPACITY:FADE:0:100
+#TEXT:HOVER:그렇게 주르르로부터 충격적인 이야기를 듣고 나서, 한참을 아무도 모르게 울었다.
+#CLICK
+
+#TEXT:HOVER:나도 비챤에게 호감이 있었고, 비챤이 나에게 그런 감정을 가진 줄도 몰랐으니까.
+#CLICK
+
+#AUDIO:bgm/climax1:VOLUME:FADE:1000:0
+#AUDIO:bgm/climax1:STOP
+
+#IMAGE:RESET
+#IMAGE:RENDER
+#JUMP:ENDING-V-B
+
+
+
+
+
+#END
+==========================================================================================
+#POINT:ENDING-V-B
+#SECTION:ENDING-V-B
+
+#IMAGE:HIDER:OPACITY:SET:100
+#IMAGE:RENDER
+#AUDIO:bgm/badending:START:BGM
+#AUDIO:bgm/badending:VOLUME:FADE:0:1000
+
+#TEXT:HOVER:평소와 똑같은 겨울.
+#SLEEP:3000
+
+#TEXT:HOVER:학원들은 겨울방학 특강을 시작했고, 나 역시도 그 반복의 일원으로 참여하여 점차 적응해나갔다.
+#SLEEP:4000
+
+#TEXT:HOVER:하지만, 시린 듯이 추워진 내 마음과 더불어, 옆 자리의 공허함은 점차 더해져만 갔다.
+#SLEEP:4000
+
+#TEXT:HOVER:비챤에게 솔직하게만 말했더라면, 조금이나마 달라졌을까.
+#SLEEP:4000
+
+#TEXT:HOVER:그렇게 시린 일상 속에서, 슬픈 후회를 하며 하루를 끝냈다.
+#SLEEP:4000
+
+#AUDIO:bgm/badending:VOLUME:FADE:1000:0
+#AUDIO:bgm/badending:STOP
 
 
 
@@ -1873,7 +2028,7 @@
 #SLEEP:4000
 
 #TEXT:HOVER:그렇게 시린 일상 속에서, 슬픈 후회를 하며 하루를 끝냈다.
-#CLICK
+#SLEEP:4000
 
 #AUDIO:bgm/badending:VOLUME:FADE:1000:0
 #AUDIO:bgm/badending:STOP
@@ -2104,3 +2259,4 @@
 #STOP
 |# 1000줄 돌파... 흐미;; 살려주세요...
 |# 2000줄 돌파... 으아앙 살려주세요...
+|# 스토리 옮기기 끝..... 살려주세요...
