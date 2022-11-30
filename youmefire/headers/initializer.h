@@ -122,6 +122,7 @@ inline void initialize() {
   HideCursor();
 	SetConsole(WINDOW_WIDTH, WINDOW_HEIGHT, false);
   HideScrollBar();
+  HideCursor();
   setlocale(LC_ALL, "KOREAN");
   srand(time(NULL));
 
